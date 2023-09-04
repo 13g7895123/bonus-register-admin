@@ -19,7 +19,11 @@ export default defineConfig({
     host: true,
     port: 8000,
     proxy: {
-      // '/admin-api': 'http://139.162.15.125:9090'
+      '/api': {
+        target: 'http://170.187.229.132:9090/api/bonus-register/admin',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
     }
   }
 })

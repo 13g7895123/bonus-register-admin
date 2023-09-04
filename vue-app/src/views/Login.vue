@@ -40,6 +40,9 @@ import Swal from 'sweetalert2'
 import { useAuthStore } from '../stores/loginAuth.js';
 
 const ruleFormRef = ref()
+const apiUrl = ref()
+const apiParam = ref()
+const apiUrlPrefix = '/api/'
 const router = useRouter();
 const loginStore = useAuthStore();
 
@@ -60,11 +63,12 @@ const handleSubmit = (formEl) => {
     if (!formEl) return;
     formEl.validate(async(valid) => {
         if (valid){
+            apiParam.value = '?action=login'
+            apiUrl.value = apiUrlPrefix + "login.php" + apiParam.value
             const {
                 data: { success, user, msg },
             } = await axios.post(
-                'http://139.162.15.125:9090/api/health-insurance/admin-login.php',
-                loginUser.value
+                apiUrl.value, loginUser.value
             )
 
             if (success && user){
