@@ -21,6 +21,18 @@
                     <span>藥品管理</span>
                 </el-menu-item>
             </router-link>
+            <router-link to="">
+                <el-menu-item index="2">
+                    <el-icon><List /></el-icon>
+                    <span>伺服器管理</span>
+                </el-menu-item>
+            </router-link>
+            <router-link to="">
+                <el-menu-item index="2">
+                    <el-icon><List /></el-icon>
+                    <span>管理者設定</span>
+                </el-menu-item>
+            </router-link>
           <!-- <el-sub-menu index="2">
             <template #title>
               <el-icon><location /></el-icon>
