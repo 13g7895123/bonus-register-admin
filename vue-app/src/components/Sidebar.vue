@@ -24,6 +24,12 @@
             <router-link to="">
                 <el-menu-item index="2">
                     <el-icon><List /></el-icon>
+                    <span>玩家帳號管理</span>
+                </el-menu-item>
+            </router-link>
+            <router-link to="">
+                <el-menu-item index="2">
+                    <el-icon><List /></el-icon>
                     <span>伺服器管理</span>
                 </el-menu-item>
             </router-link>
