@@ -6,7 +6,7 @@
           active-text-color="#ffd04b"
           background-color="#074c62"
           class="el-menu-vertical-demo"
-          default-active="1"
+          default-active="3"
           text-color="#fff"
         >
             <router-link to="/member">
@@ -22,7 +22,7 @@
                 </el-menu-item>
             </router-link>
             <router-link to="/player">
-                <el-menu-item index="2">
+                <el-menu-item index="3">
                     <el-icon><List /></el-icon>
                     <span>玩家帳號管理</span>
                 </el-menu-item>
@@ -95,9 +95,9 @@ min-width: 180px;
 
 .hiddenDropdown,
 .hiddenDropname {
-display: none;
+  display: none;
 }
 a {
-text-decoration: none;
+  text-decoration: none;
 }
 </style>
