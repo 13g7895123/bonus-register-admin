@@ -11,7 +11,7 @@
         >
             <router-link to="/player">
                 <el-menu-item index="/player">
-                    <el-icon><List /></el-icon>
+                    <el-icon><User /></el-icon>
                     <span>玩家帳號管理</span>
                 </el-menu-item>
             </router-link>
