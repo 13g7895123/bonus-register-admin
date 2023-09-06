@@ -108,8 +108,8 @@ const page_index = ref(1),
 // 篩選
 const filterEngName = ref()
 
-const getPlayers = async() => {
-    const { data: { success, data } } = await axios.post('/api/player_user.php?action=player_user')
+const getServer = async() => {
+    const { data: { success, data } } = await axios.post('/api/server.php?action=server')
 
     if (success){
         tableData.value = data
@@ -121,7 +121,7 @@ const getPlayers = async() => {
     }
 }
 
-watchEffect(() => getPlayers())
+watchEffect(() => getServer())
 
 const handleAdd = () => {
     show.value = true
