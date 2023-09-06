@@ -6,7 +6,7 @@
           active-text-color="#ffd04b"
           background-color="#074c62"
           class="el-menu-vertical-demo"
-          default-active="3"
+          :default-active="$route.path"
           text-color="#fff"
         >
             <router-link to="/member">
