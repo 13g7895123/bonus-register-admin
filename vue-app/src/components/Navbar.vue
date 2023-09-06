@@ -4,6 +4,7 @@
       <el-col :span="12" class="flex justify-start items-center pl-3">
       <!-- <el-col :span="12" class="logo-container"> -->
         <!-- <img src="../assets/logo.png" class="logo" alt="logo" /> -->
+        <el-icon><Setting /></el-icon>
         <span class="title">後台管理系统</span>
       </el-col>
       <el-col :span="12" class="user">
