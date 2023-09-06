@@ -108,7 +108,7 @@ const page_index = ref(1),
 // 篩選
 const filterEngName = ref()
 
-const getSystemUsers = async() => {
+const getSystemAdmin = async() => {
     const { data: { success, data } } = await axios.post('/api/system_admin.php?action=system_admin')
 
     if (success){
@@ -121,7 +121,7 @@ const getSystemUsers = async() => {
     }
 }
 
-watchEffect(() => getSystemUsers())
+watchEffect(() => getSystemAdmin())
 
 const handleAdd = () => {
     show.value = true
