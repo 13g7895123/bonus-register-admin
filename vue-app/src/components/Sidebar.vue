@@ -21,10 +21,10 @@
                     <span>伺服器管理</span>
                 </el-menu-item>
             </router-link>
-            <router-link to="/admin">
-                <el-menu-item index="/admin">
+            <router-link to="/systemUser">
+                <el-menu-item index="/systemUser">
                     <el-icon><Avatar /></el-icon>
-                    <span>管理者設定</span>
+                    <span>系統使用者</span>
                 </el-menu-item>
             </router-link>
           <!-- <el-sub-menu index="2">
