@@ -10,19 +10,19 @@
           text-color="#fff"
         >
             <router-link to="/member">
-                <el-menu-item index="1">
+                <el-menu-item index="/member">
                     <el-icon><UserFilled /></el-icon>
                     <span>會員管理</span>
                 </el-menu-item>
             </router-link>
             <router-link to="/medicine">
-                <el-menu-item index="2">
+                <el-menu-item index="/medicine">
                     <el-icon><List /></el-icon>
                     <span>藥品管理</span>
                 </el-menu-item>
             </router-link>
             <router-link to="/player">
-                <el-menu-item index="3">
+                <el-menu-item index="/player">
                     <el-icon><List /></el-icon>
                     <span>玩家帳號管理</span>
                 </el-menu-item>
