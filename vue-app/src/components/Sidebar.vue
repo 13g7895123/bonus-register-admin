@@ -4,23 +4,11 @@
       <el-col :span="12">
         <el-menu
           active-text-color="#ffd04b"
-          background-color="#074c62"
+          background-color="#555"
           class="el-menu-vertical-demo"
           :default-active="$route.path"
           text-color="#fff"
         >
-            <router-link to="/member">
-                <el-menu-item index="/member">
-                    <el-icon><UserFilled /></el-icon>
-                    <span>會員管理</span>
-                </el-menu-item>
-            </router-link>
-            <router-link to="/medicine">
-                <el-menu-item index="/medicine">
-                    <el-icon><List /></el-icon>
-                    <span>藥品管理</span>
-                </el-menu-item>
-            </router-link>
             <router-link to="/player">
                 <el-menu-item index="/player">
                     <el-icon><List /></el-icon>
