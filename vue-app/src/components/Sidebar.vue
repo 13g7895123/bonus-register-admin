@@ -33,24 +33,6 @@
                     <span>系統管理者</span>
                 </el-menu-item>
             </router-link>
-          <!-- <el-sub-menu index="2">
-            <template #title>
-              <el-icon><location /></el-icon>
-              <span>藥品管理</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="1-1">资金流水</el-menu-item>
-            </el-menu-item-group>
-          </el-sub-menu>
-          <el-sub-menu index="3">
-            <template #title>
-              <el-icon><location /></el-icon>
-              <span>藥品管理</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="1-1"></el-menu-item>
-            </el-menu-item-group>
-          </el-sub-menu> -->
         </el-menu>
       </el-col>
     </el-row>
