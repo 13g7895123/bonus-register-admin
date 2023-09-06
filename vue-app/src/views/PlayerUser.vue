@@ -121,7 +121,7 @@ const getPlayers = async() => {
     }
 }
 
-watchEffect(() => getMedicine())
+watchEffect(() => getPlayers())
 
 const handleAdd = () => {
     show.value = true
