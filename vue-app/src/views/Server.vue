@@ -55,11 +55,11 @@
             <el-table-column label="代號" align="center" width="200" prop="code_name"/>
             <el-table-column label="可創建帳號數量" align="center" width="200" prop="code_name"/>
             <el-table-column label="資料庫" align="center" width="200" prop="db_name">
-                <template slot-scope="slotData">
+                <!-- <template slot-scope="slotData">
                     <el-tooltop effect="dark" placement="top-start" content="texttext">
                         <span>{{ slotData.row.code }}</span>
                     </el-tooltop>
-                </template>
+                </template> -->
             </el-table-column>
             <!-- <el-table-column label="啟用狀態" align="center" width="200" prop="switch"/> -->
         </el-table>
