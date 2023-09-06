@@ -27,14 +27,14 @@
                     <span>玩家帳號管理</span>
                 </el-menu-item>
             </router-link>
-            <router-link to="">
-                <el-menu-item index="2">
+            <router-link to="/server">
+                <el-menu-item index="/server">
                     <el-icon><List /></el-icon>
                     <span>伺服器管理</span>
                 </el-menu-item>
             </router-link>
-            <router-link to="">
-                <el-menu-item index="2">
+            <router-link to="/admin">
+                <el-menu-item index="/admin">
                     <el-icon><List /></el-icon>
                     <span>管理者設定</span>
                 </el-menu-item>
