@@ -51,7 +51,7 @@
 </template>
 
 <script setup>
-import { UserFilled, List } from "@element-plus/icons-vue";
+import { UserFilled, List, Setting, User } from "@element-plus/icons-vue";
 
 </script>
 

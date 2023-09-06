@@ -37,7 +37,7 @@
 </template>
   
 <script setup>
-import { ArrowDown } from "@element-plus/icons-vue";
+import { ArrowDown, Setting } from "@element-plus/icons-vue";
 import { useAuthStore } from "../stores/loginAuth";
 import { useRouter } from "vue-router";
 
