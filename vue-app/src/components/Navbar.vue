@@ -2,8 +2,6 @@
   <nav class="w-full min-w-[600px] p-[0.4rem] bg-[#555] text-white border-b-2">
     <el-row>
       <el-col :span="12" class="flex justify-start items-center pl-3">
-      <!-- <el-col :span="12" class="logo-container"> -->
-        <!-- <img src="../assets/logo.png" class="logo" alt="logo" /> -->
         <el-icon :size="30" color="#fff"><Setting /></el-icon>
         <span class="title ml-3">後台管理系统</span>
       </el-col>

@@ -17,13 +17,13 @@
             </router-link>
             <router-link to="/server">
                 <el-menu-item index="/server">
-                    <el-icon><List /></el-icon>
+                    <el-icon><Refrigerator /></el-icon>
                     <span>伺服器管理</span>
                 </el-menu-item>
             </router-link>
             <router-link to="/admin">
                 <el-menu-item index="/admin">
-                    <el-icon><List /></el-icon>
+                    <el-icon><Avatar /></el-icon>
                     <span>管理者設定</span>
                 </el-menu-item>
             </router-link>
@@ -51,7 +51,7 @@
 </template>
 
 <script setup>
-import { UserFilled, List, Setting, User } from "@element-plus/icons-vue";
+import { Avatar, Refrigerator, User } from "@element-plus/icons-vue";
 
 </script>
 
