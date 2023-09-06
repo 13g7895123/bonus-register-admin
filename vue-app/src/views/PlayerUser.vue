@@ -109,7 +109,7 @@ const page_index = ref(1),
 const filterEngName = ref()
 
 const getPlayers = async() => {
-    const { data: { success, data } } = await axios.post('/api/player.php')
+    const { data: { success, data } } = await axios.post('/api/player_user.php?action=player_user')
 
     if (success){
         tableData.value = data
