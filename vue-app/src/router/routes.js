@@ -6,6 +6,7 @@ const routes = [
         children: [
             { path: "/player", component: () => import('../views/PlayerUser.vue')},
             { path: "/systemUser", component: () => import('../views/SystemUser.vue')},
+            { path: "/systemAdmin", component: () => import('../views/SystemAdmin.vue')},
         ]
     },
     {
