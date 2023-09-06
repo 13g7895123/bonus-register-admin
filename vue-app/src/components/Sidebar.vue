@@ -27,12 +27,6 @@
                     <span>系統使用者</span>
                 </el-menu-item>
             </router-link>
-            <router-link to="/systemUser">
-                <el-menu-item index="/systemUser">
-                    <el-icon><Avatar /></el-icon>
-                    <span>系統使用者</span>
-                </el-menu-item>
-            </router-link>
             <router-link to="/systemAdmin">
                 <el-menu-item index="/systemAdmin">
                     <el-icon><Avatar /></el-icon>
