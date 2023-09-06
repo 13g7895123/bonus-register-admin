@@ -23,13 +23,13 @@
             </el-form>
         </div>
         <el-table
-        :data="tableData"
-        max-height="70vh"
-        style="width: 100%"
-        border
-        v-if="tableData.length > 0"
+            :data="tableData"
+            max-height="70vh"
+            style="width: 100%"
+            border
+            v-if="tableData.length > 0"
         >
-        <el-table-column
+            <el-table-column
                 label="操作"
                 align="center"
                 width="120"
@@ -51,23 +51,14 @@
                 </template>
             </el-table-column>
             <el-table-column type="index" label="編號" align="center" width="100"/>
-            <el-table-column label="藥品編號" align="center" width="200" prop="medicine_code"/>
-            <el-table-column label="英文名" align="center" width="200" prop="eng_name"/>
-            <el-table-column label="中文名" align="center" width="200" prop="medicine_name"/>
-            <el-table-column label="成分" align="center" width="200" prop="ingredient"/>
-            <!-- <el-table-column label="數量" align="center" width="200" prop="ingredient_num"/> -->
-            <el-table-column label="特殊用量" align="center" width="200" prop="specification_quantity"/>
-            <el-table-column label="單複方" align="center" width="200" prop="single_compound"/>
-            <el-table-column label="價格" align="center" width="200" prop="price"/>
-            <el-table-column label="起訖日" align="center" width="200" prop="start_and_end"/>
-            <el-table-column label="製造公司" align="center" width="200" prop="medicine_manufacturer"/>
-            <el-table-column label="劑量類型" align="center" width="200" prop="dosage"/>
-            <el-table-column label="類別" align="center" width="200" prop="classification"/>
-            <el-table-column label="類別群組" align="center" width="200" prop="classification_group"/>
-            <el-table-column label="ATC編號" align="center" width="200" prop="ATC_code"/>
-            <el-table-column label="備註" align="center" width="200" prop="remark"/>
-            <el-table-column label="更新日期" align="center" width="200" prop="date_time_create"/>
+            <el-table-column label="帳號" align="center" width="200" prop="account"/>
+            <el-table-column label="密碼" align="center" width="200" prop="password"/>
+            <el-table-column label="手機" align="center" width="200" prop="phone"/>
+            <el-table-column label="生日" align="center" width="200" prop="birthday"/>
+            <el-table-column label="伺服器" align="center" width="200" prop="server"/>
+            <el-table-column label="啟用" align="center" width="200" prop="switch"/>
         </el-table>
+
         <!-- 分页 -->
         <el-row>
             <el-col :span="24">
@@ -93,7 +84,7 @@
         :operation = 'operation'
         @closeModel="closeModel"
         @handleUpdateProfiles="handelUpdateMedicine"
-        />
+    />
 </template>
 <script setup>
 import { ref, watchEffect } from 'vue'
@@ -107,6 +98,7 @@ const filterTableData = ref([])
 const show = ref(false)
 const editData = ref()
 const operation = ref()   // 0為編輯，1為新增
+
 // 分頁
 const page_index = ref(1),
       page_size = ref(10),
@@ -116,8 +108,8 @@ const page_index = ref(1),
 // 篩選
 const filterEngName = ref()
 
-const getMedicine = async() => {
-    const { data: { success, data } } = await axios.post('http://139.162.15.125:9090/api/health-insurance/admin-medicine.php')
+const getSystemUsers = async() => {
+    const { data: { success, data } } = await axios.post('/api/system_user.php?action=system_user')
 
     if (success){
         tableData.value = data
@@ -129,7 +121,7 @@ const getMedicine = async() => {
     }
 }
 
-watchEffect(() => getMedicine())
+watchEffect(() => getSystemUsers())
 
 const handleAdd = () => {
     show.value = true
