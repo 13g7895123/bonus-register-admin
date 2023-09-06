@@ -50,7 +50,7 @@
                     </el-button>
                 </template>
             </el-table-column>
-            <el-table-column type="index" label="編號" align="center" width="100"/>
+            <!-- <el-table-column type="index" label="編號" align="center" width="100"/> -->
             <el-table-column label="伺服器名稱" align="center" width="200" prop="name"/>
             <el-table-column label="代號" align="center" width="200" prop="code_name"/>
             <el-table-column label="資料庫" align="center" width="200" prop="phone"/>
