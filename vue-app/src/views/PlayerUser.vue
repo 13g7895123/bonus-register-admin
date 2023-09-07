@@ -130,7 +130,8 @@ const handleAdd = () => {
 }
 
 const handleEdit = (row) => {
-    // console.log('edit click');
+    console.log('edit click');
+    console.log(row);
     show.value = true
     editData.value = row
     operation.value = false
