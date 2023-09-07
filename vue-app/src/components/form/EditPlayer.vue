@@ -1,5 +1,10 @@
 <template>
     <el-card class="box-card">
+        <template #header>
+            <div class="card-header">
+                <span>玩家資料修改</span>
+            </div>
+        </template>
         <el-form
             :model="formData"
             ref="dialogRef"
