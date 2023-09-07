@@ -26,6 +26,10 @@
             <el-form-item prop="server" label="伺服器">
                 <el-input v-model="formData.server"></el-input>
             </el-form-item>
+            <el-form-item class="text-right">
+                <el-button @click="handleClose">取消</el-button>
+                <el-button type="primary" @click="handleSubmit(dialogRef)">提交</el-button>
+            </el-form-item>
         </el-form>
     </el-card>
 </template>
