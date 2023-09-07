@@ -92,6 +92,7 @@ import { ref, watchEffect } from 'vue'
 import axios from 'axios';
 import { EditPen, Delete } from "@element-plus/icons-vue";
 import Swal from 'sweetalert2'
+import { useRouter } from "vue-router";
 
 const tableData = ref([])
 const allTableData = ref([])
@@ -108,6 +109,8 @@ const page_index = ref(1),
       layout = "total, sizes, prev, pager, next, jumper"
 // 篩選
 const filterEngName = ref()
+
+const router = useRouter()
 
 const getPlayers = async() => {
     const { data: { success, data } } = await axios.post('/api/player_user.php?action=player_user')
@@ -132,9 +135,16 @@ const handleAdd = () => {
 const handleEdit = (row) => {
     const { id } = row
     console.log(id);
-    show.value = true
-    editData.value = row
-    operation.value = false
+
+    router.push({
+        name: 'editPayer',
+        params:{ id: id }
+    })
+
+    // /player/edit/
+    // show.value = true
+    // editData.value = row
+    // operation.value = false
 }
 
 const handleDelete = async(row) => {
