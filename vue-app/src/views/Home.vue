@@ -3,9 +3,9 @@
         <Navbar />
         <Sidebar />
         <div class="relative top-0 left-[180px] w-[calc(100%-190px)] h-[calc(100%-71px)] overflow-auto">
-            <div class="w-full flex justify-center">
+            <!-- <div class="w-full flex justify-center"> -->
                 <router-view></router-view>
-            </div>            
+            <!-- </div>             -->
         </div>
     </div>
 </template>
