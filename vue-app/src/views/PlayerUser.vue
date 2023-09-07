@@ -137,7 +137,7 @@ const handleEdit = (row) => {
     console.log(id);
 
     router.push({
-        name: 'editPayer',
+        name: 'editPlayer',
         params:{ id: id }
     })
 
