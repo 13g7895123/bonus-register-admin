@@ -27,7 +27,7 @@
                 <el-input v-model="formData.server"></el-input>
             </el-form-item>
             <el-form-item class="flex justify-center">
-                <el-button @click="handleClose">取消</el-button>
+                <el-button @click="">取消</el-button>
                 <el-button type="primary" @click="handleSubmit(dialogRef)">提交</el-button>
             </el-form-item>
         </el-form>
@@ -92,7 +92,7 @@ const handleSubmit = (formEl) => {
             )
 
             if (success){
-                handleClose()
+                // handleClose()
                 Swal.fire({
                     title: `${apiUrlOperationText}會員成功`,
                     icon: 'success',
