@@ -70,7 +70,7 @@ watch(
 const getData = async() => {
     const ajaxFormData = ref({ id: id.value })
     apiParam.value = '?action=get_play_user'
-    apiUrl.value = apiUrlPrefix + "play_user.php" + apiParam.value
+    apiUrl.value = apiUrlPrefix + "player_user.php" + apiParam.value
 
     const { data: { success, data } } = await axios.post(apiUrl.value, ajaxFormData.value)
 
