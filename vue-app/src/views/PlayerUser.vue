@@ -134,17 +134,10 @@ const handleAdd = () => {
 
 const handleEdit = (row) => {
     const { id } = row
-    console.log(id);
-
     router.push({
         name: 'editPlayer',
         params:{ id: id }
     })
-
-    // /player/edit/
-    // show.value = true
-    // editData.value = row
-    // operation.value = false
 }
 
 const handleDelete = async(row) => {

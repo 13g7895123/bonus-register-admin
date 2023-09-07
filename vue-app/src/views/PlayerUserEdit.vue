@@ -34,13 +34,19 @@
     </el-card>
 </template>
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted } from 'vue'
+import { useRouter } from "vue-router";
 import axios from 'axios'
 import Swal from 'sweetalert2'
 
+const router = useRouter()
+const id = ref()
+const apiUrl = ref()
+const apiParam = ref()
+const apiUrlPrefix = '/api/'
+
 const dialogRef = ref()
 // const miCate = ref(['自開藥局', '受聘醫師(藥劑生)'])
-const apiUrl = ref()
 
 const formData = ref({
     account: '',             // 聯絡人
@@ -51,10 +57,27 @@ const formData = ref({
     server: '',
 })
 
+onMounted(() => {
+    id.value = router.currentRoute._value.params.id
+    getData()
+})
+
 watch(
     () => props.editData,
     () => { formData.value = props.editData; }
 );
+
+const getData = async() => {
+    const ajaxFormData = ref({ id: id.value })
+    apiParam.value = '?action=get_play_user'
+    apiUrl.value = apiUrlPrefix + "play_user.php" + apiParam.value
+
+    const { data: { success, data } } = await axios.post(apiUrl.value, ajaxFormData.value)
+
+    if (success){
+        server_name.value = data;
+    }
+}
 
 const handleSubmit = (formEl) => {
     if (!formEl) return;
