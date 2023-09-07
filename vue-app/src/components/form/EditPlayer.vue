@@ -108,3 +108,11 @@ const props = defineProps({
 // 回傳至父層，要觸發的方法
 const emits = defineEmits(["closeModel", "handleUpdateProfiles"]);
 </script>
+
+<style>
+.el-form-item__content{
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+}
+</style>
