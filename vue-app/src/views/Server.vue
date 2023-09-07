@@ -111,8 +111,8 @@ const page_index = ref(1),
 // 篩選
 const filterEngName = ref()
 
-const getSystemAdmin = async() => {
-    const { data: { success, data } } = await axios.post('/api/system_admin.php?action=system_admin')
+const getServer = async() => {
+    const { data: { success, data } } = await axios.post('/api/server.php?action=server')
 
     if (success){
         tableData.value = data
@@ -124,7 +124,7 @@ const getSystemAdmin = async() => {
     }
 }
 
-watchEffect(() => getSystemAdmin())
+watchEffect(() => getServer())
 
 const handleAdd = () => {
     show.value = true
