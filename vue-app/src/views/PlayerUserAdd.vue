@@ -43,7 +43,7 @@ const apiUrl = ref()
 const apiParam = ref()
 const apiUrlPrefix = '/api/'
 
-const dialogRef = ref()
+const router = useRouter()
 
 const formData = ref({
     account: '',             // 聯絡人
