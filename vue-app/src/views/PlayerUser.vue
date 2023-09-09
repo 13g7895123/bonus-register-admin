@@ -79,13 +79,13 @@
         </el-row>
     </div>
     
-    <DialogMedicine 
+    <!-- <DialogMedicine 
         :show="show"
         :editData="editData"
         :operation = 'operation'
         @closeModel="closeModel"
         @handleUpdateProfiles="handelUpdateMedicine"
-    />
+    /> -->
 </template>
 <script setup>
 import { ref, watchEffect } from 'vue'
