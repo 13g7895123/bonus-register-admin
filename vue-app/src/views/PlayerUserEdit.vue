@@ -83,7 +83,8 @@ const handleSubmit = (formEl) => {
     formEl.validate(async(valid) => {
         if (valid){
 
-            console.log(typeof(formData.value));
+            console.log(formData.value);
+            console.log(typeof(formData.value));            
             console.log(typeof(formData.value['account']));
 
             const ajax_data = { id: id.valur }
