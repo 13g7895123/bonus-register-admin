@@ -69,6 +69,7 @@
                         v-model="scope.row.switch" 
                         :active-value="1"
                         :inactive-value="0"
+                        :disabled="true"
                     />
                 </template>
             </el-table-column>
