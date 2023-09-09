@@ -27,7 +27,7 @@
                 <el-input v-model="formData.server_name"></el-input>
             </el-form-item>
             <el-form-item class="flex justify-center">
-                <el-button @click="">取消</el-button>
+                <el-button @click="handelCancel">取消</el-button>
                 <el-button type="primary" @click="handleSubmit(dialogRef)">提交</el-button>
             </el-form-item>
         </el-form>
@@ -75,6 +75,10 @@ const handleSubmit = (formEl) => {
             }
         }
     })
+}
+
+const handelCancel = () => {
+    router.push({ path: '/player' })
 }
 
 </script>
