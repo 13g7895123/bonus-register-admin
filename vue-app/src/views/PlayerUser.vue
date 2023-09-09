@@ -1,4 +1,10 @@
 <template>
+    <el-card class="box-card mx-auto mt-3">
+        <template #header>
+            <div class="card-header">
+                <span>玩家資料修改</span>
+            </div>
+        </template>
     <div class="h-full px-5 py-3">
         <div class="w-full flex items-center justify-between">
             <el-form :inline="true">
@@ -78,14 +84,7 @@
             </el-col>
         </el-row>
     </div>
-    
-    <!-- <DialogMedicine 
-        :show="show"
-        :editData="editData"
-        :operation = 'operation'
-        @closeModel="closeModel"
-        @handleUpdateProfiles="handelUpdateMedicine"
-    /> -->
+</el-card>
 </template>
 <script setup>
 import { ref, watchEffect } from 'vue'
