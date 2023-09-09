@@ -15,13 +15,10 @@
                     <el-button type="primary" size="small" @click="handleSort"
                         >篩選</el-button
                     >
-                    <el-button type="primary" size="small" @click="handleCancelSort"
-                        >取消篩選</el-button
-                    >
                 </el-form-item>
             </el-form>
             <el-form :inline="true">
-                <el-form-item class="float-right">
+                <el-form-item class="float-left">
                     <el-button type="primary" size="small" @click="handleAdd"
                         >新增</el-button
                     >
