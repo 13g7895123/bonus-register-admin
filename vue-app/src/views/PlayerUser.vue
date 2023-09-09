@@ -6,7 +6,7 @@
             </div>
         </template>
     <div class="h-full px-5 py-3">
-        <div class="w-full flex items-center">
+        <div class="w-full flex items-center justify-end">
             <el-form :inline="true">
                 <el-form-item prop="colName" label="">
                     <el-input v-model="filterEngName"></el-input>
@@ -35,6 +35,24 @@
             border
             v-if="tableData.length > 0"
         >
+            
+            <el-table-column type="index" label="編號" align="center" width="100"/>
+            <el-table-column label="ID" align="center" width="auto" prop="id" v-if="false"/>
+            <el-table-column label="帳號" align="center" width="auto" prop="account"/>
+            <el-table-column label="密碼" align="center" width="auto" prop="password" v-if="false"/>
+            <el-table-column label="手機" align="center" width="auto" prop="phone"/>
+            <el-table-column label="生日" align="center" width="auto" prop="birthday"/>
+            <el-table-column label="伺服器" align="center" width="auto" prop="server_name"/>
+            <el-table-column label="啟用" align="center" width="auto" prop="switch">
+                <template #default="scope">
+                    <el-switch 
+                        v-model="scope.row.switch" 
+                        :active-value="1"
+                        :inactive-value="0"
+                        :disabled="true"
+                    />
+                </template>
+            </el-table-column>
             <el-table-column
                 label="操作"
                 align="center"
@@ -54,23 +72,6 @@
                         @click="handleDelete(scope.row)">
                         <el-icon><Delete /></el-icon>
                     </el-button>
-                </template>
-            </el-table-column>
-            <el-table-column type="index" label="編號" align="center" width="100"/>
-            <el-table-column label="ID" align="center" width="auto" prop="id" v-if="false"/>
-            <el-table-column label="帳號" align="center" width="auto" prop="account"/>
-            <el-table-column label="密碼" align="center" width="auto" prop="password" v-if="false"/>
-            <el-table-column label="手機" align="center" width="auto" prop="phone"/>
-            <el-table-column label="生日" align="center" width="auto" prop="birthday"/>
-            <el-table-column label="伺服器" align="center" width="auto" prop="server_name"/>
-            <el-table-column label="啟用" align="center" width="auto" prop="switch">
-                <template #default="scope">
-                    <el-switch 
-                        v-model="scope.row.switch" 
-                        :active-value="1"
-                        :inactive-value="0"
-                        :disabled="true"
-                    />
                 </template>
             </el-table-column>
         </el-table>
