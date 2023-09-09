@@ -99,7 +99,7 @@ const handleSubmit = (formEl) => {
     })
 }
 
-const handelCancel = () => {
+const handleCancel = () => {
     router.push({ path: '/player' })
 }
 
