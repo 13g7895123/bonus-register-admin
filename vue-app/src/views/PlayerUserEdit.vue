@@ -74,7 +74,6 @@ const getData = async() => {
     const { data: { success, data } } = await axios.post(apiUrl.value, ajaxFormData.value)
 
     if (success){
-        console.log(data);
         formData.value = data;
     }
 }
@@ -83,6 +82,8 @@ const handleSubmit = (formEl) => {
     if (!formEl) return;
     formEl.validate(async(valid) => {
         if (valid){
+
+            console.log(typeof(formData.value));
 
             const ajax_data = { id: id.valur }
             const { data: { success, msg } } = await axios.post(`/api/player_user.php?action=edit_player_user`, ajax_data)
