@@ -86,6 +86,7 @@ const handleSubmit = (formEl) => {
             console.log(formData.value);
             console.log(typeof(formData.value));            
             console.log(typeof(formData.value['account']));
+            console.log(typeof(formData.value.account));
 
             const ajax_data = { id: id.valur }
             const { data: { success, msg } } = await axios.post(`/api/player_user.php?action=edit_player_user`, ajax_data)
