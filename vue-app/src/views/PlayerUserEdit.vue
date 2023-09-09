@@ -83,34 +83,20 @@ const handleSubmit = (formEl) => {
     if (!formEl) return;
     formEl.validate(async(valid) => {
         if (valid){
-            const apiUrlOperation = props.operation == true ? 'add': 'edit'
-            const apiUrlOperationText = apiUrlOperation == 'add' ? '新增' : '編輯'
-            apiUrl.value = `http://139.162.15.125:9090/api/health-insurance/admin-member-${apiUrlOperation}.php`
-            const { data: { success, msg } } = await axios.post(
-                apiUrl.value,
-                formData.value
-            )
+
+            const ajax_data = { id: id.valur }
+            const { data: { success, msg } } = await axios.post(`/api/player_user.php?action=edit_player_user`, ajax_data)
 
             if (success){
-                // handleClose()
                 Swal.fire({
-                    title: `${apiUrlOperationText}會員成功`,
+                    title: `系統資訊`,
+                    text: '修改資料成功',
                     icon: 'success',
                     showConfirmButton: false,
                     showCancelButton: false,
                     timer: 2000,
                 }).then(() => {
-                    emits('handleUpdateProfiles')
-                })
-            }else{
-                handleClose()
-                Swal.fire({
-                    title: `${apiUrlOperationText}會員失敗`,
-                    text: msg,
-                    icon: 'error',
-                    showConfirmButton: false,
-                    showCancelButton: false,
-                    timer: 2000,
+                    getData()
                 })
             }
         }

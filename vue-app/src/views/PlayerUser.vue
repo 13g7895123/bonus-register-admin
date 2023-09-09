@@ -143,13 +143,12 @@ const handleEdit = (row) => {
 const handleDelete = async(row) => {
     const { id } = row
     const ajax_data = { id: id }
-
     const { data: { success, msg } } = await axios.post(`/api/player_user.php?action=delete_player_user`, ajax_data)
 
     if (success){
         Swal.fire({
             title: `系統資訊`,
-            text: '資料刪除成功',
+            text: '刪除資料成功',
             icon: 'success',
             showConfirmButton: false,
             showCancelButton: false,
