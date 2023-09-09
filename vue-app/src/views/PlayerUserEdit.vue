@@ -46,7 +46,6 @@ const apiParam = ref()
 const apiUrlPrefix = '/api/'
 
 const dialogRef = ref()
-// const miCate = ref(['自開藥局', '受聘醫師(藥劑生)'])
 
 const formData = ref({
     account: '',             // 聯絡人

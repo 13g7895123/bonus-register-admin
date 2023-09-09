@@ -90,7 +90,7 @@ const handleSubmit = (formEl) => {
                     showCancelButton: false,
                     timer: 2000,
                 }).then(() => {
-                    router.push('/member');
+                    router.push('/player');
                 })
             }else{
                 Swal.fire({
