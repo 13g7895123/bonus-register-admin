@@ -2,7 +2,7 @@
     <el-card class="box-card mx-auto mt-3">
         <template #header>
             <div class="card-header text-left">
-                <span>玩家資料修改</span>
+                <span>玩家資料管理</span>
             </div>
         </template>
     <div class="h-full px-5 py-3">
