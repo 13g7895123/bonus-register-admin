@@ -64,7 +64,7 @@
             <el-table-column label="生日" align="center" width="auto" prop="birthday"/>
             <el-table-column label="伺服器" align="center" width="auto" prop="server_name"/>
             <el-table-column label="啟用" align="center" width="auto" prop="switch">
-                <template #default="scope">
+                <template slot-scope="scope">
                     <el-switch 
                         v-model="scope.row.switch" 
                         :active-value="1"
@@ -74,25 +74,25 @@
             </el-table-column>
         </el-table>
 
-        <!-- 分页 -->
-        <el-row>
-            <el-col :span="24">
-                <div class="float-right mt-3">
-                    <el-pagination
-                        v-model:currentPage="page_index"
-                        v-model:page-size="page_size"
-                        :page-sizes="page_sizes"
-                        small="small"
-                        :layout="layout"
-                        :total="page_total"
-                        @size-change="handleSizeChange"
-                        @current-change="handleCurrentChange"
-                    />
-                </div>
-            </el-col>
-        </el-row>
-    </div>
-</el-card>
+            <!-- 分页 -->
+            <el-row>
+                <el-col :span="24">
+                    <div class="float-right mt-3">
+                        <el-pagination
+                            v-model:currentPage="page_index"
+                            v-model:page-size="page_size"
+                            :page-sizes="page_sizes"
+                            small="small"
+                            :layout="layout"
+                            :total="page_total"
+                            @size-change="handleSizeChange"
+                            @current-change="handleCurrentChange"
+                        />
+                    </div>
+                </el-col>
+            </el-row>
+        </div>
+    </el-card>s
 </template>
 <script setup>
 import { ref, watchEffect, onMounted } from 'vue'
