@@ -15,7 +15,7 @@
                 <el-input v-model="formData.account" ></el-input>
             </el-form-item>
             <el-form-item prop="password" label="密碼">
-                <el-input v-model="formData.password" type="password" :placeholder="!props.operation ? '不修改則留空' : ''"></el-input>
+                <el-input v-model="formData.password" :placeholder="!props.operation ? '不修改則留空' : ''"></el-input>
             </el-form-item>
             <el-form-item prop="phone" label="手機">
                 <el-input v-model="formData.phone"></el-input>
