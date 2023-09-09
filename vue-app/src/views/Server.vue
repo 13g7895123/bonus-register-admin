@@ -1,87 +1,86 @@
 <template>
-    <div class="h-full px-5 py-3">
-        <div class="w-full flex items-center justify-between">
-            <el-form :inline="true">
-                <el-form-item prop="colName" label="藥品英文">
-                    <el-input v-model="filterEngName"></el-input>
-                </el-form-item>
-                <el-form-item>
-                    <el-button type="primary" size="small" @click="handleSort"
-                        >篩選</el-button
-                    >
-                    <el-button type="primary" size="small" @click="handleCancelSort"
-                        >取消篩選</el-button
-                    >
-                </el-form-item>
-            </el-form>
-            <el-form :inline="true">
-                <el-form-item class="float-right">
-                    <el-button type="primary" size="small" @click="handleAdd"
-                        >新增</el-button
-                    >
-                </el-form-item>
-            </el-form>
-        </div>
-        <el-table
-            :data="tableData"
-            max-height="70vh"
-            style="width: 100%"
-            border
-            v-if="tableData.length > 0"
-        >
-            <el-table-column
-                label="操作"
-                align="center"
-                width="120"
-                prop="operation"
+    <el-card class="box-card mx-auto mt-3">
+        <template #header>
+            <div class="card-header text-left">
+                <span>玩家資料管理</span>
+            </div>
+        </template>
+        <div class="h-full px-5 py-3">
+            <div class="w-full flex items-center justify-between">
+                <el-form :inline="true">
+                    <el-form-item prop="colName" label="">
+                        <el-input v-model="filterEngName"></el-input>
+                    </el-form-item>
+                    <el-form-item>
+                        <el-button type="primary" size="small" @click="handleSort"
+                            >篩選</el-button
+                        >
+                        <el-button type="primary" size="small" @click="handleCancelSort"
+                            >取消篩選</el-button
+                        >
+                    </el-form-item>
+                </el-form>
+                <el-form :inline="true">
+                    <el-form-item class="float-right">
+                        <el-button type="primary" size="small" @click="handleAdd"
+                            >新增</el-button
+                        >
+                    </el-form-item>
+                </el-form>
+            </div>
+            <el-table
+                :data="tableData"
+                max-height="70vh"
+                style="width: 100%"
+                border
+                v-if="tableData.length > 0"
             >
-                <template #default="scope">
-                    <el-button
-                        size="small"
-                        type="primary"
-                        @click="handleEdit(scope.row)">
-                        <el-icon><EditPen /></el-icon>
-                    </el-button>
-                    <el-button
-                        size="small"
-                        type="danger"
-                        @click="handleDelete(scope.row)">
-                        <el-icon><Delete /></el-icon>
-                    </el-button>
-                </template>
-            </el-table-column>
-            <el-table-column type="index" label="編號" align="center" width="auto"/>
-            <el-table-column label="伺服器名稱" align="center" width="auto" prop="name"/>
-            <el-table-column label="代號" align="center" width="auto" prop="code_name"/>
-            <el-table-column label="資料庫" align="center" width="auto" prop="phone"/>
-        </el-table>
+                <el-table-column
+                    label="操作"
+                    align="center"
+                    width="120"
+                    prop="operation"
+                >
+                    <template #default="scope">
+                        <el-button
+                            size="small"
+                            type="primary"
+                            @click="handleEdit(scope.row)">
+                            <el-icon><EditPen /></el-icon>
+                        </el-button>
+                        <el-button
+                            size="small"
+                            type="danger"
+                            @click="handleDelete(scope.row)">
+                            <el-icon><Delete /></el-icon>
+                        </el-button>
+                    </template>
+                </el-table-column>
+                <el-table-column type="index" label="編號" align="center" width="auto"/>
+                <el-table-column label="伺服器名稱" align="center" width="auto" prop="name"/>
+                <el-table-column label="代號" align="center" width="auto" prop="code_name"/>
+                <el-table-column label="資料庫" align="center" width="auto" prop="phone"/>
+            </el-table>
 
-        <!-- 分页 -->
-        <el-row>
-            <el-col :span="24">
-                <div class="float-right mt-3">
-                    <el-pagination
-                        v-model:currentPage="page_index"
-                        v-model:page-size="page_size"
-                        :page-sizes="page_sizes"
-                        small="small"
-                        :layout="layout"
-                        :total="page_total"
-                        @size-change="handleSizeChange"
-                        @current-change="handleCurrentChange"
-                    />
-                </div>
-            </el-col>
-        </el-row>
-    </div>
-    
-    <DialogMedicine 
-        :show="show"
-        :editData="editData"
-        :operation = 'operation'
-        @closeModel="closeModel"
-        @handleUpdateProfiles="handelUpdateMedicine"
-    />
+            <!-- 分页 -->
+            <el-row>
+                <el-col :span="24">
+                    <div class="float-right mt-3">
+                        <el-pagination
+                            v-model:currentPage="page_index"
+                            v-model:page-size="page_size"
+                            :page-sizes="page_sizes"
+                            small="small"
+                            :layout="layout"
+                            :total="page_total"
+                            @size-change="handleSizeChange"
+                            @current-change="handleCurrentChange"
+                        />
+                    </div>
+                </el-col>
+            </el-row>
+        </div>
+    </el-card>
 </template>
 <script setup>
 import { ref, watchEffect } from 'vue'
