@@ -24,7 +24,7 @@
                 <el-input v-model="formData.birthday"></el-input>
             </el-form-item>
             <el-form-item prop="server" label="伺服器">
-                <el-input v-model="formData.server_name"></el-input>
+                <el-input v-model="formData.server_name" readonly="true"></el-input>
             </el-form-item>
             <el-form-item class="flex justify-center">
                 <el-button @click="">取消</el-button>
