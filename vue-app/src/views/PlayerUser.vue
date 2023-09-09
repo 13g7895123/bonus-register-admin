@@ -20,13 +20,13 @@
             <el-button type="primary" size="small" @click="handleAdd"
                 >新增</el-button
             >
-            <el-form :inline="true">
+            <!-- <el-form :inline="true">
                 <el-form-item class="float-left">
                     <el-button type="primary" size="small" @click="handleAdd"
                         >新增</el-button
                     >
                 </el-form-item>
-            </el-form>
+            </el-form> -->
         </div>
         <el-table
             :data="tableData"
