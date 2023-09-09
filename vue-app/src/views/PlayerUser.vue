@@ -63,7 +63,11 @@
             <el-table-column label="手機" align="center" width="auto" prop="phone"/>
             <el-table-column label="生日" align="center" width="auto" prop="birthday"/>
             <el-table-column label="伺服器" align="center" width="auto" prop="server_name"/>
-            <el-table-column label="啟用" align="center" width="auto" prop="switch"/>
+            <el-table-column label="啟用" align="center" width="auto" prop="switch">
+                <template>
+                    <el-switch v-model="value1" />
+                </template>
+            </el-table-column>
         </el-table>
 
         <!-- 分页 -->
@@ -87,7 +91,7 @@
 </el-card>
 </template>
 <script setup>
-import { ref, watchEffect } from 'vue'
+import { ref, watchEffect, onMounted } from 'vue'
 import axios from 'axios';
 import { EditPen, Delete } from "@element-plus/icons-vue";
 import Swal from 'sweetalert2'
@@ -98,7 +102,7 @@ const allTableData = ref([])
 const filterTableData = ref([])
 const show = ref(false)
 const editData = ref()
-const operation = ref()   // 0為編輯，1為新增
+const router = useRouter()
 
 // 分頁
 const page_index = ref(1),
@@ -109,7 +113,7 @@ const page_index = ref(1),
 // 篩選
 const filterEngName = ref()
 
-const router = useRouter()
+
 
 const getPlayers = async() => {
     const { data: { success, data } } = await axios.post('/api/player_user.php?action=player_user')
@@ -123,8 +127,6 @@ const getPlayers = async() => {
         history.go(0)
     }
 }
-
-watchEffect(() => getPlayers())
 
 const handleAdd = () => {
     router.push({ path: "/player/add" })
@@ -218,10 +220,6 @@ const handleSort = () => {
         return eng_name.includes(filterEngName.value.toUpperCase())
     })
     setPaginations();
-}
-
-const handleCancelSort = () => {
-    history.go(0)
 }
 
 </script>
