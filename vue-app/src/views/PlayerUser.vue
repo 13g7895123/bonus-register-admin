@@ -128,8 +128,7 @@ const getPlayers = async() => {
 watchEffect(() => getPlayers())
 
 const handleAdd = () => {
-    show.value = true
-    operation.value = true
+    router.push({ path: "/player/add" })
 }
 
 const handleEdit = (row) => {
