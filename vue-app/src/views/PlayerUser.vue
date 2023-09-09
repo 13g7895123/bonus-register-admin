@@ -91,7 +91,7 @@
 </el-card>
 </template>
 <script setup>
-import { ref, watchEffect } from 'vue'
+import { ref, watchEffect, onMounted } from 'vue'
 import axios from 'axios';
 import { EditPen, Delete } from "@element-plus/icons-vue";
 import Swal from 'sweetalert2'
@@ -114,6 +114,10 @@ const page_index = ref(1),
 const filterEngName = ref()
 
 const router = useRouter()
+
+onMounted(() => {
+    console.log(tableData.value);
+})
 
 const getPlayers = async() => {
     const { data: { success, data } } = await axios.post('/api/player_user.php?action=player_user')
