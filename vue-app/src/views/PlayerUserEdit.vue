@@ -59,11 +59,6 @@ onMounted(() => {
     getData()
 })
 
-watch(
-    () => props.editData,
-    () => { formData.value = props.editData; }
-);
-
 const getData = async() => {
     const ajaxFormData = ref({ id: id.value })
     apiParam.value = '?action=get_player_user'
