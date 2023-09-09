@@ -27,7 +27,7 @@
                 <el-input v-model="formData.server_name" readonly="true"></el-input>
             </el-form-item>
             <el-form-item class="flex justify-center">
-                <el-button @click="">取消</el-button>
+                <el-button @click="handleCancel">取消</el-button>
                 <el-button type="primary" @click="handleSubmit(dialogRef)">提交</el-button>
             </el-form-item>
         </el-form>
@@ -44,8 +44,6 @@ const id = ref()
 const apiUrl = ref()
 const apiParam = ref()
 const apiUrlPrefix = '/api/'
-
-const dialogRef = ref()
 
 const formData = ref({
     account: '',             // 聯絡人
@@ -101,14 +99,10 @@ const handleSubmit = (formEl) => {
     })
 }
 
-// 接收父層資料
-const props = defineProps({
-    editData: Object,
-    operation: Boolean
-})
+const handelCancel = () => {
+    router.push({ path: '/player' })
+}
 
-// 回傳至父層，要觸發的方法
-const emits = defineEmits(["closeModel", "handleUpdateProfiles"]);
 </script>
 
 <style>
