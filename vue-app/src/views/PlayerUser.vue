@@ -117,7 +117,7 @@ const router = useRouter()
 
 onMounted(() => {
     getPlayers()
-    console.log(tableData.value);
+    // console.log(tableData.value);
 })
 
 const getPlayers = async() => {
@@ -127,6 +127,7 @@ const getPlayers = async() => {
         tableData.value = data
         allTableData.value = data
         filterTableData.value = data
+        console.log(tableData.value);
         setPaginations()
     }else{
         history.go(0)
