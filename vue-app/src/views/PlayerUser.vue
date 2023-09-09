@@ -63,7 +63,11 @@
             <el-table-column label="手機" align="center" width="auto" prop="phone"/>
             <el-table-column label="生日" align="center" width="auto" prop="birthday"/>
             <el-table-column label="伺服器" align="center" width="auto" prop="server_name"/>
-            <el-table-column label="啟用" align="center" width="auto" prop="switch"></el-table-column>
+            <el-table-column label="啟用" align="center" width="auto" prop="switch">
+                <template>
+                    <el-switch v-model="tableData.switch" />
+                </template>
+            </el-table-column>
         </el-table>
 
         <!-- 分页 -->
