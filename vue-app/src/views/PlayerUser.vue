@@ -64,7 +64,7 @@
             <el-table-column label="生日" align="center" width="auto" prop="birthday"/>
             <el-table-column label="伺服器" align="center" width="auto" prop="server_name"/>
             <el-table-column label="啟用" align="center" width="auto" prop="switch">
-                <template slot-scope="scope">
+                <template #default="scope">
                     <el-switch 
                         v-model="scope.row.switch" 
                         :active-value="1"
