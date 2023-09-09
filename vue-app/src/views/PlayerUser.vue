@@ -66,7 +66,7 @@
             <el-table-column label="啟用" align="center" width="auto" prop="switch">
                 <template slot-scope="scope">
                     <el-switch 
-                        v-model="scope.row.switch" 
+                        v-model="scope.row" 
                         :active-value="1"
                         :inactive-value="0"
                     />
