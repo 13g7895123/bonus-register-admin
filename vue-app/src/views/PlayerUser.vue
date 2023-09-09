@@ -116,6 +116,7 @@ const filterEngName = ref()
 const router = useRouter()
 
 onMounted(() => {
+    getPlayers()
     console.log(tableData.value);
 })
 
