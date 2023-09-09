@@ -88,7 +88,7 @@ const handleSubmit = (formEl) => {
                     icon: 'success',
                     showConfirmButton: false,
                     showCancelButton: false,
-                    timer: 2000,
+                    timer: 1000,
                 }).then(() => {
                     router.push('/player');
                 })
