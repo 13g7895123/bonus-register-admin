@@ -1,7 +1,7 @@
 <template>
     <el-card class="box-card mx-auto mt-3">
         <template #header>
-            <div class="card-header">
+            <div class="card-header text-left">
                 <span>玩家資料修改</span>
             </div>
         </template>
