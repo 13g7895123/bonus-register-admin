@@ -9,7 +9,7 @@
             :model="formData"
             ref="dialogRef"
             label-width="120px"
-            style="margin: 10px; width: 30%; display: flex; justify-content: center;"
+            style="margin: 10px; width: 30%; display: flex; flex-direction: column; align-items: center;"
             >
             <el-form-item prop="account" label="帳號">
                 <el-input v-model="formData.account" class="text-center"></el-input>
