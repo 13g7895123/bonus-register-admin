@@ -36,7 +36,7 @@
                 <el-table-column label="伺服器名稱" align="center" width="auto" prop="name"/>
                 <el-table-column label="伺服器代號" align="center" width="auto" prop="code_name"/>
                 <el-table-column 
-                    label="最大申請數量"
+                    label="帳號數量"
                     align="center"
                     width="auto"
                     prop="max_num"
