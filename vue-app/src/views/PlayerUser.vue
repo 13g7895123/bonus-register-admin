@@ -5,7 +5,7 @@
                 <span>玩家資料管理</span>
             </div>
         </template>
-        <div class="h-full px-5 py-3">
+        <div class="h-full px-5 pt-3">
             <div class="w-full flex items-center justify-between">
                 <el-form :inline="true">
                     <el-form-item prop="colName" label="">
