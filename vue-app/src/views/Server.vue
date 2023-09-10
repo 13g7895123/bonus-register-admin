@@ -40,11 +40,29 @@
                     align="center"
                     width="auto"
                     prop="max_num"
-                    :render-header="renderTipsHeader"
                 >
-                    <template slot-scope="scope">
-                        <label>單一門號最多可申請帳號數量</label>
+                    <template v-slot:header='scope'>     // 插槽插入header
+                        <span>
+                            缩力
+                            <el-tooltip
+                            :aa="scope"
+                            class="item"
+                            effect="dark"
+                            placement="top-start"
+                            >
+                            <i class="el-icon-question"> </i>
+                        
+                            <div style="width: 200px" slot="content">
+                                    弱宫缩：宫缩持续20-30秒 <br />
+                                    中度宫缩：宫缩持续30-40秒<br />
+                                    强度宫缩：宫缩持续40秒以上
+                            </div>
+                            </el-tooltip>
+                        </span>
                     </template>
+                    <!-- <template slot-scope="scope">
+                        <label>單一門號最多可申請帳號數量</label>
+                    </template> -->
                 </el-table-column>
                 <el-table-column label="資料庫" align="center" width="auto" prop="db_ip">
                     <template #default="scope">
@@ -243,25 +261,5 @@ const handleSort = () => {
 const handleCancelSort = () => {
     history.go(0)
 }
-
-const renderTipsHeader = (h,{column}) => {
-      return h(
-        'div',[ 
-             h('span', column.label),
-             h('el-tooltip',{
-　　　　      props:{
-　　　　　　　　effect:'dark',
-　　　　　　　　content:'提示文案',
-　　　　　　　　placement:'top'
-　　　　　　},　　　 
-　　　　 },[
-                 h('i', {
-                     class:'el-icon-question',
-                     style:'color:#409EFF;margin-left:5px;'
-                 })
-            ])
-        ]
-    );
- }
 
 </script>
