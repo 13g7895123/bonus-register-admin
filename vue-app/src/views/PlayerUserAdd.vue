@@ -20,8 +20,11 @@
             <el-form-item prop="phone" label="手機">
                 <el-input v-model="formData.phone"></el-input>
             </el-form-item>
-            <el-form-item prop="birthday" label="生日">
-                <el-input v-model="formData.birthday"></el-input>
+            <el-form-item prop="birthday" label="生日" class="date_column">
+                <el-date-picker
+                    v-model="formData.birthday"
+                    type="date"
+                />
             </el-form-item>
             <el-form-item prop="server" label="伺服器">
                 <el-input v-model="formData.server_name"></el-input>
@@ -42,6 +45,7 @@ import Swal from 'sweetalert2'
 const apiUrl = ref()
 const apiParam = ref()
 const apiUrlPrefix = '/api/'
+const dialogRef = ref()
 
 const router = useRouter()
 
@@ -88,5 +92,11 @@ const handelCancel = () => {
     display: flex;
     justify-content: center;
     margin-left: 0 !important;
+}
+
+.date_column .el-input,
+.date_column .el-input__wrapper,
+.date_column .el-form-item__content{
+    width: 100%;
 }
 </style>
