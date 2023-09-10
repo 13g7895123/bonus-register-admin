@@ -48,12 +48,9 @@
                             class="item"
                             effect="dark"
                             placement="top-start"
-                            content="123"
+                            content="單一門號最多可申請帳號數量"
                             >
                                 <el-icon :size="15" color="#555"><QuestionFilled /></el-icon>
-                                <div style="width: 200px; font-size: 18px; color: #fff;" slot="content">
-                                    123
-                                </div>
                             </el-tooltip>
                         </span>
                     </template>
