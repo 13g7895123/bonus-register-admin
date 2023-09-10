@@ -71,7 +71,7 @@
                 </el-table-column>
                 <el-table-column label="啟用狀態" align="center" width="auto" prop="switch">
                     <template #default="scope">
-                        <el-tag>{{ scope.row.switch == 0 ? '停用' : '啟用' }}</el-tag>
+                        <el-tag type="{{ scope.row.switch == 0 ? 'success' : 'danger' }}">{{ scope.row.switch == 0 ? '停用' : '啟用' }}</el-tag>
                     </template>
                 </el-table-column>
                 <el-table-column
