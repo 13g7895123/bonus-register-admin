@@ -12,7 +12,7 @@
             style="margin: 10px; width: auto"
             >
             <el-form-item prop="account" label="帳號">
-                <el-input v-model="formData.account" ></el-input>
+                <el-input v-model="formData.account" class="text-center"></el-input>
             </el-form-item>
             <el-form-item prop="password" label="密碼">
                 <el-input v-model="formData.password"></el-input>
