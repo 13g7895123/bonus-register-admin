@@ -37,7 +37,7 @@
                 <el-table-column label="代號" align="center" width="auto" prop="code_name"/>
                 <el-table-column label="資料庫" align="center" width="auto" prop="db_ip">
                     <template #default="scope">
-                        <el-popover effect="light" trigger="hover" placement="top" width="auto">
+                        <el-popover effect="dark" trigger="hover" placement="top" width="auto">
                             <div>資料庫位置: {{ scope.row.db_ip }}</div>
                             <div>資料庫端口: {{ scope.row.db_port }}</div>
                             <div>資料庫名稱: {{ scope.row.db_name }}</div>
