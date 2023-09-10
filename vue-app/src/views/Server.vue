@@ -32,7 +32,7 @@
                 border
                 v-if="tableData.length > 0"
             >
-                <el-table-column type="index" label="編號" align="center" width="auto"/>
+                <el-table-column type="index" label="編號" align="center" width="70"/>
                 <el-table-column label="伺服器名稱" align="center" width="auto" prop="name"/>
                 <el-table-column label="代號" align="center" width="auto" prop="code_name"/>
                 <el-table-column label="資料庫" align="center" width="auto" prop="db_ip">
