@@ -36,16 +36,18 @@
                 <el-table-column label="伺服器名稱" align="center" width="auto" prop="name"/>
                 <el-table-column label="代號" align="center" width="auto" prop="code_name"/>
                 <el-table-column label="資料庫" align="center" width="auto" prop="db_ip">
-                    
-                        <template #default="scope">
-                            <el-popover effect="light" trigger="hover" placement="top" width="auto">
-                                <div>name: {{ scope.row.db_ip }}</div>
-                                <div>address: {{ scope.row.db_port }}</div>
-                                <template #reference>
-                                    <el-tag>{{ scope.row.db_ip }}</el-tag>
-                                </template>
-                            </el-popover>
-                        </template>
+                    <template #default="scope">
+                        <el-popover effect="light" trigger="hover" placement="top" width="auto">
+                            <div>資料庫位置: {{ scope.row.db_ip }}</div>
+                            <div>資料庫端口: {{ scope.row.db_port }}</div>
+                            <div>資料庫名稱: {{ scope.row.db_name }}</div>
+                            <div>資料庫帳號: {{ scope.row.db_username }}</div>
+                            <div>資料庫密碼: {{ scope.row.db_password }}</div>
+                            <template #reference>
+                                <el-tag>{{ scope.row.db_ip }}</el-tag>
+                            </template>
+                        </el-popover>
+                    </template>
                 </el-table-column>
                 <el-table-column
                     label="操作"
