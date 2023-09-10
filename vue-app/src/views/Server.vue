@@ -2,7 +2,7 @@
     <el-card class="box-card mx-auto mt-3">
         <template #header>
             <div class="card-header text-left">
-                <span>玩家資料管理</span>
+                <span class="text-xl font-semibold">伺服器管理</span>
             </div>
         </template>
         <div class="h-full px-5 py-3">
@@ -14,9 +14,6 @@
                     <el-form-item>
                         <el-button type="primary" size="small" @click="handleSort"
                             >篩選</el-button
-                        >
-                        <el-button type="primary" size="small" @click="handleCancelSort"
-                            >取消篩選</el-button
                         >
                     </el-form-item>
                 </el-form>
@@ -35,6 +32,10 @@
                 border
                 v-if="tableData.length > 0"
             >
+                <el-table-column type="index" label="編號" align="center" width="auto"/>
+                <el-table-column label="伺服器名稱" align="center" width="auto" prop="name"/>
+                <el-table-column label="代號" align="center" width="auto" prop="code_name"/>
+                <el-table-column label="資料庫" align="center" width="auto" prop="phone"/>
                 <el-table-column
                     label="操作"
                     align="center"
@@ -56,10 +57,6 @@
                         </el-button>
                     </template>
                 </el-table-column>
-                <el-table-column type="index" label="編號" align="center" width="auto"/>
-                <el-table-column label="伺服器名稱" align="center" width="auto" prop="name"/>
-                <el-table-column label="代號" align="center" width="auto" prop="code_name"/>
-                <el-table-column label="資料庫" align="center" width="auto" prop="phone"/>
             </el-table>
 
             <!-- 分页 -->
