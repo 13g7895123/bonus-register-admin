@@ -42,11 +42,11 @@
                 <el-table-column label="手機" align="center" width="auto" prop="phone"/>
                 <el-table-column label="生日" align="center" width="auto" prop="birthday"/>
                 <el-table-column label="伺服器" align="center" width="auto" prop="server_name">
+                    <template #default="scope">
+                        <!-- <label>{{ scope.row.server_name }}[{{ scope.row.server_code_name }}]</label> -->
+                        <label>{{ scope.row.server_name }}[{{ scope.row.server_code_name }}]</label>
+                    </template>
                     <!-- <el-popover effect="light" trigger="hover" placement="top" width="auto"> -->
-                        <template #default="scope">
-                            <!-- <label>{{ scope.row.server_name }}[{{ scope.row.server_code_name }}]</label> -->
-                            <label>{{ scope.row.server_name }}[{{ scope.row.server_code_name }}]</label>
-                        </template>
                         <!-- <template #default="scope">
                             <div>name: {{ scope.row.server_name }}</div>
                             <div>address: {{ scope.row.server_code_name }}</div>
