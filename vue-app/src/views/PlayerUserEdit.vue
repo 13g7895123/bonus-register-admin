@@ -21,8 +21,7 @@
                 <el-form-item prop="phone" label="手機">
                     <el-input v-model="formData.phone"></el-input>
                 </el-form-item>
-                <el-form-item prop="birthday" label="生日">
-                    <!-- <el-input v-model="formData.birthday"></el-input> -->
+                <el-form-item prop="birthday" label="生日" class="date_column">
                     <el-date-picker
                         v-model="formData.birthday"
                         type="date"
@@ -125,5 +124,9 @@ const handleCancel = () => {
 
 .radio_column .el-form-item__content{
     justify-content: flex-start;
+}
+
+.date_column .el-form-item__content{
+    width: 100%;
 }
 </style>
