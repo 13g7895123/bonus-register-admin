@@ -43,8 +43,7 @@
                 <el-table-column label="生日" align="center" width="auto" prop="birthday"/>
                 <el-table-column label="伺服器" align="center" width="auto" prop="server_name">
                     <template #default="scope">
-                        <label>{{ scope.row.server_name }}</label>
-                        <el-tag>{{ scope.row.server_code_name }}</el-tag>
+                        <label>{{ scope.row.server_name }}[{{ scope.row.server_code_name }}]</label>
                     </template>
                 </el-table-column>
                 <el-table-column label="啟用" align="center" width="auto" prop="switch">
