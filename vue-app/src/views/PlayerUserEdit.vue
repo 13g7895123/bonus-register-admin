@@ -5,40 +5,42 @@
                 <span>玩家資料修改</span>
             </div>
         </template>
-        <el-form
-            :model="formData"
-            ref="dialogRef"
-            label-width="120px"
-            style="margin: 10px; width: 30%; display: flex; flex-direction: column; align-items: center;"
-            >
-            <el-form-item prop="account" label="帳號">
-                <el-input v-model="formData.account" class="text-center"></el-input>
-            </el-form-item>
-            <el-form-item prop="password" label="密碼">
-                <el-input v-model="formData.password"></el-input>
-            </el-form-item>
-            <el-form-item prop="phone" label="手機">
-                <el-input v-model="formData.phone"></el-input>
-            </el-form-item>
-            <el-form-item prop="birthday" label="生日">
-                <el-input v-model="formData.birthday"></el-input>
-            </el-form-item>
-            <el-form-item prop="server" label="伺服器">
-                <el-input v-model="formData.server_name" readonly="true"></el-input>
-            </el-form-item>
-            <el-form-item prop="switch" label="啟用">
-                <!-- <el-input v-model="formData.server_name" readonly="true"></el-input> -->
-                <el-switch 
-                    v-model="formData.switch" 
-                    :active-value="1"
-                    :inactive-value="0"
-                />
-            </el-form-item>
-            <el-form-item class="flex justify-center">
-                <el-button @click="handleCancel">取消</el-button>
-                <el-button type="primary" @click="handleSubmit(dialogRef)">提交</el-button>
-            </el-form-item>
-        </el-form>
+        <div class="flex justify-center">
+            <el-form
+                :model="formData"
+                ref="dialogRef"
+                label-width="120px"
+                style="margin: 10px; width: 30%; display: flex; flex-direction: column; align-items: center;"
+                >
+                <el-form-item prop="account" label="帳號">
+                    <el-input v-model="formData.account" class="text-center"></el-input>
+                </el-form-item>
+                <el-form-item prop="password" label="密碼">
+                    <el-input v-model="formData.password"></el-input>
+                </el-form-item>
+                <el-form-item prop="phone" label="手機">
+                    <el-input v-model="formData.phone"></el-input>
+                </el-form-item>
+                <el-form-item prop="birthday" label="生日">
+                    <el-input v-model="formData.birthday"></el-input>
+                </el-form-item>
+                <el-form-item prop="server" label="伺服器">
+                    <el-input v-model="formData.server_name" readonly="true"></el-input>
+                </el-form-item>
+                <el-form-item prop="switch" label="啟用">
+                    <!-- <el-input v-model="formData.server_name" readonly="true"></el-input> -->
+                    <el-switch 
+                        v-model="formData.switch" 
+                        :active-value="1"
+                        :inactive-value="0"
+                    />
+                </el-form-item>
+                <el-form-item class="flex justify-center">
+                    <el-button @click="handleCancel">取消</el-button>
+                    <el-button type="primary" @click="handleSubmit(dialogRef)">提交</el-button>
+                </el-form-item>
+            </el-form>
+        </div>
     </el-card>
 </template>
 <script setup>
