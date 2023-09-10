@@ -26,6 +26,17 @@
             <el-form-item prop="server" label="伺服器">
                 <el-input v-model="formData.server_name" readonly="true"></el-input>
             </el-form-item>
+            <el-form-item prop="switch" label="啟用">
+                <!-- <el-input v-model="formData.server_name" readonly="true"></el-input> -->
+                <template #default="scope">
+                    <el-switch 
+                        v-model="scope.row.switch" 
+                        :active-value="1"
+                        :inactive-value="0"
+                        :disabled="true"
+                    />
+                </template>
+            </el-form-item>
             <el-form-item class="flex justify-center">
                 <el-button @click="handleCancel">取消</el-button>
                 <el-button type="primary" @click="handleSubmit(dialogRef)">提交</el-button>
