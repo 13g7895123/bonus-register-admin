@@ -5,7 +5,7 @@
                 <span>玩家資料修改</span>
             </div>
         </template>
-        <div class="flex justify-center">
+        <!-- <div class="flex justify-center"> -->
             <el-form
                 :model="formData"
                 ref="dialogRef"
@@ -40,7 +40,7 @@
                     <el-button type="primary" @click="handleSubmit(dialogRef)">提交</el-button>
                 </el-form-item>
             </el-form>
-        </div>
+        <!-- </div> -->
     </el-card>
 </template>
 <script setup>
