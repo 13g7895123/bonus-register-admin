@@ -2,7 +2,7 @@
     <el-card class="box-card mx-auto mt-3">
         <template #header>
             <div class="card-header text-left">
-                <span class="text-lg font-semibold">玩家資料管理</span>
+                <span class="text-xl font-semibold">玩家資料管理</span>
             </div>
         </template>
         <div class="h-full px-5 pt-3">
@@ -12,7 +12,7 @@
                         <el-input v-model="filterEngName"></el-input>
                     </el-form-item>
                     <el-form-item>
-                        <el-button type="primary" size="small" @click="handleSort"
+                        <el-button type="primary" size="small" @click="handleSort" class="text-lg"
                             >篩選</el-button
                         >
                     </el-form-item>
