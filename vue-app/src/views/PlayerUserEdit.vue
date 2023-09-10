@@ -126,6 +126,8 @@ const handleCancel = () => {
     justify-content: flex-start;
 }
 
+.date_column .el-input,
+.date_column .el-inpu__wrapper,
 .date_column .el-form-item__content{
     width: 100%;
 }
