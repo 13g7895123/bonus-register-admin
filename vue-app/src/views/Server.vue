@@ -45,10 +45,10 @@
                         <span>
                             帳號數量
                             <el-tooltip
-                            :content="scope"
                             class="item"
                             effect="dark"
                             placement="top-start"
+                            content="123"
                             >
                                 <el-icon :size="15" color="#555"><QuestionFilled /></el-icon>
                                 <div style="width: 200px; font-size: 18px; color: #fff;" slot="content">
