@@ -52,7 +52,7 @@
                             >
                                 <!-- <i class="el-icon-question"> </i> -->
                                 <!-- <el-icon><QuestionFilled /></el-icon> -->
-                                <el-icon :size="30" color="#555"><QuestionFilled /></el-icon>
+                                <el-icon :size="5" color="#555"><QuestionFilled /></el-icon>
                                 <div style="width: 200px" slot="content">
                                     123
                                 </div>
