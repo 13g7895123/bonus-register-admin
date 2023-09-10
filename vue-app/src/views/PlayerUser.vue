@@ -35,7 +35,7 @@
                 border
                 v-if="tableData.length > 0"
             >
-                <el-table-column type="index" label="編號" align="center" width="50"/>
+                <el-table-column type="index" label="編號" align="center" width="70"/>
                 <el-table-column label="ID" align="center" width="auto" prop="id" v-if="false"/>
                 <el-table-column label="帳號" align="center" width="auto" prop="account"/>
                 <el-table-column label="密碼" align="center" width="auto" prop="password" v-if="false"/>
