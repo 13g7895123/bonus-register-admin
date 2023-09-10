@@ -5,81 +5,81 @@
                 <span>玩家資料管理</span>
             </div>
         </template>
-    <div class="h-full px-5 py-3">
-        <div class="w-full flex items-center justify-between">
-            <el-form :inline="true">
-                <el-form-item prop="colName" label="">
-                    <el-input v-model="filterEngName"></el-input>
-                </el-form-item>
-                <el-form-item>
-                    <el-button type="primary" size="small" @click="handleSort"
-                        >篩選</el-button
-                    >
-                </el-form-item>
-            </el-form>
-            <!-- <el-button type="primary" size="small" @click="handleAdd"
-                >新增</el-button
-            > -->
-            <el-form :inline="true">
-                <el-form-item class="float-left">
-                    <el-button type="primary" size="small" @click="handleAdd"
-                        >新增</el-button
-                    >
-                </el-form-item>
-            </el-form>
-        </div>
-        <el-table
-            :data="tableData"
-            max-height="70vh"
-            style="width: 100%"
-            border
-            v-if="tableData.length > 0"
-        >
-            
-            <el-table-column type="index" label="編號" align="center" width="100"/>
-            <el-table-column label="ID" align="center" width="auto" prop="id" v-if="false"/>
-            <el-table-column label="帳號" align="center" width="auto" prop="account"/>
-            <el-table-column label="密碼" align="center" width="auto" prop="password" v-if="false"/>
-            <el-table-column label="手機" align="center" width="auto" prop="phone"/>
-            <el-table-column label="生日" align="center" width="auto" prop="birthday"/>
-            <el-table-column label="伺服器" align="center" width="auto" prop="server_name"/>
-            <el-table-column label="啟用" align="center" width="auto" prop="switch">
-                <template #default="scope">
-                    <el-switch 
-                        v-model="scope.row.switch" 
-                        :active-value="1"
-                        :inactive-value="0"
-                        :disabled="true"
-                    />
-                </template>
-            </el-table-column>
-            <el-table-column
-                label="操作"
-                align="center"
-                width="120"
-                prop="operation"
+        <div class="h-full px-5 py-3">
+            <div class="w-full flex items-center justify-between">
+                <el-form :inline="true">
+                    <el-form-item prop="colName" label="">
+                        <el-input v-model="filterEngName"></el-input>
+                    </el-form-item>
+                    <el-form-item>
+                        <el-button type="primary" size="small" @click="handleSort"
+                            >篩選</el-button
+                        >
+                    </el-form-item>
+                </el-form>
+                <!-- <el-button type="primary" size="small" @click="handleAdd"
+                    >新增</el-button
+                > -->
+                <el-form :inline="true">
+                    <el-form-item class="float-left">
+                        <el-button type="primary" size="small" @click="handleAdd"
+                            >新增</el-button
+                        >
+                    </el-form-item>
+                </el-form>
+            </div>
+            <el-table
+                :data="tableData"
+                max-height="70vh"
+                style="width: 100%"
+                border
+                v-if="tableData.length > 0"
             >
-                <template #default="scope">
-                    <el-button
-                        size="small"
-                        type="primary"
-                        @click="handleEdit(scope.row)">
-                        <el-icon><EditPen /></el-icon>
-                    </el-button>
-                    <el-button
-                        size="small"
-                        type="danger"
-                        @click="handleDelete(scope.row)">
-                        <el-icon><Delete /></el-icon>
-                    </el-button>
-                </template>
-            </el-table-column>
-        </el-table>
+                
+                <el-table-column type="index" label="編號" align="center" width="100"/>
+                <el-table-column label="ID" align="center" width="auto" prop="id" v-if="false"/>
+                <el-table-column label="帳號" align="center" width="auto" prop="account"/>
+                <el-table-column label="密碼" align="center" width="auto" prop="password" v-if="false"/>
+                <el-table-column label="手機" align="center" width="auto" prop="phone"/>
+                <el-table-column label="生日" align="center" width="auto" prop="birthday"/>
+                <el-table-column label="伺服器" align="center" width="auto" prop="server_name"/>
+                <el-table-column label="啟用" align="center" width="auto" prop="switch">
+                    <template #default="scope">
+                        <el-switch 
+                            v-model="scope.row.switch" 
+                            :active-value="1"
+                            :inactive-value="0"
+                            :disabled="true"
+                        />
+                    </template>
+                </el-table-column>
+                <el-table-column
+                    label="操作"
+                    align="center"
+                    width="120"
+                    prop="operation"
+                >
+                    <template #default="scope">
+                        <el-button
+                            size="small"
+                            type="primary"
+                            @click="handleEdit(scope.row)">
+                            <el-icon><EditPen /></el-icon>
+                        </el-button>
+                        <el-button
+                            size="small"
+                            type="danger"
+                            @click="handleDelete(scope.row)">
+                            <el-icon><Delete /></el-icon>
+                        </el-button>
+                    </template>
+                </el-table-column>
+            </el-table>
 
             <!-- 分页 -->
             <el-row>
                 <el-col :span="24">
-                    <div class="float-right mt-3">
+                    <div class="float-center mt-3">
                         <el-pagination
                             v-model:currentPage="page_index"
                             v-model:page-size="page_size"
@@ -94,7 +94,7 @@
                 </el-col>
             </el-row>
         </div>
-    </el-card>s
+    </el-card>
 </template>
 <script setup>
 import { ref, watchEffect, onMounted } from 'vue'
