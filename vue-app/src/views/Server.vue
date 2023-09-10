@@ -41,7 +41,7 @@
                     width="auto"
                     prop="max_num"
                 >
-                    <template #default="scope">
+                    <template v-slot:header='scope'>
                         <span>
                             缩力
                             <el-tooltip
