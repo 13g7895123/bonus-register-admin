@@ -44,12 +44,15 @@
                 <el-table-column label="伺服器" align="center" width="auto" prop="server_name">
                     <el-popover effect="light" trigger="hover" placement="top" width="auto">
                         <template #default="scope">
+                            <label>{{ scope.row.server_name }}[{{ scope.row.server_code_name }}]</label>
+                        </template>
+                        <!-- <template #default="scope">
                             <div>name: {{ scope.row.server_name }}</div>
                             <div>address: {{ scope.row.server_code_name }}</div>
                         </template>
                         <template #reference>
                             <el-tag>{{ scope.row.server_name }}</el-tag>
-                        </template>
+                        </template> -->
                     </el-popover>
                 </el-table-column>
                 <el-table-column label="啟用" align="center" width="auto" prop="switch">
