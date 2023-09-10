@@ -79,7 +79,7 @@
             <!-- 分页 -->
             <el-row>
                 <el-col :span="24">
-                    <div class="float-center mt-3">
+                    <div class="flex justify-center mt-3">
                         <el-pagination
                             v-model:currentPage="page_index"
                             v-model:page-size="page_size"
