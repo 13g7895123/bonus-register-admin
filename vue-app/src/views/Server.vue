@@ -244,4 +244,24 @@ const handleCancelSort = () => {
     history.go(0)
 }
 
+const renderTipsHeader = (h,{column}) => {
+      return h(
+        'div',[ 
+             h('span', column.label),
+             h('el-tooltip',{
+　　　　      props:{
+　　　　　　　　effect:'dark',
+　　　　　　　　content:'提示文案',
+　　　　　　　　placement:'top'
+　　　　　　},　　　 
+　　　　 },[
+                 h('i', {
+                     class:'el-icon-question',
+                     style:'color:#409EFF;margin-left:5px;'
+                 })
+            ])
+        ]
+    );
+ }
+
 </script>
