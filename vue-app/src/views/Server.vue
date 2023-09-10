@@ -43,7 +43,7 @@
                 >
                     <template v-slot:header='scope'>
                         <span>
-                            缩力
+                            帳號數量
                             <el-tooltip
                             :aa="scope"
                             class="item"
@@ -52,9 +52,7 @@
                             >
                                 <i class="el-icon-question"> </i>
                                 <div style="width: 200px" slot="content">
-                                        弱宫缩：宫缩持续20-30秒 <br />
-                                        中度宫缩：宫缩持续30-40秒<br />
-                                        强度宫缩：宫缩持续40秒以上
+                                    123
                                 </div>
                             </el-tooltip>
                         </span>
