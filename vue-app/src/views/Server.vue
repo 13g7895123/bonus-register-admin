@@ -41,7 +41,7 @@
                     width="auto"
                     prop="max_num"
                 >
-                    <template v-slot:header='scope'>     // 插槽插入header
+                    <template v-slot:header='scope'>
                         <span>
                             缩力
                             <el-tooltip
