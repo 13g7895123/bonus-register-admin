@@ -32,7 +32,6 @@
                     v-model="formData.switch" 
                     :active-value="1"
                     :inactive-value="0"
-                    :disabled="true"
                 />
             </el-form-item>
             <el-form-item class="flex justify-center">
