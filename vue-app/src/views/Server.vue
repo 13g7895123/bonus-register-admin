@@ -54,9 +54,6 @@
                             </el-tooltip>
                         </span>
                     </template>
-                    <!-- <template slot-scope="scope">
-                        <label>單一門號最多可申請帳號數量</label>
-                    </template> -->
                 </el-table-column>
                 <el-table-column label="資料庫" align="center" width="auto" prop="db_ip">
                     <template #default="scope">
@@ -70,6 +67,11 @@
                                 <el-tag>{{ scope.row.db_ip }}</el-tag>
                             </template>
                         </el-popover>
+                    </template>
+                </el-table-column>
+                <el-table-column label="啟用狀態" align="center" width="auto" prop="switch">
+                    <template #default="scope">
+                        <el-tag>{{ scope.row.switch == 0 ? '停用' : '啟用' }}</el-tag>
                     </template>
                 </el-table-column>
                 <el-table-column
