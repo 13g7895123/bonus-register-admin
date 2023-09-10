@@ -54,6 +54,7 @@ const id = ref()
 const apiUrl = ref()
 const apiParam = ref()
 const apiUrlPrefix = '/api/'
+const dialogRef = ref()
 
 const formData = ref({
     account: '',             // 聯絡人
