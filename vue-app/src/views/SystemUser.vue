@@ -2,7 +2,7 @@
     <div class="h-full px-5 py-3">
         <div class="w-full flex items-center justify-between">
             <el-form :inline="true">
-                <el-form-item prop="colName" label="藥品英文">
+                <el-form-item prop="colName" label="">
                     <el-input v-model="filterEngName"></el-input>
                 </el-form-item>
                 <el-form-item>
