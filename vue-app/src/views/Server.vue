@@ -41,7 +41,7 @@
                     width="auto"
                     prop="max_num"
                 >
-                    <template v-slot:header='scope'>
+                    <template #default="scope">
                         <span>
                             缩力
                             <el-tooltip
@@ -50,13 +50,12 @@
                             effect="dark"
                             placement="top-start"
                             >
-                            <i class="el-icon-question"> </i>
-                        
-                            <div style="width: 200px" slot="content">
-                                    弱宫缩：宫缩持续20-30秒 <br />
-                                    中度宫缩：宫缩持续30-40秒<br />
-                                    强度宫缩：宫缩持续40秒以上
-                            </div>
+                                <i class="el-icon-question"> </i>
+                                <div style="width: 200px" slot="content">
+                                        弱宫缩：宫缩持续20-30秒 <br />
+                                        中度宫缩：宫缩持续30-40秒<br />
+                                        强度宫缩：宫缩持续40秒以上
+                                </div>
                             </el-tooltip>
                         </span>
                     </template>
