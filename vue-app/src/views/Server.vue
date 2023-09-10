@@ -123,7 +123,7 @@
 <script setup>
 import { ref, watchEffect } from 'vue'
 import axios from 'axios';
-import { EditPen, Delete } from "@element-plus/icons-vue";
+import { EditPen, Delete, QuestionFilled } from "@element-plus/icons-vue";
 import Swal from 'sweetalert2'
 
 const tableData = ref([])
