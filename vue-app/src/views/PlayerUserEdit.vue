@@ -22,7 +22,11 @@
                     <el-input v-model="formData.phone"></el-input>
                 </el-form-item>
                 <el-form-item prop="birthday" label="生日">
-                    <el-input v-model="formData.birthday"></el-input>
+                    <!-- <el-input v-model="formData.birthday"></el-input> -->
+                    <el-date-picker
+                        v-model="formData.birthday"
+                        type="date"
+                    />
                 </el-form-item>
                 <el-form-item prop="server" label="伺服器">
                     <el-input v-model="formData.server_name" readonly="true"></el-input>
