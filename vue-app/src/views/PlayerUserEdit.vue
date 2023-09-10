@@ -27,7 +27,7 @@
                 <el-form-item prop="server" label="伺服器">
                     <el-input v-model="formData.server_name" readonly="true"></el-input>
                 </el-form-item>
-                <el-form-item prop="switch" label="啟用">
+                <el-form-item prop="switch" label="啟用" class="justify-start">
                     <!-- <el-input v-model="formData.server_name" readonly="true"></el-input> -->
                     <el-switch 
                         v-model="formData.switch" 
