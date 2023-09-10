@@ -34,7 +34,18 @@
             >
                 <el-table-column type="index" label="編號" align="center" width="70"/>
                 <el-table-column label="伺服器名稱" align="center" width="auto" prop="name"/>
-                <el-table-column label="代號" align="center" width="auto" prop="code_name"/>
+                <el-table-column label="伺服器代號" align="center" width="auto" prop="code_name"/>
+                <el-table-column 
+                    label="最大申請數量"
+                    align="center"
+                    width="auto"
+                    prop="max_num"
+                    :render-header="renderTipsHeader"
+                >
+                    <template slot-scope="scope">
+                        <label>單一門號最多可申請帳號數量</label>
+                    </template>
+                </el-table-column>
                 <el-table-column label="資料庫" align="center" width="auto" prop="db_ip">
                     <template #default="scope">
                         <el-popover effect="dark" trigger="hover" placement="top" width="auto">
