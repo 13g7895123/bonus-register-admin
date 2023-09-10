@@ -53,7 +53,7 @@
                                 <!-- <i class="el-icon-question"> </i> -->
                                 <!-- <el-icon><QuestionFilled /></el-icon> -->
                                 <el-icon :size="15" color="#555"><QuestionFilled /></el-icon>
-                                <div style="width: 200px" slot="content">
+                                <div style="width: 200px; font-size: 18px; color: #fff;" slot="content">
                                     123
                                 </div>
                             </el-tooltip>
