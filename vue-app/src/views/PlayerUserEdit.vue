@@ -27,7 +27,7 @@
                 <el-form-item prop="server" label="伺服器">
                     <el-input v-model="formData.server_name" readonly="true"></el-input>
                 </el-form-item>
-                <el-form-item prop="switch" label="啟用" style="justify-content: flex-start;">
+                <el-form-item prop="switch" label="啟用" class="radio_column">
                     <!-- <el-input v-model="formData.server_name" readonly="true"></el-input> -->
                     <el-switch 
                         v-model="formData.switch" 
@@ -115,5 +115,9 @@ const handleCancel = () => {
     display: flex;
     justify-content: center;
     margin-left: 0 !important;
+}
+
+.radio_column .el-form-item__content{
+    justify-content: flex-start;
 }
 </style>
