@@ -52,6 +52,7 @@
                     </template>
                 </el-table-column>
                 <el-table-column type="index" label="編號" align="center" width="70"/>
+                <el-table-column label="姓名" align="center" width="auto" prop="name"/>
                 <el-table-column label="帳號" align="center" width="auto" prop="account"/>
                 <el-table-column label="簡訊數量" align="center" width="auto" prop="msg_num">
                     <template v-slot:header='scope'>
@@ -77,6 +78,8 @@
                         <el-tag effect="dark" :type="scope.row.switch == 0 ? 'danger' : 'success'">{{ scope.row.switch == 0 ? '停用' : '開啟' }}</el-tag>
                     </template>
                 </el-table-column>
+                <el-table-column label="最後登入" align="center" width="auto" prop="last_login_time"/>
+                <el-table-column label="建立時間" align="center" width="auto" prop="create_at"/>
             </el-table>
 
             <!-- 分页 -->
