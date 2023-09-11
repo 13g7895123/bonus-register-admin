@@ -71,10 +71,12 @@
                         <label>{{ scope.row.msg_num }}/{{ scope.row.msg_count }}</label>
                     </template>
                 </el-table-column>
-                <el-table-column label="管理數" align="center" width="200" prop="phone"/>
-                <el-table-column label="生日" align="center" width="200" prop="birthday"/>
-                <el-table-column label="伺服器" align="center" width="200" prop="server"/>
-                <el-table-column label="啟用" align="center" width="200" prop="switch"/>
+                <el-table-column label="管理數" align="center" width="200" prop="manage_server_count"/>
+                <el-table-column label="啟用狀態" align="center" width="200" prop="switch">
+                    <template #default="scope">
+                        <el-tag effect="dark" :type="scope.row.switch == 0 ? 'danger' : 'success'">{{ scope.row.switch == 0 ? '停用' : '開啟' }}</el-tag>
+                    </template>
+                </el-table-column>
             </el-table>
 
             <!-- 分页 -->
