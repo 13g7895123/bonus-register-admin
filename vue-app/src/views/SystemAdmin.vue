@@ -51,13 +51,13 @@
                         </el-button>
                     </template>
                 </el-table-column>
-                <el-table-column type="index" label="編號" align="center" width="100"/>
-                <el-table-column label="帳號" align="center" width="200" prop="account"/>
-                <el-table-column label="密碼" align="center" width="200" prop="password"/>
-                <el-table-column label="手機" align="center" width="200" prop="phone"/>
-                <el-table-column label="生日" align="center" width="200" prop="birthday"/>
-                <el-table-column label="伺服器" align="center" width="200" prop="server"/>
-                <el-table-column label="啟用" align="center" width="200" prop="switch"/>
+                <el-table-column type="index" label="編號" align="center" width="70"/>
+                <el-table-column label="帳號" align="center" width="auto" prop="account"/>
+                <el-table-column label="密碼" align="center" width="auto" prop="password"/>
+                <el-table-column label="手機" align="center" width="auto" prop="phone"/>
+                <el-table-column label="生日" align="center" width="auto" prop="birthday"/>
+                <el-table-column label="伺服器" align="center" width="auto" prop="server"/>
+                <el-table-column label="啟用" align="center" width="auto" prop="switch"/>
             </el-table>
 
             <!-- 分页 -->

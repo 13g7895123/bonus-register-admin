@@ -51,9 +51,9 @@
                         </el-button>
                     </template>
                 </el-table-column>
-                <el-table-column type="index" label="編號" align="center" width="100"/>
-                <el-table-column label="帳號" align="center" width="200" prop="account"/>
-                <el-table-column label="簡訊數量" align="center" width="200" prop="msg_num">
+                <el-table-column type="index" label="編號" align="center" width="70"/>
+                <el-table-column label="帳號" align="center" width="auto" prop="account"/>
+                <el-table-column label="簡訊數量" align="center" width="auto" prop="msg_num">
                     <template v-slot:header='scope'>
                         <span>
                             簡訊數量
@@ -71,8 +71,8 @@
                         <label>{{ scope.row.msg_num }}/{{ scope.row.msg_count }}</label>
                     </template>
                 </el-table-column>
-                <el-table-column label="管理數" align="center" width="200" prop="manage_server_count"/>
-                <el-table-column label="啟用狀態" align="center" width="200" prop="switch">
+                <el-table-column label="管理數" align="center" width="auto" prop="manage_server_count"/>
+                <el-table-column label="啟用狀態" align="center" width="auto" prop="switch">
                     <template #default="scope">
                         <el-tag effect="dark" :type="scope.row.switch == 0 ? 'danger' : 'success'">{{ scope.row.switch == 0 ? '停用' : '開啟' }}</el-tag>
                     </template>
