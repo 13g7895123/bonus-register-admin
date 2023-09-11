@@ -5,16 +5,14 @@
                 <span class="text-xl font-semibold">伺服器管理</span>
             </div>
         </template>
-        <div class="h-full px-5 py-3">
+        <div class="h-full px-5 pt-3">
             <div class="w-full flex items-center justify-between">
                 <el-form :inline="true">
                     <el-form-item prop="colName" label="">
                         <el-input v-model="filterEngName"></el-input>
                     </el-form-item>
                     <el-form-item>
-                        <el-button type="primary" size="small" @click="handleSort"
-                            >篩選</el-button
-                        >
+                        <el-button type="primary" size="small" @click="handleSort">篩選</el-button>
                     </el-form-item>
                 </el-form>
                 <el-form :inline="true">
@@ -100,7 +98,7 @@
             <!-- 分页 -->
             <el-row>
                 <el-col :span="24">
-                    <div class="float-right mt-3">
+                    <div class="flex justify-center mt-3">
                         <el-pagination
                             v-model:currentPage="page_index"
                             v-model:page-size="page_size"
