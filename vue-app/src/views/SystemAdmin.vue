@@ -2,7 +2,7 @@
     <el-card class="box-card mx-auto mt-3">
         <template #header>
             <div class="card-header text-left">
-                <span class="text-xl font-semibold">伺服器管理</span>
+                <span class="text-xl font-semibold">系統管理者</span>
             </div>
         </template>
         <div class="h-full px-5 pt-3">
