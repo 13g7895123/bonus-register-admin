@@ -79,7 +79,7 @@
                     </template>
                 </el-table-column>
                 <el-table-column label="最後登入" align="center" width="auto" prop="last_login_time"/>
-                <el-table-column label="建立時間" align="center" width="auto" prop="created_at"/>
+                <el-table-column label="建立時間" align="center" width="auto" prop="create_at"/>
             </el-table>
 
             <!-- 分页 -->
