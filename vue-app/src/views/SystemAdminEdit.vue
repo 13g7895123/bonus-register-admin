@@ -2,7 +2,7 @@
     <el-card class="box-card mx-auto mt-3">
         <template #header>
             <div class="card-header">
-                <span class="font-semibold text-left">玩家資料修改</span>
+                <span class="font-semibold text-left">管理者設定</span>
             </div>
         </template>
         <!-- <div class="flex justify-center"> -->
