@@ -55,12 +55,7 @@
                 </el-table-column>
                 <el-table-column label="啟用" align="center" width="auto" prop="switch">
                     <template #default="scope">
-                        <el-switch 
-                            v-model="scope.row.switch" 
-                            :active-value="1"
-                            :inactive-value="0"
-                            :disabled="true"
-                        />
+                        <el-tag effect="dark" :type="scope.row.switch == 0 ? 'danger' : 'success'">{{ scope.row.switch == 0 ? '停用' : '開啟' }}</el-tag>
                     </template>
                 </el-table-column>
                 <el-table-column
