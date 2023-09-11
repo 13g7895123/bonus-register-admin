@@ -126,10 +126,11 @@ const handleAdd = () => {
 }
 
 const handleEdit = (row) => {
-    // console.log('edit click');
-    show.value = true
-    editData.value = row
-    operation.value = false
+    const { id } = row
+    router.push({
+        name: 'editSystemAdmin',
+        params:{ id: id }
+    })
 }
 
 const handleDelete = async(row) => {
