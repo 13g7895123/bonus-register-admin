@@ -40,18 +40,8 @@
                 <el-table-column label="生日" align="center" width="auto" prop="birthday"/>
                 <el-table-column label="伺服器" align="center" width="auto" prop="server_name">
                     <template #default="scope">
-                        <!-- <label>{{ scope.row.server_name }}[{{ scope.row.server_code_name }}]</label> -->
                         <label>{{ scope.row.server_name }}[{{ scope.row.server_code_name }}]</label>
                     </template>
-                    <!-- <el-popover effect="light" trigger="hover" placement="top" width="auto"> -->
-                        <!-- <template #default="scope">
-                            <div>name: {{ scope.row.server_name }}</div>
-                            <div>address: {{ scope.row.server_code_name }}</div>
-                        </template>
-                        <template #reference>
-                            <el-tag>{{ scope.row.server_name }}</el-tag>
-                        </template> -->
-                    <!-- </el-popover> -->
                 </el-table-column>
                 <el-table-column label="啟用" align="center" width="auto" prop="switch">
                     <template #default="scope">

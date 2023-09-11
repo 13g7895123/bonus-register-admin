@@ -53,8 +53,25 @@
                 </el-table-column>
                 <el-table-column type="index" label="編號" align="center" width="100"/>
                 <el-table-column label="帳號" align="center" width="200" prop="account"/>
-                <el-table-column label="密碼" align="center" width="200" prop="password"/>
-                <el-table-column label="手機" align="center" width="200" prop="phone"/>
+                <el-table-column label="簡訊數量" align="center" width="200" prop="msg_num">
+                    <template v-slot:header='scope'>
+                        <span>
+                            簡訊數量
+                            <el-tooltip
+                            class="item"
+                            effect="dark"
+                            placement="top-start"
+                            content="可用數量/累積數量"
+                            >
+                                <el-icon :size="15" color="#555"><QuestionFilled /></el-icon>
+                            </el-tooltip>
+                        </span>
+                    </template>
+                    <template #default="scope">
+                        <label>{{ scope.row.msg_num }}/{{ scope.row.msg_count }}</label>
+                    </template>
+                </el-table-column>
+                <el-table-column label="管理數" align="center" width="200" prop="phone"/>
                 <el-table-column label="生日" align="center" width="200" prop="birthday"/>
                 <el-table-column label="伺服器" align="center" width="200" prop="server"/>
                 <el-table-column label="啟用" align="center" width="200" prop="switch"/>
@@ -83,7 +100,7 @@
 <script setup>
 import { ref, watchEffect } from 'vue'
 import axios from 'axios';
-import { EditPen, Delete } from "@element-plus/icons-vue";
+import { EditPen, Delete, QuestionFilled } from "@element-plus/icons-vue";
 import Swal from 'sweetalert2'
 
 const tableData = ref([])
