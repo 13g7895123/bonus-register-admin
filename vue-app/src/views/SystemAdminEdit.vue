@@ -9,7 +9,6 @@
             <el-form
                 :model="formData"
                 ref="dialogRef"
-                label-width="120px"
                 style="margin: 10px; width: auto;"
                 >
                 <el-form-item prop="account" label="姓名">
