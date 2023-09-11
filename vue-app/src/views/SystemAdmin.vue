@@ -124,8 +124,7 @@ const getSystemAdmin = async() => {
 watchEffect(() => getSystemAdmin())
 
 const handleAdd = () => {
-    show.value = true
-    operation.value = true
+    router.push({ name: 'addSystemAdmin' })
 }
 
 const handleEdit = (row) => {
