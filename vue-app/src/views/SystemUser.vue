@@ -155,32 +155,27 @@ const handleEdit = (row) => {
 }
 
 const handleDelete = async(row) => {
-    const { medicine_code } = row
-    const ajax_data = {
-        medicine_code: medicine_code
-    }
+    const { id } = row
+    const ajax_data = { id: id }
 
     const { data: { success, msg } } = await axios.post(
-        `http://139.162.15.125:9090/api/health-insurance/admin-medicine-delete.php`,
+        `/api/${phpAction}.php?action=delete_${phpAction}`,
         ajax_data
     )
     // console.log(success);
 
     if (success){
         Swal.fire({
-            title: `刪除藥品資料成功`,
+            title: `系統提示`,
+            text: msg,
             icon: 'success',
             showConfirmButton: false,
             showCancelButton: false,
             timer: 2000,
         }).then(() => {
-            handelUpdateMedicine()
+            getSystemUser()
         })
     }
-}
-
-const handelUpdateMedicine = () => {
-    getMedicine()
 }
 
 const handleSizeChange = (pages) => {
