@@ -15,26 +15,26 @@
                 <el-form-item prop="name" label="伺服器名稱">
                     <el-input v-model="formData.name" class="text-center"></el-input>
                 </el-form-item>
-                <el-form-item prop="account" label="伺服器代號">
-                    <el-input v-model="formData.account" class="text-center"></el-input>
+                <el-form-item prop="code_name" label="伺服器代號">
+                    <el-input v-model="formData.code_name" class="text-center"></el-input>
                 </el-form-item>
-                <el-form-item prop="password" label="帳號數量">
-                    <el-input v-model="formData.password"></el-input>
+                <el-form-item prop="max_num" label="帳號數量">
+                    <el-input v-model="formData.max_num"></el-input>
                 </el-form-item>
-                <el-form-item prop="password" label="資料庫IP">
-                    <el-input v-model="formData.password"></el-input>
+                <el-form-item prop="db_name" label="資料庫名稱">
+                    <el-input v-model="formData.db_name"></el-input>
                 </el-form-item>
-                <el-form-item prop="password" label="資料庫PORT">
-                    <el-input v-model="formData.password"></el-input>
+                <el-form-item prop="db_ip" label="資料庫IP">
+                    <el-input v-model="formData.db_ip"></el-input>
                 </el-form-item>
-                <el-form-item prop="password" label="資料庫名稱">
-                    <el-input v-model="formData.password"></el-input>
+                <el-form-item prop="db_port" label="資料庫PORT">
+                    <el-input v-model="formData.db_port"></el-input>
                 </el-form-item>
-                <el-form-item prop="password" label="資料庫帳號">
-                    <el-input v-model="formData.password"></el-input>
+                <el-form-item prop="db_username" label="資料庫帳號">
+                    <el-input v-model="formData.db_username"></el-input>
                 </el-form-item>
-                <el-form-item prop="password" label="資料庫密碼">
-                    <el-input v-model="formData.password"></el-input>
+                <el-form-item prop="db_password" label="資料庫密碼">
+                    <el-input v-model="formData.db_password"></el-input>
                 </el-form-item>
                 <el-form-item prop="switch" label="啟用狀態" class="radio_column">
                     <el-switch 
@@ -67,8 +67,13 @@ const dialogRef = ref()
 
 const formData = ref({
     name: '',
-    account: '',             // 聯絡人
-    password: '',            // 密碼
+    code_name: '',
+    max_num: '',
+    db_name: '',
+    db_ip: '',
+    db_port: '',
+    db_username: '',
+    db_password: '',
     switch: 1
 })
 
