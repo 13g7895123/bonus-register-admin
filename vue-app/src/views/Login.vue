@@ -81,7 +81,7 @@ const handleSubmit = (formEl) => {
                 loginStore.setAuth(true)
                 loginStore.setUser(account)
                 loginStore.setUserName(name)
-                loginStore.setIsAdmin(isAdmin)
+                loginStore.setIsAdmin(is_admin)
 
                 Swal.fire({
                     title: '登入成功',
