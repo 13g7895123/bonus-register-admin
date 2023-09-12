@@ -157,13 +157,13 @@ const handleDelete = async(row) => {
             showCancelButton: false,
             timer: 2000,
         }).then(() => {
-            handelUpdateMedicine()
+            getSystemAdmin()
         })
     }
 }
 
 const handelUpdateMedicine = () => {
-    getMedicine()
+    // getMedicine()
 }
 
 const handleSizeChange = (pages) => {
