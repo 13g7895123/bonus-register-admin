@@ -53,6 +53,7 @@ const apiUrl = ref()
 const apiParam = ref()
 const apiUrlPrefix = '/api/'
 const dialogRef = ref()
+const nowUser = ref()
 
 // Api config
 const phpAction = 'system_user';
@@ -66,8 +67,7 @@ const formData = ref({
 
 onMounted(() => {
     id.value = router.currentRoute._value.params.id
-    console.log(loginAuth.getUser);
-    console.log(loginAuth.getUserName);
+    nowUser.value = loginAuth.getUser   // 操作者帳號
 })
 
 const handleSubmit = (formEl) => {
@@ -100,6 +100,14 @@ const handleSubmit = (formEl) => {
             }
         }
     })
+}
+
+const operatorPermission = () => {    // 操作者權限
+
+}
+
+const getServer = () => {    // 依操作者權限取得伺服器列表
+
 }
 
 const handleCancel = () => {
