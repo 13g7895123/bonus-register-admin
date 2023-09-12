@@ -67,6 +67,7 @@ const formData = ref({
 onMounted(() => {
     id.value = router.currentRoute._value.params.id
     console.log(loginAuth.getUser);
+    console.log(loginAuth.getUserName);
 })
 
 const handleSubmit = (formEl) => {
