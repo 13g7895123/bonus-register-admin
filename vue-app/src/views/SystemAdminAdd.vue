@@ -57,7 +57,7 @@ const formData = ref({
 
 onMounted(() => {
     id.value = router.currentRoute._value.params.id
-    getData()
+    // getData()
 })
 
 const getData = async() => {
