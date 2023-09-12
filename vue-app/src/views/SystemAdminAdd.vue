@@ -85,8 +85,6 @@ const handleSubmit = (formEl) => {
                     showConfirmButton: false,
                     showCancelButton: false,
                     timer: 2000,
-                }).then(() => {
-                    getData()
                 })
             }
         }
