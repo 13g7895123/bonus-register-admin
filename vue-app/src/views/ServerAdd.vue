@@ -88,7 +88,7 @@ const handleSubmit = (formEl) => {
     formEl.validate(async(valid) => {    
         if (valid){
             const ajax_data = formData.value
-            apiParam.value = `?action=get_${phpAction}`
+            apiParam.value = `?action=add_${phpAction}`
             apiUrl.value = apiUrlPrefix + `${phpAction}.php` + apiParam.value
             const { data: { success, msg } } = await axios.post(apiUrl.value, ajax_data)
 
