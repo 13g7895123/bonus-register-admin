@@ -107,6 +107,7 @@ import { ref, watchEffect } from 'vue'
 import axios from 'axios';
 import { EditPen, Delete, QuestionFilled } from "@element-plus/icons-vue";
 import Swal from 'sweetalert2'
+import { useRouter } from "vue-router";
 
 const tableData = ref([])
 const allTableData = ref([])
@@ -114,6 +115,8 @@ const filterTableData = ref([])
 const show = ref(false)
 const editData = ref()
 const operation = ref()   // 0為編輯，1為新增
+
+const router = useRouter()
 
 // 分頁
 const page_index = ref(1),
@@ -145,10 +148,11 @@ const handleAdd = () => {
 }
 
 const handleEdit = (row) => {
-    // console.log('edit click');
-    show.value = true
-    editData.value = row
-    operation.value = false
+    const { id } = row
+    router.push({
+        name: 'editSystemAdmin',
+        params:{ id: id }
+    })
 }
 
 const handleDelete = async(row) => {
