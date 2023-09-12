@@ -150,7 +150,7 @@ const handleAdd = () => {
 const handleEdit = (row) => {
     const { id } = row
     router.push({
-        name: 'editSystemAdmin',
+        name: 'editSystemUser',
         params:{ id: id }
     })
 }
