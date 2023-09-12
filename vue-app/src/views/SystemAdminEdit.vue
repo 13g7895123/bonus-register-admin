@@ -61,7 +61,6 @@ const formData = ref({
 
 onMounted(() => {
     id.value = router.currentRoute._value.params.id
-    console.log(id.value);
     getData()
 })
 
@@ -83,7 +82,7 @@ const handleSubmit = (formEl) => {
         console.log(formData.value);        
         if (valid){
             const ajax_data = formData.value
-            const { data: { success, msg } } = await axios.post(`/api/.php?action=edit_${phpAction}`, ajax_data)
+            const { data: { success, msg } } = await axios.post(`/api/${phpAction}.php?action=edit_${phpAction}`, ajax_data)
 
             if (success){
                 Swal.fire({
