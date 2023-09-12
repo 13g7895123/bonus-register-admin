@@ -21,7 +21,6 @@
                     <el-input v-model="formData.password"></el-input>
                 </el-form-item>
                 <el-form-item prop="switch" label="啟用" class="radio_column">
-                    <!-- <el-input v-model="formData.server_name" readonly="true"></el-input> -->
                     <el-switch 
                         v-model="formData.switch" 
                         :active-value="1"
@@ -63,7 +62,7 @@ onMounted(() => {
 
 const getData = async() => {
     const ajaxFormData = ref({ id: id.value })
-    apiParam.value = '?action=get_system_admin'
+    apiParam.value = '?action=system_admin'
     apiUrl.value = apiUrlPrefix + "system_admin.php" + apiParam.value
 
     const { data: { success, data } } = await axios.post(apiUrl.value, ajaxFormData.value)
