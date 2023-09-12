@@ -76,6 +76,7 @@ const handleSubmit = (formEl) => {
                 localStorage.setItem('userId', id)
                 localStorage.setItem('userAccount', account)
                 localStorage.setItem('userName', name)
+                localStorage.setItem('isAdmin', isAdmin)
 
                 loginStore.setAuth(true)
                 loginStore.setUser(account)
