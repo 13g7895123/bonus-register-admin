@@ -11,22 +11,38 @@
                 ref="dialogRef"
                 style="margin: 10px; width: auto;"
                 >
-                <el-form-item prop="name" label="姓名">
+                <el-form-item prop="name" label="伺服器名稱">
                     <el-input v-model="formData.name" class="text-center"></el-input>
                 </el-form-item>
-                <el-form-item prop="account" label="帳號">
+                <el-form-item prop="account" label="伺服器代號">
                     <el-input v-model="formData.account" class="text-center"></el-input>
                 </el-form-item>
-                <el-form-item prop="password" label="密碼">
+                <el-form-item prop="password" label="帳號數量">
                     <el-input v-model="formData.password"></el-input>
                 </el-form-item>
-                <el-form-item prop="switch" label="啟用" class="radio_column">
+                <el-form-item prop="password" label="資料庫IP">
+                    <el-input v-model="formData.password"></el-input>
+                </el-form-item>
+                <el-form-item prop="password" label="資料庫PORT">
+                    <el-input v-model="formData.password"></el-input>
+                </el-form-item>
+                <el-form-item prop="password" label="資料庫名稱">
+                    <el-input v-model="formData.password"></el-input>
+                </el-form-item>
+                <el-form-item prop="password" label="資料庫帳號">
+                    <el-input v-model="formData.password"></el-input>
+                </el-form-item>
+                <el-form-item prop="password" label="資料庫密碼">
+                    <el-input v-model="formData.password"></el-input>
+                </el-form-item>
+                <el-form-item prop="switch" label="啟用狀態" class="radio_column">
                     <el-switch 
                         v-model="formData.switch" 
                         :active-value="1"
                         :inactive-value="0"
                     />
                 </el-form-item>
+                
                 <el-form-item class="flex justify-center">
                     <el-button @click="handleCancel">取消</el-button>
                     <el-button type="primary" @click="handleSubmit(dialogRef)">提交</el-button>
