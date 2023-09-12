@@ -12,9 +12,7 @@
                         <el-input v-model="filterEngName"></el-input>
                     </el-form-item>
                     <el-form-item>
-                        <el-button type="primary" size="small" @click="handleSort" class="text-lg"
-                            >篩選</el-button
-                        >
+                        <el-button type="primary" size="small" @click="handleSort" class="text-lg">篩選</el-button>
                     </el-form-item>
                 </el-form>
                 <el-form :inline="true">
