@@ -48,6 +48,9 @@ const apiParam = ref()
 const apiUrlPrefix = '/api/'
 const dialogRef = ref()
 
+// Api config
+const phpAction = 'system_admin';
+
 const formData = ref({
     name: '',
     account: '',             // 聯絡人
@@ -64,7 +67,7 @@ const handleSubmit = (formEl) => {
     formEl.validate(async(valid) => {    
         if (valid){
             const ajax_data = formData.value
-            const { data: { success, msg } } = await axios.post(`/api/system_admin.php?action=add_system_admin`, ajax_data)
+            const { data: { success, msg } } = await axios.post(`/api/${phpAction}.php?action=add_${phpAction}`, ajax_data)
 
             if (success){
                 Swal.fire({
