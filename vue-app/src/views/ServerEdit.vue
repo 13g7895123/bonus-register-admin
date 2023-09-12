@@ -5,23 +5,37 @@
                 <span class="font-semibold text-left">伺服器設定</span>
             </div>
         </template>
-        <!-- <div class="flex justify-center"> -->
             <el-form
                 :model="formData"
                 ref="dialogRef"
-                style="margin: 10px; width: auto;"
+                label-width="100px"
+                style="margin: 10px;"
                 >
-                <el-form-item prop="account" label="姓名">
-                    <el-input v-model="formData.account" class="text-center"></el-input>
+                <el-form-item prop="name" label="伺服器名稱">
+                    <el-input v-model="formData.name" class="text-center"></el-input>
                 </el-form-item>
-                <el-form-item prop="account" label="帳號">
-                    <el-input v-model="formData.account" class="text-center"></el-input>
+                <el-form-item prop="code_name" label="伺服器代號">
+                    <el-input v-model="formData.code_name" class="text-center"></el-input>
                 </el-form-item>
-                <el-form-item prop="password" label="密碼">
-                    <el-input v-model="formData.password"></el-input>
+                <el-form-item prop="max_num" label="帳號數量">
+                    <el-input v-model="formData.max_num"></el-input>
                 </el-form-item>
-                <el-form-item prop="switch" label="啟用" class="radio_column">
-                    <!-- <el-input v-model="formData.server_name" readonly="true"></el-input> -->
+                <el-form-item prop="db_name" label="資料庫名稱">
+                    <el-input v-model="formData.db_name"></el-input>
+                </el-form-item>
+                <el-form-item prop="db_ip" label="資料庫IP">
+                    <el-input v-model="formData.db_ip"></el-input>
+                </el-form-item>
+                <el-form-item prop="db_port" label="資料庫PORT">
+                    <el-input v-model="formData.db_port"></el-input>
+                </el-form-item>
+                <el-form-item prop="db_username" label="資料庫帳號">
+                    <el-input v-model="formData.db_username"></el-input>
+                </el-form-item>
+                <el-form-item prop="db_password" label="資料庫密碼">
+                    <el-input v-model="formData.db_password"></el-input>
+                </el-form-item>
+                <el-form-item prop="switch" label="啟用狀態" class="radio_column">
                     <el-switch 
                         v-model="formData.switch" 
                         :active-value="1"
@@ -37,7 +51,7 @@
     </el-card>
 </template>
 <script setup>
-import { ref, watch, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from "vue-router";
 import axios from 'axios'
 import Swal from 'sweetalert2'
@@ -54,9 +68,14 @@ const phpAction = 'server';
 
 const formData = ref({
     name: '',
-    account: '',             // 聯絡人
-    password: '',            // 密碼
-    switch: ''
+    code_name: '',
+    max_num: '',
+    db_name: '',
+    db_ip: '',
+    db_port: '',
+    db_username: '',
+    db_password: '',
+    switch: 1
 })
 
 onMounted(() => {
@@ -78,11 +97,12 @@ const getData = async() => {
 
 const handleSubmit = (formEl) => {
     if (!formEl) return;
-    formEl.validate(async(valid) => {
-        console.log(formData.value);        
+    formEl.validate(async(valid) => {    
         if (valid){
             const ajax_data = formData.value
-            const { data: { success, msg } } = await axios.post(`/api/${phpAction}.php?action=edit_${phpAction}`, ajax_data)
+            apiParam.value = `?action=edit_${phpAction}`
+            apiUrl.value = apiUrlPrefix + `${phpAction}.php` + apiParam.value
+            const { data: { success, msg } } = await axios.post(apiUrl.value, ajax_data)
 
             if (success){
                 Swal.fire({
@@ -94,6 +114,15 @@ const handleSubmit = (formEl) => {
                     timer: 2000,
                 }).then(() => {
                     router.push({ path: '/server' })
+                })
+            }else{
+                Swal.fire({
+                    title: `系統提示`,
+                    text: msg,
+                    icon: 'error',
+                    showConfirmButton: false,
+                    showCancelButton: false,
+                    timer: 2000,
                 })
             }
         }
