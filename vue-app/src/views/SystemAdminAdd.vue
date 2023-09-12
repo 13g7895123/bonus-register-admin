@@ -57,20 +57,7 @@ const formData = ref({
 
 onMounted(() => {
     id.value = router.currentRoute._value.params.id
-    // getData()
 })
-
-const getData = async() => {
-    const ajaxFormData = ref({ id: id.value })
-    apiParam.value = '?action=system_admin'
-    apiUrl.value = apiUrlPrefix + "system_admin.php" + apiParam.value
-
-    const { data: { success, data } } = await axios.post(apiUrl.value, ajaxFormData.value)
-
-    if (success){
-        formData.value = data;
-    }
-}
 
 const handleSubmit = (formEl) => {
     if (!formEl) return;
@@ -78,7 +65,7 @@ const handleSubmit = (formEl) => {
         console.log(formData.value);        
         if (valid){
             const ajax_data = formData.value
-            const { data: { success, msg } } = await axios.post(`/api/system_admin.php?action=edit_system_admin`, ajax_data)
+            const { data: { success, msg } } = await axios.post(`/api/system_admin.php?action=add_system_admin`, ajax_data)
 
             if (success){
                 Swal.fire({
