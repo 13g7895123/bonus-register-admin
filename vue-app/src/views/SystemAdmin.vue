@@ -151,7 +151,7 @@ const handleDelete = async(row) => {
     if (success){
         Swal.fire({
             title: `系統提示`,
-
+            text: msg,
             icon: 'success',
             showConfirmButton: false,
             showCancelButton: false,
