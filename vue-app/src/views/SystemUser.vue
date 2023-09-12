@@ -248,3 +248,8 @@ const handleCancelSort = () => {
 }
 
 </script>
+<style>
+.el-form-item{
+    margin-right: 5px !important;
+}
+</style>

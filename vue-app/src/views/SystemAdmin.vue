@@ -98,6 +98,9 @@ const show = ref(false)
 const editData = ref()
 const operation = ref()   // 0為編輯，1為新增
 
+// Api config
+const phpAction = 'system_admin';
+
 const router = useRouter()
 
 // 分頁
@@ -110,7 +113,7 @@ const page_index = ref(1),
 const filterEngName = ref()
 
 const getSystemAdmin = async() => {
-    const { data: { success, data } } = await axios.post('/api/system_admin.php?action=system_admin')
+    const { data: { success, data } } = await axios.post(`/api/${phpAction}.php?action=${phpAction}`)
 
     if (success){
         tableData.value = data
@@ -143,14 +146,13 @@ const handleDelete = async(row) => {
     }
 
     const { data: { success, msg } } = await axios.post(
-        `http://139.162.15.125:9090/api/health-insurance/admin-medicine-delete.php`,
+        `/api/${phpAction}.php?action=delete_${phpAction}`,
         ajax_data
     )
-    // console.log(success);
 
     if (success){
         Swal.fire({
-            title: `刪除藥品資料成功`,
+            title: `系統提示`,
             icon: 'success',
             showConfirmButton: false,
             showCancelButton: false,
