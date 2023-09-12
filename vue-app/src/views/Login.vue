@@ -72,7 +72,7 @@ const handleSubmit = (formEl) => {
 
             if (success && user){
                 
-                const { id, account, name } = user
+                const { id, account, name, isAdmin } = user
                 localStorage.setItem('userId', id)
                 localStorage.setItem('userAccount', account)
                 localStorage.setItem('userName', name)
@@ -80,6 +80,7 @@ const handleSubmit = (formEl) => {
                 loginStore.setAuth(true)
                 loginStore.setUser(account)
                 loginStore.setUserName(name)
+                loginStore.setIsAdmin(isAdmin)
 
                 Swal.fire({
                     title: '登入成功',
