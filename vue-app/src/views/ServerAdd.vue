@@ -43,7 +43,6 @@
                         :inactive-value="0"
                     />
                 </el-form-item>
-                
                 <el-form-item class="flex justify-center">
                     <el-button @click="handleCancel">取消</el-button>
                     <el-button type="primary" @click="handleSubmit(dialogRef)">提交</el-button>
@@ -64,6 +63,9 @@ const apiUrl = ref()
 const apiParam = ref()
 const apiUrlPrefix = '/api/'
 const dialogRef = ref()
+
+// Api config
+const phpAction = 'server';
 
 const formData = ref({
     name: '',
@@ -86,7 +88,9 @@ const handleSubmit = (formEl) => {
     formEl.validate(async(valid) => {    
         if (valid){
             const ajax_data = formData.value
-            const { data: { success, msg } } = await axios.post(`/api/system_admin.php?action=add_system_admin`, ajax_data)
+            apiParam.value = `?action=get_${phpAction}`
+            apiUrl.value = apiUrlPrefix + `${phpAction}.php` + apiParam.value
+            const { data: { success, msg } } = await axios.post(apiUrl.value, ajax_data)
 
             if (success){
                 Swal.fire({
@@ -114,7 +118,7 @@ const handleSubmit = (formEl) => {
 }
 
 const handleCancel = () => {
-    router.push({ path: '/systemAdmin' })
+    router.push({ path: '/server' })
 }
 
 </script>
