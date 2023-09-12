@@ -49,6 +49,9 @@ const apiParam = ref()
 const apiUrlPrefix = '/api/'
 const dialogRef = ref()
 
+// Api config
+const phpAction = 'system_admin';
+
 const formData = ref({
     name: '',
     account: '',             // 聯絡人
@@ -63,8 +66,8 @@ onMounted(() => {
 
 const getData = async() => {
     const ajaxFormData = ref({ id: id.value })
-    apiParam.value = '?action=get_player_user'
-    apiUrl.value = apiUrlPrefix + "player_user.php" + apiParam.value
+    apiParam.value = `?action=${phpAction}`
+    apiUrl.value = apiUrlPrefix + `${phpAction}.php` + apiParam.value
 
     const { data: { success, data } } = await axios.post(apiUrl.value, ajaxFormData.value)
 
@@ -79,7 +82,7 @@ const handleSubmit = (formEl) => {
         console.log(formData.value);        
         if (valid){
             const ajax_data = formData.value
-            const { data: { success, msg } } = await axios.post(`/api/player_user.php?action=edit_player_user`, ajax_data)
+            const { data: { success, msg } } = await axios.post(`/api/.php?action=edit_${phpAction}`, ajax_data)
 
             if (success){
                 Swal.fire({
