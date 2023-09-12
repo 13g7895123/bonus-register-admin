@@ -84,8 +84,19 @@ const handleSubmit = (formEl) => {
             if (success){
                 Swal.fire({
                     title: `系統資訊`,
-                    text: '修改資料成功',
+                    text: msg,
                     icon: 'success',
+                    showConfirmButton: false,
+                    showCancelButton: false,
+                    timer: 2000,
+                }).then(() => {
+                    getData()
+                })
+            }else{
+                Swal.fire({
+                    title: `系統資訊`,
+                    text: msg,
+                    icon: 'error',
                     showConfirmButton: false,
                     showCancelButton: false,
                     timer: 2000,
