@@ -140,10 +140,8 @@ const handleEdit = (row) => {
 }
 
 const handleDelete = async(row) => {
-    const { medicine_code } = row
-    const ajax_data = {
-        medicine_code: medicine_code
-    }
+    const { id } = row
+    const ajax_data = { id: id }
 
     const { data: { success, msg } } = await axios.post(
         `/api/${phpAction}.php?action=delete_${phpAction}`,
@@ -153,6 +151,7 @@ const handleDelete = async(row) => {
     if (success){
         Swal.fire({
             title: `系統提示`,
+
             icon: 'success',
             showConfirmButton: false,
             showCancelButton: false,
