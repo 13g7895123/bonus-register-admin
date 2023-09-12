@@ -20,7 +20,7 @@
                 <el-form-item prop="password" label="密碼">
                     <el-input v-model="formData.password"></el-input>
                 </el-form-item>
-                <el-form-item prop="switch" label="啟用" class="radio_column">
+                <el-form-item prop="switch" label="啟用狀態" class="radio_column">
                     <!-- <el-input v-model="formData.server_name" readonly="true"></el-input> -->
                     <el-switch 
                         v-model="formData.switch" 
