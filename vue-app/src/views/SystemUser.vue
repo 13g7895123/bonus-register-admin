@@ -117,7 +117,7 @@ const editData = ref()
 const operation = ref()   // 0為編輯，1為新增
 
 // Api config
-const phpAction = 'system_admin';
+const phpAction = 'system_user';
 
 const router = useRouter()
 
