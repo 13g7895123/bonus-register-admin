@@ -50,7 +50,7 @@ const apiUrlPrefix = '/api/'
 const dialogRef = ref()
 
 // Api config
-const phpAction = 'system_admin';
+const phpAction = 'server';
 
 const formData = ref({
     name: '',
@@ -93,7 +93,7 @@ const handleSubmit = (formEl) => {
                     showCancelButton: false,
                     timer: 2000,
                 }).then(() => {
-                    router.push({ path: '/systemAdmin' })
+                    router.push({ path: '/server' })
                 })
             }
         }
@@ -101,7 +101,7 @@ const handleSubmit = (formEl) => {
 }
 
 const handleCancel = () => {
-    router.push({ path: '/systemAdmin' })
+    router.push({ path: '/server' })
 }
 
 </script>
