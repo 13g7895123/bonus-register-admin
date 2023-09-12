@@ -44,8 +44,10 @@ import { ref, watch, onMounted } from 'vue'
 import { useRouter } from "vue-router";
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import { useAuthStore } from "../stores/loginAuth";
 
 const router = useRouter()
+const loginAuth = useAuthStore()
 const id = ref()
 const apiUrl = ref()
 const apiParam = ref()
@@ -64,6 +66,7 @@ const formData = ref({
 
 onMounted(() => {
     id.value = router.currentRoute._value.params.id
+    console.log(loginAuth.getUser);
 })
 
 const handleSubmit = (formEl) => {
