@@ -9,7 +9,7 @@
             <el-form
                 :model="formData"
                 ref="dialogRef"
-                style="margin: 10px; width: 100;"
+                style="margin: 10px; width: 100px;"
                 >
                 <el-form-item prop="name" label="伺服器名稱">
                     <el-input v-model="formData.name" class="text-center"></el-input>
