@@ -52,7 +52,7 @@ const formData = ref({
     name: '',
     account: '',             // 聯絡人
     password: '',            // 密碼
-    switch: 1
+    switch: '1'
 })
 
 onMounted(() => {
