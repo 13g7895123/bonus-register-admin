@@ -143,8 +143,7 @@ const getSystemUsers = async() => {
 watchEffect(() => getSystemUsers())
 
 const handleAdd = () => {
-    show.value = true
-    operation.value = true
+    router.push({ name: 'addSystemUser' })
 }
 
 const handleEdit = (row) => {
