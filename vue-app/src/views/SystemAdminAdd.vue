@@ -61,8 +61,7 @@ onMounted(() => {
 
 const handleSubmit = (formEl) => {
     if (!formEl) return;
-    formEl.validate(async(valid) => {
-        console.log(formData.value);        
+    formEl.validate(async(valid) => {    
         if (valid){
             const ajax_data = formData.value
             const { data: { success, msg } } = await axios.post(`/api/system_admin.php?action=add_system_admin`, ajax_data)
@@ -76,7 +75,7 @@ const handleSubmit = (formEl) => {
                     showCancelButton: false,
                     timer: 2000,
                 }).then(() => {
-                    getData()
+                    router.push({ path: '/systemAdmin' })
                 })
             }else{
                 Swal.fire({
