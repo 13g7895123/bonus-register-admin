@@ -162,10 +162,6 @@ const handleDelete = async(row) => {
     }
 }
 
-const handelUpdateMedicine = () => {
-    // getMedicine()
-}
-
 const handleSizeChange = (pages) => {
     page_index.value = 1;
     page_size.value = pages;

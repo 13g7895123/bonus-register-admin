@@ -120,6 +120,7 @@ import { ref, watchEffect } from 'vue'
 import axios from 'axios';
 import { EditPen, Delete, QuestionFilled } from "@element-plus/icons-vue";
 import Swal from 'sweetalert2'
+import { useRouter } from "vue-router";
 
 const tableData = ref([])
 const allTableData = ref([])
@@ -127,6 +128,11 @@ const filterTableData = ref([])
 const show = ref(false)
 const editData = ref()
 const operation = ref()   // 0為編輯，1為新增
+
+// Api config
+const phpAction = 'system_admin';
+
+const router = useRouter()
 
 // 分頁
 const page_index = ref(1),
@@ -158,10 +164,11 @@ const handleAdd = () => {
 }
 
 const handleEdit = (row) => {
-    // console.log('edit click');
-    show.value = true
-    editData.value = row
-    operation.value = false
+    const { id } = row
+    router.push({
+        name: 'editServer',
+        params:{ id: id }
+    })
 }
 
 const handleDelete = async(row) => {
@@ -171,26 +178,22 @@ const handleDelete = async(row) => {
     }
 
     const { data: { success, msg } } = await axios.post(
-        `http://139.162.15.125:9090/api/health-insurance/admin-medicine-delete.php`,
+        `/api/${phpAction}.php?action=delete_${phpAction}`,
         ajax_data
     )
-    // console.log(success);
 
     if (success){
         Swal.fire({
-            title: `刪除藥品資料成功`,
+            title: `系統提示`,
+            text: msg,
             icon: 'success',
             showConfirmButton: false,
             showCancelButton: false,
             timer: 2000,
         }).then(() => {
-            handelUpdateMedicine()
+            getServer()
         })
     }
-}
-
-const handelUpdateMedicine = () => {
-    getMedicine()
 }
 
 const handleSizeChange = (pages) => {
