@@ -68,7 +68,7 @@ const handleSubmit = (formEl) => {
 
             if (success){
                 Swal.fire({
-                    title: `系統資訊`,
+                    title: `系統提示`,
                     text: msg,
                     icon: 'success',
                     showConfirmButton: false,
@@ -79,7 +79,7 @@ const handleSubmit = (formEl) => {
                 })
             }else{
                 Swal.fire({
-                    title: `系統資訊`,
+                    title: `系統提示`,
                     text: msg,
                     icon: 'error',
                     showConfirmButton: false,
