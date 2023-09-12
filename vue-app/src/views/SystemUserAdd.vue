@@ -9,6 +9,7 @@
             <el-form
                 :model="formData"
                 ref="dialogRef"
+                label-width="100px"
                 style="margin: 10px; width: auto;"
                 >
                 <el-form-item prop="account" label="姓名">
@@ -21,12 +22,14 @@
                     <el-input v-model="formData.password"></el-input>
                 </el-form-item>
                 <el-form-item prop="switch" label="啟用狀態" class="radio_column">
-                    <!-- <el-input v-model="formData.server_name" readonly="true"></el-input> -->
                     <el-switch 
                         v-model="formData.switch" 
                         :active-value="1"
                         :inactive-value="0"
                     />
+                </el-form-item>
+                <el-form-item prop="server_manage" label="伺服器管理">
+                    <el-input v-model="formData.server_manage"></el-input>
                 </el-form-item>
                 <el-form-item class="flex justify-center">
                     <el-button @click="handleCancel">取消</el-button>
