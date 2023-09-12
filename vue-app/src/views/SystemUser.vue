@@ -24,33 +24,12 @@
                 </el-form>
             </div>
             <el-table
-                :data="tableData"
-                max-height="70vh"
-                style="width: 100%"
-                border
-                v-if="tableData.length > 0"
+            :data="tableData"
+            max-height="70vh"
+            style="width: 100%"
+            border
+            v-if="tableData.length > 0"
             >
-                <el-table-column
-                    label="操作"
-                    align="center"
-                    width="120"
-                    prop="operation"
-                >
-                    <template #default="scope">
-                        <el-button
-                            size="small"
-                            type="primary"
-                            @click="handleEdit(scope.row)">
-                            <el-icon><EditPen /></el-icon>
-                        </el-button>
-                        <el-button
-                            size="small"
-                            type="danger"
-                            @click="handleDelete(scope.row)">
-                            <el-icon><Delete /></el-icon>
-                        </el-button>
-                    </template>
-                </el-table-column>
                 <el-table-column type="index" label="編號" align="center" width="70"/>
                 <el-table-column label="姓名" align="center" width="auto" prop="name"/>
                 <el-table-column label="帳號" align="center" width="auto" prop="account"/>
@@ -80,6 +59,27 @@
                 </el-table-column>
                 <el-table-column label="最後登入" align="center" width="auto" prop="last_login_time"/>
                 <el-table-column label="建立時間" align="center" width="auto" prop="create_at"/>
+                <el-table-column
+                label="操作"
+                align="center"
+                width="auto"
+                prop="operation"
+                >
+                    <template #default="scope">
+                        <el-button
+                            size="small"
+                            type="primary"
+                            @click="handleEdit(scope.row)">
+                            <el-icon><EditPen /></el-icon>
+                        </el-button>
+                        <el-button
+                            size="small"
+                            type="danger"
+                            @click="handleDelete(scope.row)">
+                            <el-icon><Delete /></el-icon>
+                        </el-button>
+                    </template>
+                </el-table-column>
             </el-table>
 
             <!-- 分页 -->
@@ -107,6 +107,7 @@ import { ref, watchEffect } from 'vue'
 import axios from 'axios';
 import { EditPen, Delete, QuestionFilled } from "@element-plus/icons-vue";
 import Swal from 'sweetalert2'
+import { useRouter } from "vue-router";
 
 const tableData = ref([])
 const allTableData = ref([])
@@ -114,6 +115,8 @@ const filterTableData = ref([])
 const show = ref(false)
 const editData = ref()
 const operation = ref()   // 0為編輯，1為新增
+
+const router = useRouter()
 
 // 分頁
 const page_index = ref(1),
@@ -145,10 +148,11 @@ const handleAdd = () => {
 }
 
 const handleEdit = (row) => {
-    // console.log('edit click');
-    show.value = true
-    editData.value = row
-    operation.value = false
+    const { id } = row
+    router.push({
+        name: 'editSystemUser',
+        params:{ id: id }
+    })
 }
 
 const handleDelete = async(row) => {
