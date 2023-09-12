@@ -119,4 +119,9 @@ const handleCancel = () => {
 .date_column .el-form-item__content{
     width: 100%;
 }
+
+.el-card__body {
+    padding-bottom: 0;
+}
+
 </style>
