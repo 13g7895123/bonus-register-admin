@@ -154,7 +154,7 @@ const handleDelete = async(row) => {
 
     if (success){
         Swal.fire({
-            title: `系統資訊`,
+            title: `系統提示`,
             text: '刪除資料成功',
             icon: 'success',
             showConfirmButton: false,
