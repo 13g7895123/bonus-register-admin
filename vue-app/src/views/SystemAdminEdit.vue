@@ -61,6 +61,7 @@ const formData = ref({
 
 onMounted(() => {
     id.value = router.currentRoute._value.params.id
+    console.log(id.value);
     getData()
 })
 
