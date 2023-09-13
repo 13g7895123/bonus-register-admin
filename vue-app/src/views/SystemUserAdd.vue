@@ -60,7 +60,7 @@ const dialogRef = ref()
 const nowUser = ref()
 const isAdmin = ref()
 let serverList = []
-checkboxGroup1 = ref(['test_server'])
+const checkboxGroup1 = ref(['test_server'])
 
 // Api config
 const phpAction = 'system_user';
