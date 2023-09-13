@@ -59,7 +59,7 @@ const apiUrlPrefix = ref('/api/')
 const dialogRef = ref()
 const nowUser = ref()
 const isAdmin = ref()
-let serverList = []
+let serverList = [[]]
 const checkboxGroup1 = ref(['test_server'])
 
 // Api config
@@ -129,7 +129,7 @@ const getServer = async() => {    // 依操作者權限取得伺服器列表
     if (success){
         const serverListData = data
         for (let i = 0; i < data.length; i++){
-            serverList[i] = serverListData[i]['name']
+            serverList[i]['name'] = serverListData[i]['name']
         }
     }
 }
