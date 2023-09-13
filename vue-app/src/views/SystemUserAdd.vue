@@ -60,8 +60,8 @@ const dialogRef = ref()
 const nowUser = ref()
 const isAdmin = ref()
 // let serverList = ['123', '456', '789']
-let serverList = []
-let selectServer = []
+let serverList = ref([])
+let selectServer = ref([])
 
 // Api config
 const phpAction = 'system_user';
