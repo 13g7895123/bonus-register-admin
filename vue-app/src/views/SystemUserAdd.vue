@@ -61,7 +61,6 @@ const nowUser = ref()
 const isAdmin = ref()
 let serverList = []
 let selectServer = ref([])
-const checkboxGroup1 = ref(['test_server'])
 
 // Api config
 const phpAction = 'system_user';
