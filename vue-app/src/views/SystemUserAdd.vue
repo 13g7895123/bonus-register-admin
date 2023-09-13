@@ -29,7 +29,7 @@
                     />
                 </el-form-item>
                 <el-form-item prop="server_manage" label="伺服器管理">
-                    <el-checkbox-group v-model="serverList" size="large">
+                    <el-checkbox-group v-model="selectServer" size="large">
                         <el-checkbox-button v-for="server in serverList" :key="server" :label="server">
                             {{ server }}
                         </el-checkbox-button>
@@ -59,7 +59,7 @@ const apiUrlPrefix = ref('/api/')
 const dialogRef = ref()
 const nowUser = ref()
 const isAdmin = ref()
-let serverList = []
+let serverList = ['123', '456', '789']
 let selectServer = ref([])
 
 // Api config
@@ -76,7 +76,7 @@ onMounted(() => {
     id.value = router.currentRoute._value.params.id
     nowUser.value = loginAuth.getUser   // 操作者帳號
     isAdmin.value = loginAuth.getIsAdmin
-    getServer()
+    // getServer()
     // console.log(serverList.value);
 })
 
