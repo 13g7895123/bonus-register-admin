@@ -80,6 +80,10 @@ onMounted(() => {
     // console.log(serverList.value);
 })
 
+watch(() => {
+    serverList
+})
+
 const handleSubmit = (formEl) => {
     if (!formEl) return;
     formEl.validate(async(valid) => {    
