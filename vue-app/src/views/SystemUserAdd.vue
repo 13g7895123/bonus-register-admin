@@ -85,7 +85,9 @@ watch(() => {
     // selectServer
 })
 
-watchEffect(() => getServer())
+watchEffect(() => {
+    getServer()
+})
 
 const handleSubmit = (formEl) => {
     if (!formEl) return;
