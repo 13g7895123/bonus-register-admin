@@ -76,7 +76,7 @@ onMounted(() => {
     nowUser.value = loginAuth.getUser   // 操作者帳號
     isAdmin.value = loginAuth.getIsAdmin
     getServer()
-    console.log(serverList.value[0]);
+    console.log(serverList.value);
 })
 
 const handleSubmit = (formEl) => {
@@ -127,6 +127,9 @@ const getServer = async() => {    // 依操作者權限取得伺服器列表
     const { data: { success, data } } = await axios.post(apiUrl.value, serverData.value)
     if (success){
         serverList.value = data
+        const serverList2 = serverList.value
+        console.log(serverList.value);
+        console.log(serverList2[0]);
     }
 }
 
