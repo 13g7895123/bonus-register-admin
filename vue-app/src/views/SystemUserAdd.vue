@@ -130,7 +130,9 @@ const getServer = async() => {    // 依操作者權限取得伺服器列表
         const serverListData = data
         for (let i = 0; i < data.length; i++){
             serverList[i]['name'] = serverListData[i]['name']
+            serverList[i]['code_name'] = serverListData[i]['code_name']
         }
+        console.log(serverList);
     }
 }
 
