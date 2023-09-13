@@ -117,7 +117,7 @@ const getServer = async() => {    // 依操作者權限取得伺服器列表
         isAdmin: isAdmin.value,
         account: nowUser.value,     // 操作使用者帳號
     })
-    apiParam.value = 'server'
+    apiParam.value = 'server_list'
     apiUrl.value = `${apiUrlPrefix.value}${phpAction}.php?action=${apiParam.value}`
     const { serverData: { success, msg, data } } = await axios.post(apiUrl.value, serverData)
     if (success){
