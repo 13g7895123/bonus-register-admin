@@ -29,11 +29,11 @@
                     />
                 </el-form-item>
                 <el-form-item prop="server_manage" label="伺服器管理">
-                    <!-- <el-checkbox-group v-model="checkboxGroup1" size="large">
-                        <el-checkbox-button v-for="city in cities" :key="city" :label="city">
-                            {{ city }}
+                    <el-checkbox-group v-model="checkboxGroup1" size="large">
+                        <el-checkbox-button v-for="server in serverList" :key="server" :label="server">
+                            {{ server }}
                         </el-checkbox-button>
-                    </el-checkbox-group> -->
+                    </el-checkbox-group>
                 </el-form-item>
                 <el-form-item class="flex justify-center">
                     <el-button @click="handleCancel">取消</el-button>
@@ -59,7 +59,8 @@ const apiUrlPrefix = ref('/api/')
 const dialogRef = ref()
 const nowUser = ref()
 const isAdmin = ref()
-const serverList = ref()
+let serverList = []
+checkboxGroup1 = ref(['test_server'])
 
 // Api config
 const phpAction = 'system_user';
@@ -126,10 +127,10 @@ const getServer = async() => {    // 依操作者權限取得伺服器列表
     apiUrl.value = `${apiUrlPrefix.value}${phpAction}.php?action=${apiParam.value}`
     const { data: { success, data } } = await axios.post(apiUrl.value, serverData.value)
     if (success){
-        serverList.value = data
-        const serverList2 = serverList.value
-        console.log(serverList.value);
-        console.log(serverList2[0]['code_name']);
+        const serverListData = data
+        for (let i = 0; i < data.length; i++){
+            serverList[i] = serverListData[i]['name']
+        }
     }
 }
 
