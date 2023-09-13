@@ -12,7 +12,7 @@
                 style="margin: 10px; width: auto;"
                 >
                 <el-form-item prop="name" label="姓名">
-                    <el-input v-model="formData.account" class="text-center"></el-input>
+                    <el-input v-model="formData.name" class="text-center"></el-input>
                 </el-form-item>
                 <el-form-item prop="account" label="帳號">
                     <el-input v-model="formData.account" class="text-center"></el-input>
