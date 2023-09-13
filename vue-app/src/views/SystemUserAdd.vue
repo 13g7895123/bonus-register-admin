@@ -44,7 +44,7 @@
     </el-card>
 </template>
 <script setup>
-import { ref, watch, onMounted } from 'vue'
+import { ref, watch, watchEffect, onMounted } from 'vue'
 import { useRouter } from "vue-router";
 import axios from 'axios'
 import Swal from 'sweetalert2'
@@ -84,6 +84,8 @@ watch(() => {
     // serverList
     // selectServer
 })
+
+watchEffect(() => getServer())
 
 const handleSubmit = (formEl) => {
     if (!formEl) return;
