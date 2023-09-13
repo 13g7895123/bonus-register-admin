@@ -24,6 +24,8 @@
                 <el-date-picker
                     v-model="formData.birthday"
                     type="date"
+                    format="yyyy/MM/dd"
+                    value-format="yyyy-MM-dd"
                 />
             </el-form-item>
             <el-form-item prop="server" label="伺服器">
