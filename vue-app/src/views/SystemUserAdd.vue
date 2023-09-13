@@ -60,8 +60,8 @@ const dialogRef = ref()
 const nowUser = ref()
 const isAdmin = ref()
 // let serverList = ['123', '456', '789']
-// let serverList = ref([])
-let serverList = []
+let serverList = ref([])
+// let serverList = []
 let selectServer = ref([])
 
 // Api config
@@ -144,10 +144,10 @@ const getServer = async() => {    // 依操作者權限取得伺服器列表
             testArr[i] = serverListData[i]['name']
             // serverList[i]['code_name'] = serverListData[i]['code_name']
         }
-        // serverList.value = testArr
-        serverList = testArr
-        // console.log(serverList.value);
-        console.log(serverList);
+        serverList.value = testArr
+        // serverList = testArr
+        console.log(serverList.value);
+        // console.log(serverList);
     }
 }
 
