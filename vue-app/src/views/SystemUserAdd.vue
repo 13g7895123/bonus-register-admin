@@ -138,19 +138,9 @@ const getServer = async() => {    // 依操作者權限取得伺服器列表
     apiUrl.value = `${apiUrlPrefix.value}${phpAction}.php?action=${apiParam.value}`
     const { data: { success, data } } = await axios.post(apiUrl.value, serverData.value)
     if (success){
-        const serverListData = data
         let testArr = []
-        // for (let i = 0; i < data.length; i++){
-        //     testArr[i] = serverListData[i]['name']
-        //     // serverList[i]['code_name'] = serverListData[i]['code_name']
-        // }
         testArr = data.map(item => item.name)
-        // serverList.value = testArr
         serverList.value = testArr
-        // serverList = testArr
-        console.log(testArr);
-        // console.log(serverList.value);
-        // console.log(serverList);
     }
 }
 
