@@ -81,7 +81,6 @@ onMounted(() => {
 })
 
 watch(() => {
-    getServer()
     serverList
     selectServer.value
 })
