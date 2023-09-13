@@ -119,7 +119,7 @@ const getServer = async() => {    // 依操作者權限取得伺服器列表
     })
     apiParam.value = 'server_list'
     apiUrl.value = `${apiUrlPrefix.value}${phpAction}.php?action=${apiParam.value}`
-    const { serverData: { success, msg, data } } = await axios.post(apiUrl.value, serverData)
+    const { serverData: { success, msg, data } } = await axios.post(apiUrl.value, serverData.value)
     if (success){
         serverList.value = data
         console.log(data);
