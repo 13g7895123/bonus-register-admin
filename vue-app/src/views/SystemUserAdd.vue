@@ -59,7 +59,7 @@ const apiUrlPrefix = ref('/api/')
 const dialogRef = ref()
 const nowUser = ref()
 const isAdmin = ref()
-let serverList = []
+let serverList = {}
 const checkboxGroup1 = ref(['test_server'])
 
 // Api config
