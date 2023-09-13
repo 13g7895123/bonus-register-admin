@@ -81,7 +81,9 @@ onMounted(() => {
 })
 
 watch(() => {
-    serverList, selectServer.value
+    getServer()
+    serverList
+    selectServer.value
 })
 
 const handleSubmit = (formEl) => {
