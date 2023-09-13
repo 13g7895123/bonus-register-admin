@@ -30,7 +30,7 @@
                 </el-form-item>
                 <el-form-item prop="server_manage" label="伺服器管理">
                     <el-checkbox-group v-model="checkboxGroup1" size="large">
-                        <el-checkbox-button v-for="server, code_name in serverList" :key="code_name" :label="server">
+                        <el-checkbox-button v-for="index, server in serverList" :key="index" :label="server">
                             {{ server }}
                         </el-checkbox-button>
                     </el-checkbox-group>
@@ -129,8 +129,7 @@ const getServer = async() => {    // 依操作者權限取得伺服器列表
     if (success){
         const serverListData = data
         for (let i = 0; i < data.length; i++){
-            serverList[i].name = serverListData[i]['name']
-            serverList[i].code_name = serverListData[i]['code_name']
+            serverList[i] = `${serverListData[i]['name']}[${serverListData[i]['code_name']}]`
         }
     }
 }
