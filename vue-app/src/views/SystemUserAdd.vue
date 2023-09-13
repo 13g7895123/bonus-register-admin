@@ -59,8 +59,9 @@ const apiUrlPrefix = ref('/api/')
 const dialogRef = ref()
 const nowUser = ref()
 const isAdmin = ref()
-let serverList = ['123', '456', '789']
-let selectServer = ref([])
+// let serverList = ['123', '456', '789']
+let serverList = []
+let selectServer = []
 
 // Api config
 const phpAction = 'system_user';
@@ -76,7 +77,7 @@ onMounted(() => {
     id.value = router.currentRoute._value.params.id
     nowUser.value = loginAuth.getUser   // 操作者帳號
     isAdmin.value = loginAuth.getIsAdmin
-    // getServer()
+    getServer()
     // console.log(serverList.value);
 })
 
