@@ -29,7 +29,11 @@
                     />
                 </el-form-item>
                 <el-form-item prop="server_manage" label="伺服器管理">
-                    <el-input v-model="formData.server_manage"></el-input>
+                    <!-- <el-checkbox-group v-model="checkboxGroup1" size="large">
+                        <el-checkbox-button v-for="city in cities" :key="city" :label="city">
+                            {{ city }}
+                        </el-checkbox-button>
+                    </el-checkbox-group> -->
                 </el-form-item>
                 <el-form-item class="flex justify-center">
                     <el-button @click="handleCancel">取消</el-button>
@@ -72,6 +76,7 @@ onMounted(() => {
     nowUser.value = loginAuth.getUser   // 操作者帳號
     isAdmin.value = loginAuth.getIsAdmin
     getServer()
+    console.log(serverList.value[0]);
 })
 
 const handleSubmit = (formEl) => {
@@ -122,7 +127,6 @@ const getServer = async() => {    // 依操作者權限取得伺服器列表
     const { data: { success, data } } = await axios.post(apiUrl.value, serverData.value)
     if (success){
         serverList.value = data
-        console.log(data);
     }
 }
 
