@@ -76,18 +76,18 @@ onMounted(() => {
     id.value = router.currentRoute._value.params.id
     nowUser.value = loginAuth.getUser   // 操作者帳號
     isAdmin.value = loginAuth.getIsAdmin
-    // getServer()
+    getServer()
     // console.log(serverList.value);
 })
 
-watch(() => {
-    // serverList
-    // selectServer
-})
+// watch(() => {
+//     // serverList
+//     // selectServer
+// })
 
-watchEffect(() => {
-    getServer()
-})
+// watchEffect(() => {
+//     getServer()
+// })
 
 const handleSubmit = (formEl) => {
     if (!formEl) return;
