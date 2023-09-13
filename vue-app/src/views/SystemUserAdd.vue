@@ -141,12 +141,11 @@ const getServer = async() => {    // 依操作者權限取得伺服器列表
             serverList[i] = serverListData[i]['name']
             // serverList[i]['code_name'] = serverListData[i]['code_name']
         }
-        console.log(serverList);
     }
 }
 
 const handleCancel = () => {
-    router.push({ path: '/systemAdmin' })
+    router.push({ path: '/systemUser' })
 }
 
 </script>

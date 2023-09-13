@@ -65,7 +65,6 @@ const handleSubmit = (formEl) => {
         if (valid){
             apiParam.value = '?action=login'
             apiUrl.value = apiUrlPrefix + "login.php" + apiParam.value
-            console.log(apiUrl.value);
             const { data: { success, user, msg } } = await axios.post(
                 apiUrl.value, loginUser.value
             )
