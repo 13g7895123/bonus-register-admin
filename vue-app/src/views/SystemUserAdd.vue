@@ -51,23 +51,27 @@ const loginAuth = useAuthStore()
 const id = ref()
 const apiUrl = ref()
 const apiParam = ref()
-const apiUrlPrefix = '/api/'
+const apiUrlPrefix = ref('/api/')
 const dialogRef = ref()
 const nowUser = ref()
+const isAdmin = ref()
+const serverList = ref()
 
 // Api config
 const phpAction = 'system_user';
 
 const formData = ref({
     name: '',
-    account: '',             // 聯絡人
-    password: '',            // 密碼
+    account: '',
+    password: '',
     switch: 1
 })
 
 onMounted(() => {
     id.value = router.currentRoute._value.params.id
     nowUser.value = loginAuth.getUser   // 操作者帳號
+    isAdmin.value = loginAuth.getIsAdmin
+    getServer()
 })
 
 const handleSubmit = (formEl) => {
@@ -75,7 +79,9 @@ const handleSubmit = (formEl) => {
     formEl.validate(async(valid) => {    
         if (valid){
             const ajax_data = formData.value
-            const { data: { success, msg } } = await axios.post(`/api/${phpAction}.php?action=add_${phpAction}`, ajax_data)
+            apiParam.value = 'server'
+            apiUrl.value = `${apiUrlPrefix.value}${phpAction}.php?action=add_${phpAction}`
+            const { data: { success, msg } } = await axios.post(apiUrl.value, ajax_data)
 
             if (success){
                 Swal.fire({
@@ -106,8 +112,18 @@ const operatorPermission = () => {    // 操作者權限
 
 }
 
-const getServer = () => {    // 依操作者權限取得伺服器列表
-
+const getServer = async() => {    // 依操作者權限取得伺服器列表
+    const serverData = ref({
+        isAdmin: isAdmin.value,
+        account: nowUser.value,     // 操作使用者帳號
+    })
+    apiParam.value = 'server'
+    apiUrl.value = `${apiUrlPrefix.value}${phpAction}.php?action=${apiParam.value}`
+    const { serverData: { success, msg, data } } = await axios.post(apiUrl.value, serverData)
+    if (success){
+        serverList.value = data
+        console.log(data);
+    }
 }
 
 const handleCancel = () => {
