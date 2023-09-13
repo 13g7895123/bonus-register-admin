@@ -77,7 +77,7 @@ onMounted(() => {
     nowUser.value = loginAuth.getUser   // 操作者帳號
     isAdmin.value = loginAuth.getIsAdmin
     getServer()
-    console.log(serverList.value);
+    // console.log(serverList.value);
 })
 
 const handleSubmit = (formEl) => {
