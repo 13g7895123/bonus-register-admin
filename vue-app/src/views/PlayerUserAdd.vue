@@ -69,6 +69,8 @@ const formData = ref({
 })
 
 onMounted(() => {
+    nowUser.value = loginAuth.getUser   // 操作者帳號
+    isAdmin.value = loginAuth.getIsAdmin
     getServer()
 })
 
@@ -85,7 +87,7 @@ const getServer = async() => {    // 依操作者權限取得伺服器列表
         let codeNameTempArr = []
         let mixServerList = []
         nameTempArr = data.map(item => item.name)
-        codeNameTempArr = data.map(item => item.codeName)
+        codeNameTempArr = data.map(item => item.code_name)
         for (let i = 0; i < data.length; i++){
             mixServerList[i] = `${nameTempArr[i]}[${codeNameTempArr[i]}]`
         }
