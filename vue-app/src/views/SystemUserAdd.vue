@@ -180,7 +180,7 @@ const handleCancel = () => {
 
 .selServer .el-form-item__content{
     justify-content: start !important;
-    column-gap: 10px;
+    row-gap: 10px;
     flex-wrap: wrap !important;
 }
 </style>
