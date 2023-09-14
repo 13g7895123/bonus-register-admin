@@ -179,7 +179,8 @@ const handleCancel = () => {
 }
 
 .selServer .el-form-item__content{
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    justify-content: start !important;
+    column-gap: 10px;
+    flex-wrap: wrap !important;
 }
 </style>
