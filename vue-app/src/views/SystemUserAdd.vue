@@ -179,7 +179,7 @@ const handleCancel = () => {
 }
 
 .selServer .el-form-item__content{
-    justify-content: start;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 </style>
