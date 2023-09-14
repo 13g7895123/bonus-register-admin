@@ -12,13 +12,13 @@
                 label-width="100px"
                 style="margin: 10px; width: auto;"
                 >
-                <el-form-item prop="name" label="姓名">
+                <el-form-item prop="name" label="姓名" required>
                     <el-input v-model="formData.name" class="text-center"></el-input>
                 </el-form-item>
-                <el-form-item prop="account" label="帳號">
+                <el-form-item prop="account" label="帳號" required>
                     <el-input v-model="formData.account" class="text-center"></el-input>
                 </el-form-item>
-                <el-form-item prop="password" label="密碼">
+                <el-form-item prop="password" label="密碼" required>
                     <el-input v-model="formData.password"></el-input>
                 </el-form-item>
                 <el-form-item prop="switch" label="啟用狀態" class="radio_column">
@@ -28,7 +28,7 @@
                     :inactive-value="0"
                     />
                 </el-form-item>
-                <el-form-item prop="server_manage" label="伺服器管理" class="selServer">
+                <el-form-item prop="server_manage" label="伺服器管理" class="selServer" required>
                     <el-checkbox-group v-model="formData.server" size="large">
                         <el-checkbox v-for="server in serverList" :key="server" :label="server" border>
                             {{ server }}
