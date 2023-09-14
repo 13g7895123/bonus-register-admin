@@ -84,8 +84,8 @@ onMounted(() => {
 
 const getData = async() => {
     const ajaxFormData = ref({ id: id.value })
-    apiParam.value = '?action=get_player_user'
-    apiUrl.value = apiUrlPrefix + "player_user.php" + apiParam.value
+    apiParam.value = `?action=get_${phpAction}`
+    apiUrl.value = `${apiUrlPrefix.value}${phpAction}.php${apiParam.value}`
 
     const { data: { success, data } } = await axios.post(apiUrl.value, ajaxFormData.value)
 
