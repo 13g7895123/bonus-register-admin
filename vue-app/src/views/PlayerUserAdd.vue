@@ -30,7 +30,7 @@
             </el-form-item>
             <el-form-item prop="server" label="伺服器">
                 <!-- <el-input v-model="formData.server_name"></el-input> -->
-                <el-select v-model="selServer" class="m-2" placeholder="Select" size="large">
+                <el-select v-model="selServer" class="m-2 w-full" placeholder="Select" size="large">
                     <el-option
                     v-for="item in serverList"
                     :key="item"
