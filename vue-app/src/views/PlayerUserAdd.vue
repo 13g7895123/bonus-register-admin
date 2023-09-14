@@ -50,6 +50,7 @@ const apiUrlPrefix = '/api/'
 const dialogRef = ref()
 
 const router = useRouter()
+const serverList = ref([])
 
 // Api config
 const phpAction = 'player_user';
@@ -62,6 +63,28 @@ const formData = ref({
     birthday: '',                   // 郵件
     server_name: '',
 })
+
+const getServer = async() => {    // 依操作者權限取得伺服器列表
+    const serverData = ref({
+        isAdmin: isAdmin.value,
+        account: nowUser.value,     // 操作使用者帳號
+    })
+    apiParam.value = 'server_list'
+    apiUrl.value = `${apiUrlPrefix.value}${phpAction}.php?action=${apiParam.value}`
+    const { data: { success, data } } = await axios.post(apiUrl.value, serverData.value)
+    if (success){
+        let nameTempArr = []
+        let codeNameTempArr = []
+        let mixServerList = []
+        nameTempArr = data.map(item => item.name)
+        codeNameTempArr = data.map(item => item.codeName)
+        for (let i = 0; i < data.length; i++){
+            mixServerList[i] = `${nameTempArr[i]}[${codeNameTempArr[i]}]`
+        }
+        serverList.value = mixServerList
+        console.log(serverList.value );
+    }
+}
 
 const handleSubmit = (formEl) => {
     if (!formEl) return;
