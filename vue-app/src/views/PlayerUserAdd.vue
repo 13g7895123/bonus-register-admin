@@ -28,7 +28,7 @@
                     value-format="YYYY/MM/DD"
                 />
             </el-form-item>
-            <el-form-item prop="server" label="伺服器" required>
+            <el-form-item prop="server" label="伺服器">
                 <el-select v-model="formData.serverName" class="w-full" placeholder="請選擇伺服器" size="large">
                     <el-option
                     v-for="item in serverList"
