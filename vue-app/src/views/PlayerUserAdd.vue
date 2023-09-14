@@ -114,6 +114,7 @@ const handleSubmit = (formEl) => {
         if (valid){
             const ajax_data = formData.value
             getServerId()
+            console.log(selServer);
             console.log(formData.value['serverId']);
             apiParam.value = `add_${phpAction}`
             apiUrl.value = `${apiUrlPrefix.value}${phpAction}.php?action=${apiParam.value}`
