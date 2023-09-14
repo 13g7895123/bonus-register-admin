@@ -178,9 +178,9 @@ const handleCancel = () => {
     width: 100%;
 }
 
-.selServer .el-form-item__content{
-    justify-content: start !important;
-    row-gap: 10px;
+.selServer .el-checkbox-group{
+    display: flex;
     flex-wrap: wrap !important;
+    row-gap: 20px;
 }
 </style>
