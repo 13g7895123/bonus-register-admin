@@ -30,7 +30,7 @@
             </el-form-item>
             <el-form-item prop="server" label="伺服器">
                 <!-- <el-input v-model="formData.server_name"></el-input> -->
-                <el-select v-model="selServer" class="w-full" placeholder="Select" size="large">
+                <el-select v-model="formData.serverName" class="w-full" placeholder="Select" size="large">
                     <el-option
                     v-for="item in serverList"
                     :key="item"
@@ -75,7 +75,7 @@ const formData = ref({
     passwordCheck: '',          // 密碼確認
     phone: '',                  // 電話
     birthday: '',                   // 郵件
-    server_name: '',
+    serverName: '',
 })
 
 onMounted(() => {
