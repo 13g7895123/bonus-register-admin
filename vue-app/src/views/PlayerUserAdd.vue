@@ -75,7 +75,7 @@ const formData = ref({
     passwordCheck: '',          // 密碼確認
     phone: '',                  // 電話
     birthday: '',                   // 郵件
-    serverName: '',
+    serverId: '',
 })
 
 onMounted(() => {
@@ -114,7 +114,7 @@ const handleSubmit = (formEl) => {
         if (valid){
             const ajax_data = formData.value
             getServerId()
-            console.log(formData.value['serverName']);
+            console.log(formData.value['serverId']);
             apiParam.value = `add_${phpAction}`
             apiUrl.value = `${apiUrlPrefix.value}${phpAction}.php?action=${apiParam.value}`
             const { data: { success, msg } } = await axios.post(apiUrl.value, ajax_data)
