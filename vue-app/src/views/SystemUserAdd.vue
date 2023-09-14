@@ -52,7 +52,6 @@ import { useAuthStore } from "../stores/loginAuth";
 
 const router = useRouter()
 const loginAuth = useAuthStore()
-const id = ref()
 const apiUrl = ref()
 const apiParam = ref()
 const apiUrlPrefix = ref('/api/')
