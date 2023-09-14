@@ -29,7 +29,15 @@
                 />
             </el-form-item>
             <el-form-item prop="server" label="伺服器">
-                <el-input v-model="formData.server_name"></el-input>
+                <!-- <el-input v-model="formData.server_name"></el-input> -->
+                <el-select v-model="selServer" class="m-2" placeholder="Select" size="large">
+                    <el-option
+                    v-for="item in serverList"
+                    :key="item"
+                    :label="item"
+                    :value="item"
+                    />
+                </el-select>  
             </el-form-item>
             <el-form-item class="flex justify-center">
                 <el-button @click="handelCancel">取消</el-button>
@@ -55,6 +63,7 @@ const isAdmin = ref()
 const router = useRouter()
 const loginAuth = useAuthStore()
 const serverList = ref([])
+const selServer = ref()
 
 // Api config
 const phpAction = 'player_user';
@@ -92,7 +101,7 @@ const getServer = async() => {    // 依操作者權限取得伺服器列表
             mixServerList[i] = `${nameTempArr[i]}[${codeNameTempArr[i]}]`
         }
         serverList.value = mixServerList
-        console.log(serverList.value[0] );
+        // console.log(serverList.value[0]);
     }
 }
 
