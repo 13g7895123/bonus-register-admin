@@ -28,6 +28,13 @@
                         :inactive-value="0"
                     />
                 </el-form-item>
+                <el-form-item prop="server_manage" label="伺服器管理" class="selServer">
+                    <el-checkbox-group v-model="formData.server" size="large">
+                        <el-checkbox v-for="server in serverList" :key="server" :label="server" border>
+                            {{ server }}
+                        </el-checkbox>
+                    </el-checkbox-group>
+                </el-form-item>
                 <el-form-item class="flex justify-center">
                     <el-button @click="handleCancel">取消</el-button>
                     <el-button type="primary" @click="handleSubmit(dialogRef)">提交</el-button>
@@ -48,12 +55,17 @@ const apiUrl = ref()
 const apiParam = ref()
 const apiUrlPrefix = '/api/'
 const dialogRef = ref()
+const nowUser = ref()
+const isAdmin = ref()
+const testDate = ref()
+let serverList = ref([])
 
 const formData = ref({
     name: '',
     account: '',             // 聯絡人
     password: '',            // 密碼
     switch: '1',
+    server: []
 })
 
 onMounted(() => {
