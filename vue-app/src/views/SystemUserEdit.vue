@@ -91,6 +91,7 @@ const getData = async() => {
 
     if (success){
         formData.value = data;
+        console.log(formData.value);
     }
 }
 
