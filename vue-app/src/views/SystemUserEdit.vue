@@ -153,19 +153,20 @@ const handleCancel = () => {
     justify-content: center;
     margin-left: 0 !important;
 }
-
 .radio_column .el-form-item__content{
     justify-content: flex-start;
 }
-
 .date_column .el-input,
 .date_column .el-input__wrapper,
 .date_column .el-form-item__content{
     width: 100%;
 }
-
 .el-card__body {
     padding-bottom: 0;
 }
-
+.selServer .el-checkbox-group{
+    display: flex;
+    flex-wrap: wrap !important;
+    row-gap: 10px;
+}
 </style>
