@@ -51,6 +51,9 @@ const dialogRef = ref()
 
 const router = useRouter()
 
+// Api config
+const phpAction = 'player_user';
+
 const formData = ref({
     account: '',             // 聯絡人
     password: '',               // 密碼
@@ -65,7 +68,8 @@ const handleSubmit = (formEl) => {
     formEl.validate(async(valid) => {
         if (valid){
             const ajax_data = formData.value
-            const { data: { success, msg } } = await axios.post(`/api/player_user.php?action=add_player_user`, ajax_data)
+            apiUrl.value = `${apiUrlPrefix.value}${phpAction}.php?action=add_${phpAction}`
+            const { data: { success, msg } } = await axios.post(apiUrl.value, ajax_data)
 
             if (success){
                 Swal.fire({
