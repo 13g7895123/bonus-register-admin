@@ -28,7 +28,7 @@
                     :inactive-value="0"
                     />
                 </el-form-item>
-                <el-form-item prop="server_manage" label="伺服器管理" class="selServer" required>
+                <el-form-item prop="server_manage" label="伺服器管理" class="selServer">
                     <el-checkbox-group v-model="formData.server" size="large">
                         <el-checkbox v-for="server in serverList" :key="server" :label="server" border>
                             {{ server }}
