@@ -181,6 +181,6 @@ const handleCancel = () => {
 .selServer .el-checkbox-group{
     display: flex;
     flex-wrap: wrap !important;
-    row-gap: 20px;
+    row-gap: 10px;
 }
 </style>
