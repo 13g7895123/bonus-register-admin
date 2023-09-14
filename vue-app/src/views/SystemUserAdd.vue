@@ -27,9 +27,15 @@
                         :active-value="1"
                         :inactive-value="0"
                     />
+                    <el-date-picker
+                    v-model="testDate"
+                    type="date"
+                    format="yyyy-MM-dd"
+                    value-format="yyyy-MM-dd"
+                />
                 </el-form-item>
                 <el-form-item prop="server_manage" label="伺服器管理">
-                    <el-checkbox-group v-model="selectServer" size="large">
+                    <el-checkbox-group v-model="formData.server" size="large">
                         <el-checkbox-button v-for="server in serverList" :key="server" :label="server">
                             {{ server }}
                         </el-checkbox-button>
@@ -59,6 +65,7 @@ const apiUrlPrefix = ref('/api/')
 const dialogRef = ref()
 const nowUser = ref()
 const isAdmin = ref()
+const testDate = ''
 // let serverList = ['123', '456', '789']
 let serverList = ref([])
 // let serverList = []
@@ -71,7 +78,8 @@ const formData = ref({
     name: '',
     account: '',
     password: '',
-    switch: 1
+    switch: 1,
+    server: ''
 })
 
 onMounted(() => {
