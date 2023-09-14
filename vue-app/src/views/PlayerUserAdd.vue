@@ -47,7 +47,7 @@ import { useAuthStore } from "../stores/loginAuth";
 
 const apiUrl = ref()
 const apiParam = ref()
-const apiUrlPrefix = '/api/'
+const apiUrlPrefix = ref('/api/')
 const dialogRef = ref()
 const nowUser = ref()
 const isAdmin = ref()
