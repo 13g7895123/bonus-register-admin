@@ -30,9 +30,9 @@
                 </el-form-item>
                 <el-form-item prop="server_manage" label="伺服器管理">
                     <el-checkbox-group v-model="formData.server" size="large">
-                        <el-checkbox-button v-for="server in serverList" :key="server" :label="server">
+                        <el-checkbox v-for="server in serverList" :key="server" :label="server" border>
                             {{ server }}
-                        </el-checkbox-button>
+                        </el-checkbox>
                     </el-checkbox-group>
                 </el-form-item>
                 <el-form-item class="flex justify-center">
