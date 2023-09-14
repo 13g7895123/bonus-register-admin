@@ -130,7 +130,7 @@ const page_index = ref(1),
 // 篩選
 const filterEngName = ref()
 
-const getSystemUsers = async() => {
+const getSystemUser = async() => {
     const { data: { success, data } } = await axios.post('/api/system_user.php?action=system_user')
 
     if (success){
@@ -143,7 +143,7 @@ const getSystemUsers = async() => {
     }
 }
 
-watchEffect(() => getSystemUsers())
+watchEffect(() => getSystemUser())
 
 const handleAdd = () => {
     router.push({ name: 'addSystemUser' })

@@ -111,7 +111,7 @@ const handleSubmit = (formEl) => {
                     showCancelButton: false,
                     timer: 2000,
                 }).then(() => {
-                    // router.push({ path: '/systemUser' })
+                    router.push({ path: '/systemUser' })
                 })
             }else{
                 Swal.fire({
