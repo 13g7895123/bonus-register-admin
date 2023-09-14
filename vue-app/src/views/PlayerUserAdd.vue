@@ -11,10 +11,10 @@
             label-width="120px"
             style="margin: 10px; width: auto"
             >
-            <el-form-item prop="account" label="帳號">
+            <el-form-item prop="account" label="帳號" required>
                 <el-input v-model="formData.account" ></el-input>
             </el-form-item>
-            <el-form-item prop="password" label="密碼">
+            <el-form-item prop="password" label="密碼" required>
                 <el-input v-model="formData.password"></el-input>
             </el-form-item>
             <el-form-item prop="phone" label="手機">
