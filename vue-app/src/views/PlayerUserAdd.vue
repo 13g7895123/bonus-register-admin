@@ -20,7 +20,7 @@
             <el-form-item prop="phone" label="手機">
                 <el-input v-model="formData.phone"></el-input>
             </el-form-item>
-            <el-form-item prop="birthday" label="生日">
+            <el-form-item prop="" label="生日" class="date_column">
                 <el-date-picker
                     v-model="formData.birthday"
                     type="date"
