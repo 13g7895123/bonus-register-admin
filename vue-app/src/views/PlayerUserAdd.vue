@@ -124,7 +124,7 @@ const handleSubmit = (formEl) => {
                     showCancelButton: false,
                     timer: 2000,
                 }).then(() => {
-                    getData()
+                    router.push({ path: '/player' })
                 })
             }
         }
