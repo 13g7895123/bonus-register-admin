@@ -28,7 +28,7 @@
                     :inactive-value="0"
                     />
                 </el-form-item>
-                <el-form-item prop="server_manage" label="伺服器管理">
+                <el-form-item prop="server_manage" label="伺服器管理" class="selServer">
                     <el-checkbox-group v-model="formData.server" size="large">
                         <el-checkbox v-for="server in serverList" :key="server" :label="server" border>
                             {{ server }}
@@ -167,5 +167,9 @@ const handleCancel = () => {
 .date_column .el-input__wrapper,
 .date_column .el-form-item__content{
     width: 100%;
+}
+
+.selServer .el-form-item__content{
+    justify-content: start;
 }
 </style>
