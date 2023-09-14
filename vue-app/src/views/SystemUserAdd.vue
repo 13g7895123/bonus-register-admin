@@ -30,8 +30,6 @@
                     <el-date-picker
                     v-model="testDate"
                     type="date"
-                    format="yyyy-MM-dd"
-                    value-format="yyyy-MM-dd"
                 />
                 </el-form-item>
                 <el-form-item prop="server_manage" label="伺服器管理">
