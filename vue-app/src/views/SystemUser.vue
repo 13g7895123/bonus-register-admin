@@ -78,6 +78,12 @@
                             @click="handleDelete(scope.row)">
                             <el-icon><Delete /></el-icon>
                         </el-button>
+                        <el-button
+                            size="small"
+                            type="success"
+                            @click="handleMsg(scope.row)">
+                            <el-icon><Message /></el-icon>
+                        </el-button>
                     </template>
                 </el-table-column>
             </el-table>
@@ -105,7 +111,7 @@
 <script setup>
 import { ref, watchEffect } from 'vue'
 import axios from 'axios';
-import { EditPen, Delete, QuestionFilled } from "@element-plus/icons-vue";
+import { EditPen, Delete, QuestionFilled, Message } from "@element-plus/icons-vue";
 import Swal from 'sweetalert2'
 import { useRouter } from "vue-router";
 
@@ -179,6 +185,14 @@ const handleDelete = async(row) => {
             getSystemUser()
         })
     }
+}
+
+const handleMsg = () => {
+    const { id } = row
+    router.push({
+        name: 'editSystemUserMsg',
+        params:{ id: id }
+    })
 }
 
 const handleSizeChange = (pages) => {

@@ -13,6 +13,7 @@ const routes = [
             { path: "/systemUser", component: () => import('../views/SystemUser.vue')},
             { path: "/systemUser/add", name: 'addSystemUser', component: () => import('../views/SystemUserAdd.vue')},
             { path: "/systemUser/edit/:id", name: 'editSystemUser', component: () => import('../views/SystemUserEdit.vue')},
+            { path: "/systemUser/editMsg/:id", name: 'editSystemUserMsg', component: () => import('../views/SystemUserMsgEdit.vue')},
             { path: "/systemAdmin", component: () => import('../views/SystemAdmin.vue')},
             { path: "/systemAdmin/add", name: 'addSystemAdmin', component: () => import('../views/SystemAdminAdd.vue')},
             { path: "/systemAdmin/edit/:id", name: 'editSystemAdmin', component: () => import('../views/SystemAdminEdit.vue')},
