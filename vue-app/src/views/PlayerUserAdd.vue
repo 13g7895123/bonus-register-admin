@@ -40,7 +40,7 @@
 </template>
 <script setup>
 import { ref } from 'vue'
-import { useRouter } from "vue-router";
+import { useRouter, onMounted } from "vue-router";
 import axios from 'axios'
 import Swal from 'sweetalert2'
 
@@ -64,6 +64,10 @@ const formData = ref({
     server_name: '',
 })
 
+onMounted(() => {
+    getServer()
+})
+
 const getServer = async() => {    // 依操作者權限取得伺服器列表
     const serverData = ref({
         isAdmin: isAdmin.value,
@@ -82,7 +86,7 @@ const getServer = async() => {    // 依操作者權限取得伺服器列表
             mixServerList[i] = `${nameTempArr[i]}[${codeNameTempArr[i]}]`
         }
         serverList.value = mixServerList
-        console.log(codeNameTempArr);
+        console.log(serverList.value );
     }
 }
 
