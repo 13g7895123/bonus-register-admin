@@ -113,6 +113,7 @@ const handleSubmit = (formEl) => {
     formEl.validate(async(valid) => {
         if (valid){
             const ajax_data = formData.value
+            getServerId()
             console.log(formData.value['serverName']);
             apiParam.value = `add_${phpAction}`
             apiUrl.value = `${apiUrlPrefix.value}${phpAction}.php?action=${apiParam.value}`
@@ -132,6 +133,14 @@ const handleSubmit = (formEl) => {
             }
         }
     })
+}
+
+const getServerId = () => {
+    for(let i = 0; i < serverList; i++){
+        if (selServer.value == serverList[i]){
+            formData.value['serverId'] = serverIdList[i]
+        }
+    }
 }
 
 const handelCancel = () => {
