@@ -58,7 +58,10 @@ const formData = ref({
 
 onMounted(() => {
     id.value = router.currentRoute._value.params.id
+    nowUser.value = loginAuth.getUser   // 操作者帳號
+    isAdmin.value = loginAuth.getIsAdmin
     getData()
+    getServer()
 })
 
 const getData = async() => {
@@ -95,6 +98,29 @@ const handleSubmit = (formEl) => {
             }
         }
     })
+}
+
+const getServer = async() => {    // 依操作者權限取得伺服器列表
+    const serverData = ref({
+        isAdmin: isAdmin.value,
+        account: nowUser.value,     // 操作使用者帳號
+    })
+    apiParam.value = 'server_list'
+    apiUrl.value = `${apiUrlPrefix.value}${phpAction}.php?action=${apiParam.value}`
+    const { data: { success, data } } = await axios.post(apiUrl.value, serverData.value)
+    if (success){
+
+        let nameTempArr = []
+        let codeNameTempArr = []
+        let mixServerList = []
+        nameTempArr = data.map(item => item.name)
+        codeNameTempArr = data.map(item => item.code_name)
+        serverIdTempArr = data.map(item => item.id)
+        for (let i = 0; i < data.length; i++){
+            mixServerList[i] = `${nameTempArr[i]}[${codeNameTempArr[i]}]`
+        }
+        serverList.value = mixServerList
+    }
 }
 
 const handleCancel = () => {

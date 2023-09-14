@@ -60,10 +60,7 @@ const dialogRef = ref()
 const nowUser = ref()
 const isAdmin = ref()
 const testDate = ref()
-// let serverList = ['123', '456', '789']
 let serverList = ref([])
-// let serverList = []
-let selectServer = ref([])
 
 // Api config
 const phpAction = 'system_user';
@@ -77,21 +74,11 @@ const formData = ref({
 })
 
 onMounted(() => {
-    id.value = router.currentRoute._value.params.id
     nowUser.value = loginAuth.getUser   // 操作者帳號
     isAdmin.value = loginAuth.getIsAdmin
     getServer()
     // console.log(serverList.value);
 })
-
-// watch(() => {
-//     // serverList
-//     // selectServer
-// })
-
-// watchEffect(() => {
-//     getServer()
-// })
 
 const handleSubmit = (formEl) => {
     if (!formEl) return;
@@ -144,7 +131,6 @@ const getServer = async() => {    // 依操作者權限取得伺服器列表
         let nameTempArr = []
         let codeNameTempArr = []
         let mixServerList = []
-        let serverIdTempArr = []
         nameTempArr = data.map(item => item.name)
         codeNameTempArr = data.map(item => item.code_name)
         serverIdTempArr = data.map(item => item.id)
