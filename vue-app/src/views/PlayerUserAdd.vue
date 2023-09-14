@@ -82,7 +82,7 @@ const getServer = async() => {    // 依操作者權限取得伺服器列表
             mixServerList[i] = `${nameTempArr[i]}[${codeNameTempArr[i]}]`
         }
         serverList.value = mixServerList
-        console.log(serverList.value );
+        console.log(codeNameTempArr);
     }
 }
 
