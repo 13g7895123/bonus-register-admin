@@ -17,10 +17,10 @@
             <el-form-item prop="password" label="密碼" required>
                 <el-input v-model="formData.password"></el-input>
             </el-form-item>
-            <el-form-item prop="phone" label="手機">
+            <el-form-item prop="phone" label="手機" required>
                 <el-input v-model="formData.phone"></el-input>
             </el-form-item>
-            <el-form-item prop="" label="生日" class="date_column">
+            <el-form-item prop="" label="生日" class="date_column" required>
                 <el-date-picker
                     v-model="formData.birthday"
                     type="date"
@@ -28,9 +28,8 @@
                     value-format="YYYY/MM/DD"
                 />
             </el-form-item>
-            <el-form-item prop="server" label="伺服器">
-                <!-- <el-input v-model="formData.server_name"></el-input> -->
-                <el-select v-model="formData.serverName" class="w-full" placeholder="Select" size="large">
+            <el-form-item prop="server" label="伺服器" required>
+                <el-select v-model="formData.serverName" class="w-full" placeholder="請選擇伺服器" size="large">
                     <el-option
                     v-for="item in serverList"
                     :key="item"
