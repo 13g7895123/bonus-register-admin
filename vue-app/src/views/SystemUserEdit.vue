@@ -98,7 +98,7 @@ const handleSubmit = (formEl) => {
 }
 
 const handleCancel = () => {
-    router.push({ path: '/player' })
+    router.push({ path: '/systemUser' })
 }
 
 </script>
