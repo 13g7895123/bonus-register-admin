@@ -48,6 +48,8 @@ import { ref, watch, onMounted } from 'vue'
 import { useRouter } from "vue-router";
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import { useAuthStore } from "../stores/loginAuth";
+const loginAuth = useAuthStore()
 
 const router = useRouter()
 const id = ref()
