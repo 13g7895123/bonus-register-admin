@@ -62,6 +62,9 @@ const isAdmin = ref()
 const testDate = ref()
 let serverList = ref([])
 
+// Api config
+const phpAction = 'system_user';
+
 const formData = ref({
     name: '',
     account: '',             // 聯絡人
