@@ -79,7 +79,7 @@ const formData = ref({
     account: '',
     password: '',
     switch: 1,
-    server: ''
+    server: []
 })
 
 onMounted(() => {
