@@ -27,6 +27,12 @@
                     format="yyyy-MM-dd"
                     value-format="yyyy-MM-dd"
                 />
+                <el-date-picker
+                    v-model="formData.birthday"
+                    type="date"
+                    format="yyyy-MM-dd"
+                    value-format="yyyy-MM-dd"
+                />
             </el-form-item>
             <el-form-item prop="server" label="伺服器">
                 <!-- <el-input v-model="formData.server_name"></el-input> -->
@@ -64,7 +70,6 @@ const router = useRouter()
 const loginAuth = useAuthStore()
 const serverList = ref([])
 const serverIdList = ref([])
-const selServer = ref()
 
 // Api config
 const phpAction = 'player_user';
@@ -75,7 +80,7 @@ const formData = ref({
     passwordCheck: '',          // 密碼確認
     phone: '',                  // 電話
     birthday: '',                   // 郵件
-    serverId: '',
+    serverName: '',
 })
 
 onMounted(() => {
@@ -113,9 +118,6 @@ const handleSubmit = (formEl) => {
     formEl.validate(async(valid) => {
         if (valid){
             const ajax_data = formData.value
-            getServerId()
-            console.log(selServer.value);
-            console.log(formData.value['serverId']);
             apiParam.value = `add_${phpAction}`
             apiUrl.value = `${apiUrlPrefix.value}${phpAction}.php?action=${apiParam.value}`
             const { data: { success, msg } } = await axios.post(apiUrl.value, ajax_data)
@@ -134,14 +136,6 @@ const handleSubmit = (formEl) => {
             }
         }
     })
-}
-
-const getServerId = () => {
-    for(let i = 0; i < serverList; i++){
-        if (selServer.value == serverList[i]){
-            formData.value['serverId'] = serverIdList[i]
-        }
-    }
 }
 
 const handelCancel = () => {
