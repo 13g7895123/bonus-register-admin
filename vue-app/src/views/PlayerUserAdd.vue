@@ -43,13 +43,17 @@ import { ref, onMounted } from 'vue'
 import { useRouter } from "vue-router";
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import { useAuthStore } from "../stores/loginAuth";
 
 const apiUrl = ref()
 const apiParam = ref()
 const apiUrlPrefix = '/api/'
 const dialogRef = ref()
+const nowUser = ref()
+const isAdmin = ref()
 
 const router = useRouter()
+const loginAuth = useAuthStore()
 const serverList = ref([])
 
 // Api config
