@@ -23,14 +23,10 @@
                 </el-form-item>
                 <el-form-item prop="switch" label="啟用狀態" class="radio_column">
                     <el-switch 
-                        v-model="formData.switch" 
-                        :active-value="1"
-                        :inactive-value="0"
+                    v-model="formData.switch" 
+                    :active-value="1"
+                    :inactive-value="0"
                     />
-                    <el-date-picker
-                    v-model="testDate"
-                    type="date"
-                />
                 </el-form-item>
                 <el-form-item prop="server_manage" label="伺服器管理">
                     <el-checkbox-group v-model="formData.server" size="large">

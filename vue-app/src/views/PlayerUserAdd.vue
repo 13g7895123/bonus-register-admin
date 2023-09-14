@@ -22,16 +22,8 @@
             </el-form-item>
             <el-form-item prop="" label="生日" class="date_column">
                 <el-date-picker
-                    v-model="formData.birthday"
-                    type="date"
-                    format="yyyy-MM-dd"
-                    value-format="yyyy-MM-dd"
-                />
-                <el-date-picker
-                    v-model="formData.birthday"
-                    type="date"
-                    format="yyyy-MM-dd"
-                    value-format="yyyy-MM-dd"
+                v-model="formData.birthday"
+                type="date"
                 />
             </el-form-item>
             <el-form-item prop="server" label="伺服器">
