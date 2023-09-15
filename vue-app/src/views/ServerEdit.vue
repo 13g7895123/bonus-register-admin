@@ -42,6 +42,24 @@
                         :inactive-value="0"
                     />
                 </el-form-item>
+                <el-form-item prop="bg_img" label="背景圖片"></el-form-item>
+                    <el-upload
+                    ref="uploadRef"
+                    class="upload-demo"
+                    action="https://jsonplaceholder.typicode.com/posts/"
+                    :multiple="false"
+                    :show-file-list="true"
+                    :file-list="fileList"
+                    accept=".zip,.txt"
+                    :on-success="handleSuccess"
+                    :on-error="handleError"
+                    :before-upload="handleBeforeUpload"
+                    :limit="1"
+                    :on-exceed="handleExceed"
+                    :on-change="handleChange"
+                    >
+                        <el-button type="primary">上传</el-button>
+                    </el-upload>
                 <el-form-item class="flex justify-center">
                     <el-button @click="handleCancel">取消</el-button>
                     <el-button type="primary" @click="handleSubmit(dialogRef)">提交</el-button>
