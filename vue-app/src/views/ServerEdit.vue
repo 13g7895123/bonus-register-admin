@@ -105,6 +105,7 @@ onMounted(() => {
 
     apiParam.value = `?action=bg_img_upload`
     imgUploadUrl = apiUrlPrefix.value + `${phpAction}.php` + apiParam.value
+    console.log(imgUploadUrl);
 })
 
 const getData = async() => {
