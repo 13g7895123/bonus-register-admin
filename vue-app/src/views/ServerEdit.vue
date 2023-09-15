@@ -43,30 +43,31 @@
                     />
                 </el-form-item>
                 <!-- http://170.187.229.132:9091/api/bonus-register/admin/server.php?action=bg_img_upload -->
-                <el-form-item prop="bg_img" label="背景圖片">
-                    <el-upload
-                    ref="uploadRef"
-                    class="upload-demo"
-                    action="http://170.187.229.132:9091/api/bonus-register/admin/server.php?action=bg_img_upload"
-                    :multiple="false"
-                    :show-file-list="true"
-                    :file-list="fileList"
-                    accept=".png,.jpg,.jpeg"
-                    :on-success="handleSuccess"
-                    :on-error="handleError"
-                    :before-upload="handleBeforeUpload"
-                    :limit="1"
-                    :on-exceed="handleExceed"
-                    :on-change="handleChange"
-                    >
-                        <el-button type="primary">上傳</el-button>
-                    </el-upload>
-                </el-form-item>
+                <!-- <el-form-item prop="bg_img" label="背景圖片">
+                    
+                </el-form-item> -->
                 <el-form-item class="flex justify-center">
                     <el-button @click="handleCancel">取消</el-button>
                     <el-button type="primary" @click="handleSubmit(dialogRef)">提交</el-button>
                 </el-form-item>
             </el-form>
+            <el-upload
+            ref="uploadRef"
+            class="upload-demo"
+            action="http://170.187.229.132:9091/api/bonus-register/admin/server.php?action=bg_img_upload"
+            :multiple="false"
+            :show-file-list="true"
+            :file-list="fileList"
+            accept=".png,.jpg,.jpeg"
+            :on-success="handleSuccess"
+            :on-error="handleError"
+            :before-upload="handleBeforeUpload"
+            :limit="1"
+            :on-exceed="handleExceed"
+            :on-change="handleChange"
+            >
+                <el-button type="primary">上傳</el-button>
+            </el-upload>
         <!-- </div> -->
     </el-card>
 </template>
