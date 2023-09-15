@@ -42,7 +42,7 @@
                         :inactive-value="0"
                     />
                 </el-form-item>
-                <el-form-item prop="bg_img" label="背景圖片"></el-form-item>
+                <el-form-item prop="bg_img" label="背景圖片">
                     <el-upload
                     ref="uploadRef"
                     class="upload-demo"
@@ -60,6 +60,7 @@
                     >
                         <el-button type="primary">上传</el-button>
                     </el-upload>
+                </el-form-item>
                 <el-form-item class="flex justify-center">
                     <el-button @click="handleCancel">取消</el-button>
                     <el-button type="primary" @click="handleSubmit(dialogRef)">提交</el-button>
