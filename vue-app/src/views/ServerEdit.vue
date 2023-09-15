@@ -50,7 +50,7 @@
                     :multiple="false"
                     :show-file-list="true"
                     :file-list="fileList"
-                    accept=".zip,.txt"
+                    accept=".png,.jpg,.jpeg"
                     :on-success="handleSuccess"
                     :on-error="handleError"
                     :before-upload="handleBeforeUpload"
