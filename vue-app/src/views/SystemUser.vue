@@ -187,7 +187,7 @@ const handleDelete = async(row) => {
     }
 }
 
-const handleMsg = () => {
+const handleMsg = (row) => {
     const { id } = row
     router.push({
         name: 'editSystemUserMsg',
