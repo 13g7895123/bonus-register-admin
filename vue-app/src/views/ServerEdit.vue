@@ -43,6 +43,7 @@
                     />
                 </el-form-item>
                 <!-- http://170.187.229.132:9091/api/bonus-register/admin/server.php?action=bg_img_upload -->
+                <!-- action="http://170.187.229.132:9091/api/bonus-register/admin/server.php?action=bg_img_upload" -->
                 <!-- <el-form-item prop="bg_img" label="背景圖片">
                     
                 </el-form-item> -->
@@ -54,7 +55,7 @@
             <el-upload
             ref="uploadRef"
             class="upload-demo"
-            action="http://170.187.229.132:9091/api/bonus-register/admin/server.php?action=bg_img_upload"
+            :action="imgUploadUrl.value"
             :multiple="false"
             :show-file-list="true"
             :file-list="fileList"
@@ -106,7 +107,8 @@ onMounted(() => {
     getData()
 
     apiParam.value = `?action=bg_img_upload`
-    imgUploadUrl.value = apiUrlPrefix.value + `${phpAction}.php` + apiParam.value
+    const url = apiUrlPrefix.value + `${phpAction}.php` + apiParam.value
+    imgUploadUrl.value = url
     console.log(imgUploadUrl.value);
 })
 
