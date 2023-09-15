@@ -46,7 +46,7 @@
                     <el-upload
                     ref="uploadRef"
                     class="upload-demo"
-                    action="{{ imgUploadUrl}}"
+                    action="{{ imgUploadUrl.value }}"
                     :multiple="false"
                     :show-file-list="true"
                     :file-list="fileList"
