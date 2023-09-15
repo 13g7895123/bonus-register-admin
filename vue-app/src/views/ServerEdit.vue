@@ -47,7 +47,7 @@
                     <el-upload
                     ref="uploadRef"
                     class="upload-demo"
-                    :action="imgUploadUrl.value"
+                    action="imgUploadUrl"
                     :multiple="false"
                     :show-file-list="true"
                     :file-list="fileList"
@@ -59,7 +59,7 @@
                     :on-exceed="handleExceed"
                     :on-change="handleChange"
                     >
-                        <el-button type="primary">上传</el-button>
+                        <el-button type="primary">上傳</el-button>
                     </el-upload>
                 </el-form-item>
                 <el-form-item class="flex justify-center">
