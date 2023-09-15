@@ -97,12 +97,14 @@ const formData = ref({
     switch: 1
 })
 
+let imgUploadUrl
+
 onMounted(() => {
     id.value = router.currentRoute._value.params.id
     getData()
 
     apiParam.value = `?action=bg_img_upload`
-    const imgUploadUrl = apiUrlPrefix.value + `${phpAction}.php` + apiParam.value
+    imgUploadUrl = apiUrlPrefix.value + `${phpAction}.php` + apiParam.value
 })
 
 const getData = async() => {
