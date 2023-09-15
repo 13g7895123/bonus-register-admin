@@ -46,7 +46,7 @@
                     <el-upload
                     ref="uploadRef"
                     class="upload-demo"
-                    action="https://jsonplaceholder.typicode.com/posts/"
+                    action="{{ imgUploadUrl}}"
                     :multiple="false"
                     :show-file-list="true"
                     :file-list="fileList"
@@ -79,7 +79,7 @@ const router = useRouter()
 const id = ref()
 const apiUrl = ref()
 const apiParam = ref()
-const apiUrlPrefix = '/api/'
+const apiUrlPrefix = ref('/api/')
 const dialogRef = ref()
 
 // Api config
@@ -100,12 +100,15 @@ const formData = ref({
 onMounted(() => {
     id.value = router.currentRoute._value.params.id
     getData()
+
+    apiParam.value = `?action=bg_img_upload`
+    const imgUploadUrl = apiUrlPrefix.value + `${phpAction}.php` + apiParam.value
 })
 
 const getData = async() => {
     const ajaxFormData = ref({ id: id.value })
     apiParam.value = `?action=get_${phpAction}`
-    apiUrl.value = apiUrlPrefix + `${phpAction}.php` + apiParam.value
+    apiUrl.value = apiUrlPrefix.value + `${phpAction}.php` + apiParam.value
 
     const { data: { success, data } } = await axios.post(apiUrl.value, ajaxFormData.value)
 
@@ -120,7 +123,7 @@ const handleSubmit = (formEl) => {
         if (valid){
             const ajax_data = formData.value
             apiParam.value = `?action=edit_${phpAction}`
-            apiUrl.value = apiUrlPrefix + `${phpAction}.php` + apiParam.value
+            apiUrl.value = apiUrlPrefix.value + `${phpAction}.php` + apiParam.value
             const { data: { success, msg } } = await axios.post(apiUrl.value, ajax_data)
 
             if (success){
