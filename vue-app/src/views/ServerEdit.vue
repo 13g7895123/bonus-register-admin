@@ -47,7 +47,7 @@
                     <el-upload
                     ref="uploadRef"
                     class="upload-demo"
-                    action="imgUploadUrl"
+                    action="http://170.187.229.132:9091/api/bonus-register/admin/server.php?action=bg_img_upload"
                     :multiple="false"
                     :show-file-list="true"
                     :file-list="fileList"
