@@ -109,7 +109,7 @@ onMounted(() => {
     // apiParam.value = `?action=bg_img_upload`
     // const url = apiUrlPrefix.value + `${phpAction}.php` + apiParam.value
     // imgUploadUrl.value = url
-    imgUploadUrl.value = '/testApi/bonus-register-api-ori/api-ori/api/bonus-register/admin/server.php?action=bg_img_upload'
+    imgUploadUrl.value = 'testApi/api-ori/api/bonus-register/admin/server.php?action=bg_img_upload'
     // imgUploadUrl.value = '/api-ori/api/bonus-register/admin/testApi/server.php?action=bg_img_upload'
     console.log(imgUploadUrl.value);
 })
