@@ -5,6 +5,7 @@
                 <span class="font-semibold text-left">背景圖片設定</span>
             </div>
         </template>
+        <el-image v-if="imgUrl != ''" style="width: 100px; height: 100px" :src="imgUrl" :fit="fit" />
         <el-upload
         ref="uploadRef"
         class="upload-demo"
@@ -36,6 +37,7 @@ const apiUrl = ref()
 const apiParam = ref()
 const apiUrlPrefix = ref('/api/')
 let imgUploadUrl = ref()
+const imgUrl = ref('')
 
 // Api config
 const phpAction = 'server';
@@ -56,7 +58,7 @@ const getData = async() => {
     const { data: { success, data } } = await axios.post(apiUrl.value, ajaxFormData.value)
 
     if (success){
-       console.log(data);
+        imgUrl.value = data
     }
 }
 
