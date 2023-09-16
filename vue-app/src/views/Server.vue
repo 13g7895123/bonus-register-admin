@@ -35,8 +35,8 @@
                 <el-table-column label="伺服器代號" align="center" width="auto" prop="code_name"/>
                 <el-table-column label="背景圖片" align="center" width="auto" prop="">
                     <template #default="scope">
-                        <el-image v-if="scope.row.bg_img_path != ''" style="width: auto; height: 50px" :src="scope.row.bg_img_path"></el-image>
-                        <el-text v-else>未上傳圖片</el-text>
+                        <el-image style="width: auto; height: 50px" :src="scope.row.bg_img_path" @error="errorImage"></el-image>
+                        <!-- <el-text v-else>未上傳圖片</el-text> -->
                     </template>
                     <!-- <el-image v-if="imgUrl != ''" style="max-width: 130px; height: auto" :src="imgUrl"/> -->
                 </el-table-column>
@@ -210,6 +210,10 @@ const handleImgUpload = (row) => {
         name: 'editServerBgImg',
         params:{ id: id }
     })
+}
+
+const errorImage = (e) =>{
+    e.target.src = 'https://w7.pngwing.com/pngs/733/160/png-transparent-computer-icons-upload-youtube-icon-upload-miscellaneous-photography-sign-thumbnail.png'
 }
 
 const handleSizeChange = (pages) => {
