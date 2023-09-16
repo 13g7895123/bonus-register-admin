@@ -10,7 +10,7 @@
         class="upload-demo"
         :action="imgUploadUrl"
         :multiple="false"
-        :show-file-list="true"
+        :show-file-list="false"
         :file-list="fileList"
         accept=".png,.jpg,.jpeg"
         :on-success="handleSuccess"
