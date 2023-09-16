@@ -91,6 +91,12 @@
                             @click="handleDelete(scope.row)">
                             <el-icon><Delete /></el-icon>
                         </el-button>
+                        <el-button
+                            size="small"
+                            type="success"
+                            @click="handleImgUpload(scope.row)">
+                            <el-icon><Picture /></el-icon>
+                        </el-button>
                     </template>
                 </el-table-column>
             </el-table>
@@ -118,7 +124,7 @@
 <script setup>
 import { ref, watchEffect } from 'vue'
 import axios from 'axios';
-import { EditPen, Delete, QuestionFilled } from "@element-plus/icons-vue";
+import { EditPen, Delete, QuestionFilled, Picture } from "@element-plus/icons-vue";
 import Swal from 'sweetalert2'
 import { useRouter } from "vue-router";
 
