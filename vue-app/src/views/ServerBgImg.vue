@@ -85,7 +85,7 @@ const handleSuccess = (response, file, fileList, rowInfo) => {
             showCancelButton: false,
             timer: 2000,
         }).then(() => {
-            history.go(0)
+            this.$router.go(0)
         })
     }
 }
