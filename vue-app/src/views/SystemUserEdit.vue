@@ -60,7 +60,6 @@ const apiUrlPrefix = ref('/api/')
 const dialogRef = ref()
 const nowUser = ref()
 const isAdmin = ref()
-const testDate = ref()
 let serverList = ref([])
 
 // Api config

@@ -49,16 +49,15 @@ import { useRouter } from "vue-router";
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { useAuthStore } from "../stores/loginAuth";
+const loginAuth = useAuthStore()
 
 const router = useRouter()
-const loginAuth = useAuthStore()
 const apiUrl = ref()
 const apiParam = ref()
 const apiUrlPrefix = ref('/api/')
 const dialogRef = ref()
 const nowUser = ref()
 const isAdmin = ref()
-const testDate = ref()
 let serverList = ref([])
 
 // Api config
@@ -76,7 +75,6 @@ onMounted(() => {
     nowUser.value = loginAuth.getUser   // 操作者帳號
     isAdmin.value = loginAuth.getIsAdmin
     getServer()
-    // console.log(serverList.value);
 })
 
 const handleSubmit = (formEl) => {
@@ -132,7 +130,7 @@ const getServer = async() => {    // 依操作者權限取得伺服器列表
         let mixServerList = []
         nameTempArr = data.map(item => item.name)
         codeNameTempArr = data.map(item => item.code_name)
-        serverIdTempArr = data.map(item => item.id)
+        // serverIdTempArr = data.map(item => item.id)
         for (let i = 0; i < data.length; i++){
             mixServerList[i] = `${nameTempArr[i]}[${codeNameTempArr[i]}]`
         }
