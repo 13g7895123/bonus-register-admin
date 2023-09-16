@@ -34,7 +34,10 @@
                 <el-table-column label="伺服器名稱" align="center" width="auto" prop="name"/>
                 <el-table-column label="伺服器代號" align="center" width="auto" prop="code_name"/>
                 <el-table-column label="背景圖片" align="center" width="auto" prop="">
-                    <el-image v-if="imgUrl != ''" style="max-width: 130px; height: auto" :src="imgUrl"/>
+                    <template slot-scope="scope">
+                        <el-image :preview-src-list="'http://missa.mercylife.cc' + scope.row.bg_img_path"></el-image>
+                    </template>
+                    <!-- <el-image v-if="imgUrl != ''" style="max-width: 130px; height: auto" :src="imgUrl"/> -->
                 </el-table-column>
                 <el-table-column 
                     label="帳號數量"
@@ -136,12 +139,10 @@ const allTableData = ref([])
 const filterTableData = ref([])
 const show = ref(false)
 const editData = ref()
-const operation = ref()   // 0為編輯，1為新增
+const router = useRouter()
 
 // Api config
 const phpAction = 'server';
-
-const router = useRouter()
 
 // 分頁
 const page_index = ref(1),
@@ -150,7 +151,7 @@ const page_index = ref(1),
       page_sizes = [5, 10, 15, 20],
       layout = "total, sizes, prev, pager, next, jumper"
 // 篩選
-const filterEngName = ref()
+// const filterEngName = ref()
 
 const getServer = async() => {
     const { data: { success, data } } = await axios.post('/api/server.php?action=server')
