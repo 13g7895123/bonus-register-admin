@@ -12,13 +12,9 @@
         :action="imgUploadUrl"
         :multiple="false"
         :show-file-list="false"
-        :file-list="fileList"
         accept=".png,.jpg,.jpeg"
         :on-success="handleSuccess"
-        :on-error="handleError"
-        :before-upload="handleBeforeUpload"
         :limit="1"
-        :on-exceed="handleExceed"
         >
             <el-button type="primary">上傳</el-button>
         </el-upload>
@@ -85,7 +81,8 @@ const handleSuccess = (response, file, fileList, rowInfo) => {
             showCancelButton: false,
             timer: 2000,
         }).then(() => {
-            this.$router.go(0)
+            // history.go(0)
+            router.push({ name: 'editServerBgImg' })
         })
     }
 }
