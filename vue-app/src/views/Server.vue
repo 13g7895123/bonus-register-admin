@@ -36,7 +36,7 @@
                 <el-table-column label="背景圖片" align="center" width="auto" prop="">
                     <template #default="scope">
                         <el-image v-if="scope.row.bg_img_path != ''" style="width: auto; height: 50px" :src="scope.row.bg_img_path"></el-image>
-                        <el-label v-else>未上傳圖片</el-label>
+                        <el-text v-else>未上傳圖片</el-text>
                     </template>
                     <!-- <el-image v-if="imgUrl != ''" style="max-width: 130px; height: auto" :src="imgUrl"/> -->
                 </el-table-column>
