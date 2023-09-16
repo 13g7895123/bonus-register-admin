@@ -199,6 +199,14 @@ const handleDelete = async(row) => {
     }
 }
 
+const handleImgUpload = (row) => {
+    const { id } = row
+    router.push({
+        name: 'editServerBgImg',
+        params:{ id: id }
+    })
+}
+
 const handleSizeChange = (pages) => {
     page_index.value = 1;
     page_size.value = pages;

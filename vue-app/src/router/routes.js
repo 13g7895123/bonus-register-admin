@@ -10,6 +10,7 @@ const routes = [
             { path: "/server", component: () => import('../views/Server.vue')},
             { path: "/server/add", name: 'addServer', component: () => import('../views/ServerAdd.vue')},
             { path: "/server/edit/:id", name: 'editServer', component: () => import('../views/ServerEdit.vue')},
+            { path: "/server/editBgImg/:id", name: 'editServerBgImg', component: () => import('../views/ServerBgImg.vue')},
             { path: "/systemUser", component: () => import('../views/SystemUser.vue')},
             { path: "/systemUser/add", name: 'addSystemUser', component: () => import('../views/SystemUserAdd.vue')},
             { path: "/systemUser/edit/:id", name: 'editSystemUser', component: () => import('../views/SystemUserEdit.vue')},
