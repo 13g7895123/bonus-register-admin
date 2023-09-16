@@ -2,7 +2,7 @@
     <el-card class="box-card mx-auto mt-3">
         <template #header>
             <div class="card-header">
-                <span class="font-semibold text-left">使用者設定</span>
+                <span class="font-semibold text-left">簡訊儲值</span>
             </div>
         </template>
         <!-- <div class="flex justify-center"> -->
