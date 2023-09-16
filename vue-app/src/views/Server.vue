@@ -35,7 +35,7 @@
                 <el-table-column label="伺服器代號" align="center" width="auto" prop="code_name"/>
                 <el-table-column label="背景圖片" align="center" width="auto" prop="">
                     <template #default="scope">
-                        <el-image :preview-src-list="scope.row.bg_img_path"></el-image>
+                        <el-image style="max-width: 130px; height: auto" :src="scope.row.bg_img_path"></el-image>
                     </template>
                     <!-- <el-image v-if="imgUrl != ''" style="max-width: 130px; height: auto" :src="imgUrl"/> -->
                 </el-table-column>
