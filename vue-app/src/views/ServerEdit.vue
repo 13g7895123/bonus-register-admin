@@ -105,7 +105,7 @@ let imgUploadUrl = ref()
 onMounted(() => {
     id.value = router.currentRoute._value.params.id
     getData()
-    imgUploadUrl.value = `http://missa.mercylife.cc/img_upload/upload.php?action=server&sid=${id.value}`
+    imgUploadUrl.value = `/imgApi/upload.php?action=server&sid=${id.value}`
 })
 
 const getData = async() => {
