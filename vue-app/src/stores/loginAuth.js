@@ -28,6 +28,13 @@ export const useAuthStore = defineStore('auth', {
                 this.userName = {}
             }
         },
+        setUserId(userId){
+            if(userId){
+                this.userId = userId;
+            }else {
+                this.userId = {}
+            }
+        },
         setIsAdmin(isAdmin){
             if(isAdmin){
                 this.isAdmin = isAdmin;

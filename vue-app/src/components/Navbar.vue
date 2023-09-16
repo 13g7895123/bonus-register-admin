@@ -66,6 +66,7 @@ const logout = () => {
   // 變更 login auth 狀態
   loginAuth.setAuth(false)
   loginAuth.setUser('')
+  loginAuth.setUserName('')
   loginAuth.setUserId('')
   loginAuth.setIsAdmin('')
 
