@@ -23,6 +23,11 @@ export default defineConfig({
         target: 'http://170.187.229.132:9091/api/bonus-register/admin',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
+      },
+      '/testApi': {
+        target: 'http://139.162.15.125/bonus-register-api-ori/api-ori/api/bonus-register/admin',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
   }
