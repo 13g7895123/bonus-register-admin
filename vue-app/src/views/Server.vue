@@ -33,6 +33,9 @@
                 <el-table-column type="index" label="編號" align="center" width="70"/>
                 <el-table-column label="伺服器名稱" align="center" width="auto" prop="name"/>
                 <el-table-column label="伺服器代號" align="center" width="auto" prop="code_name"/>
+                <el-table-column label="背景圖片" align="center" width="auto" prop="">
+                    <el-image v-if="imgUrl != ''" style="max-width: 130px; height: auto" :src="imgUrl"/>
+                </el-table-column>
                 <el-table-column 
                     label="帳號數量"
                     align="center"
