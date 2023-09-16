@@ -75,7 +75,7 @@ const getData = async() => {
 }
 
 const handleSuccess = (response, file, fileList, rowInfo) => {
-    const { data: { success, msg } } = response
+    // const { data: { success, msg } } = response
     console.log(response);
     console.log(response.success);
 }
