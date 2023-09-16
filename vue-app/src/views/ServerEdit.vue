@@ -105,16 +105,7 @@ let imgUploadUrl = ref()
 onMounted(() => {
     id.value = router.currentRoute._value.params.id
     getData()
-
-    // apiParam.value = `?action=bg_img_upload`
-    // const url = apiUrlPrefix.value + `${phpAction}.php` + apiParam.value
-    // imgUploadUrl.value = url
-
-    // imgUploadUrl.value = '/testApi/api-ori/api/bonus-register/admin/server.php?action=bg_img_upload'
-    imgUploadUrl.value = 'http://missa.mercylife.cc/img_upload/upload.php?action=server'
-    // imgUploadUrl.value = 'http://missa.mercylife.cc/Pages/ajax/com_company_group.php?action=bg_img_upload'
-    // imgUploadUrl.value = '/api-ori/api/bonus-register/admin/testApi/server.php?action=bg_img_upload'
-    // console.log(imgUploadUrl.value);
+    imgUploadUrl.value = `http://missa.mercylife.cc/img_upload/upload.php?action=server&sid=${id.value}`
 })
 
 const getData = async() => {
