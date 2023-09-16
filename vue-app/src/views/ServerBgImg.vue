@@ -35,24 +35,10 @@ const id = ref()
 const apiUrl = ref()
 const apiParam = ref()
 const apiUrlPrefix = ref('/api/')
-const dialogRef = ref()
+let imgUploadUrl = ref()
 
 // Api config
 const phpAction = 'server';
-
-const formData = ref({
-    name: '',
-    code_name: '',
-    max_num: '',
-    db_name: '',
-    db_ip: '',
-    db_port: '',
-    db_username: '',
-    db_password: '',
-    switch: 1
-})
-
-let imgUploadUrl = ref()
 
 onMounted(() => {
     id.value = router.currentRoute._value.params.id
@@ -64,13 +50,13 @@ onMounted(() => {
 
 const getData = async() => {
     const ajaxFormData = ref({ id: id.value })
-    apiParam.value = `?action=get_${phpAction}`
+    apiParam.value = `?action=get_bg_img`
     apiUrl.value = apiUrlPrefix.value + `${phpAction}.php` + apiParam.value
 
     const { data: { success, data } } = await axios.post(apiUrl.value, ajaxFormData.value)
 
     if (success){
-        formData.value = data;
+       console.log(data);
     }
 }
 
