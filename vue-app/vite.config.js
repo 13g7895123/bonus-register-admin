@@ -24,11 +24,6 @@ export default defineConfig({
         // target: 'localhost/api/bonus-register/admin',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
-      },
-      '/imgApi': {
-        target: 'http://missa.mercylife.cc/img_upload/',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
   }
