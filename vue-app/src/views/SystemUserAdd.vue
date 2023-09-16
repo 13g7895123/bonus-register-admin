@@ -130,7 +130,6 @@ const getServer = async() => {    // 依操作者權限取得伺服器列表
         let mixServerList = []
         nameTempArr = data.map(item => item.name)
         codeNameTempArr = data.map(item => item.code_name)
-        // serverIdTempArr = data.map(item => item.id)
         for (let i = 0; i < data.length; i++){
             mixServerList[i] = `${nameTempArr[i]}[${codeNameTempArr[i]}]`
         }
