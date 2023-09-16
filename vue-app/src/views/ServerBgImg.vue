@@ -74,38 +74,8 @@ const getData = async() => {
     }
 }
 
-const handleSubmit = (formEl) => {
-    if (!formEl) return;
-    formEl.validate(async(valid) => {    
-        if (valid){
-            const ajax_data = formData.value
-            apiParam.value = `?action=edit_${phpAction}`
-            apiUrl.value = apiUrlPrefix.value + `${phpAction}.php` + apiParam.value
-            const { data: { success, msg } } = await axios.post(apiUrl.value, ajax_data)
-
-            if (success){
-                Swal.fire({
-                    title: `系統提示`,
-                    text: msg,
-                    icon: 'success',
-                    showConfirmButton: false,
-                    showCancelButton: false,
-                    timer: 2000,
-                }).then(() => {
-                    router.push({ path: '/server' })
-                })
-            }else{
-                Swal.fire({
-                    title: `系統提示`,
-                    text: msg,
-                    icon: 'error',
-                    showConfirmButton: false,
-                    showCancelButton: false,
-                    timer: 2000,
-                })
-            }
-        }
-    })
+const handleSuccess = (response, file, fileList, rowInfo) => {
+    console.log(response, file, fileList, rowInfo);
 }
 
 const handleCancel = () => {
