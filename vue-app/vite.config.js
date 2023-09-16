@@ -25,8 +25,8 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       },
-      '/testApi': {
-        target: 'http://139.162.15.125/img_upload/',
+      '/imgApi': {
+        target: 'http://missa.mercylife.cc/img_upload/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }
