@@ -213,7 +213,7 @@ const handleImgUpload = (row) => {
 }
 
 const errorImage = (e) =>{
-    e.target.src = 'https://w7.pngwing.com/pngs/733/160/png-transparent-computer-icons-upload-youtube-icon-upload-miscellaneous-photography-sign-thumbnail.png'
+    e.target.src = ''
 }
 
 const handleSizeChange = (pages) => {
