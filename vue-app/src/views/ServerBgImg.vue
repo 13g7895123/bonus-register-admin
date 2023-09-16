@@ -76,8 +76,29 @@ const getData = async() => {
 
 const handleSuccess = (response, file, fileList, rowInfo) => {
     // const { data: { success, msg } } = response
-    console.log(response);
-    console.log(response.success);
+    if (response.success){
+        Swal.fire({
+            title: `系統提示`,
+            text: response.msg,
+            icon: 'success',
+            showConfirmButton: false,
+            showCancelButton: false,
+            timer: 2000,
+        }).then(() => {
+            // router.push({ path: '/server' })
+        })
+    }else{
+        Swal.fire({
+            title: `系統提示`,
+            text: response.msg,
+            icon: 'error',
+            showConfirmButton: false,
+            showCancelButton: false,
+            timer: 2000,
+        }).then(() => {
+            // router.push({ path: '/server' })
+        })
+    }
 }
 
 const handleCancel = () => {
