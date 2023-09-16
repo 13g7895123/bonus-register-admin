@@ -106,11 +106,12 @@ onMounted(() => {
     id.value = router.currentRoute._value.params.id
     getData()
 
-    apiParam.value = `?action=bg_img_upload`
-    const url = apiUrlPrefix.value + `${phpAction}.php` + apiParam.value
-    imgUploadUrl.value = url
+    // apiParam.value = `?action=bg_img_upload`
+    // const url = apiUrlPrefix.value + `${phpAction}.php` + apiParam.value
+    // imgUploadUrl.value = url
+
     // imgUploadUrl.value = '/testApi/api-ori/api/bonus-register/admin/server.php?action=bg_img_upload'
-    // imgUploadUrl.value = '/testApi/api-ori/api/bonus-register/admin/test.php'
+    imgUploadUrl.value = '/testApi/upload.php'
     // imgUploadUrl.value = '/api-ori/api/bonus-register/admin/testApi/server.php?action=bg_img_upload'
     // console.log(imgUploadUrl.value);
 })

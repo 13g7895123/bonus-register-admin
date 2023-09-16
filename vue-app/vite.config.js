@@ -26,7 +26,7 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api/, '')
       },
       '/testApi': {
-        target: 'http://139.162.15.125/bonus-register-api-ori/',
+        target: 'http://139.162.15.125/img_upload/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }
