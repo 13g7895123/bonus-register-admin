@@ -91,6 +91,10 @@ const handleSuccess = (response, file, fileList, rowInfo) => {
     }
 }
 
+function handleChange(){
+    this.$refs.upload.submit();
+}
+
 const handleCancel = () => {
     router.push({ path: '/server' })
 }
