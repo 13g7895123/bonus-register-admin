@@ -19,7 +19,7 @@
         :before-upload="handleBeforeUpload"
         :limit="1"
         :on-exceed="handleExceed"
-        :on-change="handleChange"
+        :on-change="this.$refs.upload.submit()"
         >
             <el-button type="primary">上傳</el-button>
         </el-upload>
@@ -91,9 +91,9 @@ const handleSuccess = (response, file, fileList, rowInfo) => {
     }
 }
 
-function handleChange(){
-    this.$refs.upload.submit();
-}
+// function handleChange(){
+//     this.$refs.upload.submit();
+// }
 
 const handleCancel = () => {
     router.push({ path: '/server' })
