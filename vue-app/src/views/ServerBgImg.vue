@@ -19,7 +19,7 @@
         :before-upload="handleBeforeUpload"
         :limit="1"
         :on-exceed="handleExceed"
-        :on-change="this.$refs.upload.submit()"
+        :on-change="this.$refs.submit()"
         >
             <el-button type="primary">上傳</el-button>
         </el-upload>
