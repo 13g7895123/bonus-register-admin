@@ -105,7 +105,9 @@ let imgUploadUrl = ref()
 onMounted(() => {
     id.value = router.currentRoute._value.params.id
     getData()
-    imgUploadUrl.value = `/imgApi/upload.php?action=server&sid=${id.value}`
+    
+    // 這邊的檔案上傳不可用vite proxy，會失敗
+    imgUploadUrl.value = `http://missa.mercylife.cc/img_upload/upload.php?action=server&sid=${id.value}`
 })
 
 const getData = async() => {
