@@ -58,6 +58,7 @@ const getData = async() => {
     const { data: { success, data } } = await axios.post(apiUrl.value, ajaxFormData.value)
 
     if (success){
+        console.log(data);
         imgUrl.value = data
     }
 }
