@@ -85,7 +85,7 @@ const handleSuccess = (response, file, fileList, rowInfo) => {
             showCancelButton: false,
             timer: 2000,
         }).then(() => {
-            // router.push({ path: '/server' })
+            history.go(0)
         })
     }
 }
