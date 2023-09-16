@@ -106,9 +106,10 @@ onMounted(() => {
     id.value = router.currentRoute._value.params.id
     getData()
 
-    apiParam.value = `?action=bg_img_upload`
-    const url = apiUrlPrefix.value + `${phpAction}.php` + apiParam.value
-    imgUploadUrl.value = url
+    // apiParam.value = `?action=bg_img_upload`
+    // const url = apiUrlPrefix.value + `${phpAction}.php` + apiParam.value
+    // imgUploadUrl.value = url
+    imgUploadUrl.value = 'http://139.162.15.125/bonus-register-api-ori/api-ori/api/bonus-register/admin/server.php?action=bg_img_upload'
     console.log(imgUploadUrl.value);
 })
 
