@@ -42,11 +42,6 @@
                     :inactive-value="0"
                 />
             </el-form-item>
-            <!-- http://170.187.229.132:9091/api/bonus-register/admin/server.php?action=bg_img_upload -->
-            <!-- action="http://170.187.229.132:9091/api/bonus-register/admin/server.php?action=bg_img_upload" -->
-            <!-- <el-form-item prop="bg_img" label="背景圖片">
-                
-            </el-form-item> -->
             <el-form-item class="flex justify-center">
                 <el-button @click="handleCancel">取消</el-button>
                 <el-button type="primary" @click="handleSubmit(dialogRef)">提交</el-button>

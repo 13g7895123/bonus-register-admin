@@ -5,7 +5,7 @@
                 <span class="font-semibold text-left">背景圖片設定</span>
             </div>
         </template>
-        <el-image v-if="imgUrl != ''" style="max-width: 1280px; height: auto" :src="imgUrl"/>
+        <el-image v-if="imgUrl != ''" style="max-width: 720px; height: auto" :src="imgUrl"/>
         <el-upload
         ref="uploadRef"
         class="upload-demo"
