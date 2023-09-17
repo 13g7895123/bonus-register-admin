@@ -5,35 +5,11 @@
                 <span class="font-semibold text-left">簡訊儲值</span>
             </div>
         </template>
-        <!-- <div class="flex justify-center"> -->
-            <el-form
-                :model="formData"
-                ref="dialogRef"
-                style="margin: 10px; width: auto;"
-                >
-                <el-form-item prop="name" label="姓名">
-                    <el-input v-model="formData.name" class="text-center"></el-input>
-                </el-form-item>
-                <el-form-item prop="account" label="帳號">
-                    <el-input v-model="formData.account" class="text-center"></el-input>
-                </el-form-item>
-                <el-form-item prop="password" label="密碼">
-                    <el-input v-model="formData.password"></el-input>
-                </el-form-item>
-                <el-form-item prop="switch" label="啟用狀態" class="radio_column">
-                    <!-- <el-input v-model="formData.server_name" readonly="true"></el-input> -->
-                    <el-switch 
-                        v-model="formData.switch" 
-                        :active-value="1"
-                        :inactive-value="0"
-                    />
-                </el-form-item>
-                <el-form-item class="flex justify-center">
-                    <el-button @click="handleCancel">取消</el-button>
-                    <el-button type="primary" @click="handleSubmit(dialogRef)">提交</el-button>
-                </el-form-item>
-            </el-form>
-        <!-- </div> -->
+        <div class="flex justify-center items-center">
+            <div class="w-24 h-24 circle border border-slate-700 rounded-full">
+
+            </div>
+        </div>
     </el-card>
 </template>
 <script setup>
