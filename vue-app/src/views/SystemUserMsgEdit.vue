@@ -7,7 +7,10 @@
         </template>
         <div class="flex justify-center items-center">
             <div class="w-64 h-64 relative circle border border-slate-700 rounded-full">
-                <label>20</label>   <!-- 目前剩餘次數 -->
+                <div class="absolute">
+                    <label text-[30px]>20</label>   <!-- 目前剩餘次數 -->
+                </div>
+                
                 <label class="text-lg absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" >/</label>
                 <label>100</label>  <!-- 累積儲值次數 -->
             </div>
