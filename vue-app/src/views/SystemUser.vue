@@ -5,7 +5,7 @@
                 <span class="text-xl font-semibold">系統使用者</span>
             </div>
         </template>
-        <div class="h-full px-5 pt-3">
+        <div class="h-full px-5">
             <div class="w-full flex items-center justify-between">
                 <el-form :inline="true">
                     <el-form-item prop="colName" label="">
