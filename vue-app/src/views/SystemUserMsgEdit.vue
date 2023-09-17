@@ -97,7 +97,7 @@ const handleCancel = () => {
 }
 
 .el-card__body {
-    padding-bottom: 0;
+    padding-bottom: 5px;
 }
 
 </style>
