@@ -33,7 +33,7 @@
                 <el-table-column type="index" label="編號" align="center" width="70"/>
                 <el-table-column label="伺服器名稱" align="center" width="auto" prop="name">
                     <template #default="scope">
-                        <el-link :href="domain + scope.row.bg_img_path"></el-link>
+                        <el-link :href="domain + scope.row.bg_img_path">{{ scope.row.name }}</el-link>
                     </template>
                 </el-table-column>
                 <el-table-column label="伺服器代號" align="center" width="auto" prop="code_name"/>
