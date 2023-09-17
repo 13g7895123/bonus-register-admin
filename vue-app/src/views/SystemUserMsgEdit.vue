@@ -12,13 +12,13 @@
                 style="margin: 10px; width: auto;"
                 >
                 <el-form-item prop="name" label="目前數量">
-                    <el-input v-model="formData.name" class="text-center"></el-input>
+                    <el-input v-model="formData.msg_num" class="text-center"></el-input>
                 </el-form-item>
                 <el-form-item prop="account" label="累積數量" disabled>
-                    <el-input v-model="formData.account" class="text-center"></el-input>
+                    <el-input v-model="formData.msg_total" class="text-center"></el-input>
                 </el-form-item>
                 <el-form-item prop="password" label="新增數量">
-                    <el-input v-model="formData.password"></el-input>
+                    <el-input v-model="formData.add_num"></el-input>
                 </el-form-item>
                 <el-form-item class="flex justify-center">
                     <el-button @click="handleCancel">取消</el-button>
@@ -47,6 +47,7 @@ const formData = ref({
     msg_num: '',
     msg_total: '',             
     msg_last_num: '', 
+    add_num: ''
 })
 
 onMounted(() => {
