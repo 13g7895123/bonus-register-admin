@@ -48,7 +48,7 @@
                         </span>
                     </template>
                     <template #default="scope">
-                        <label>{{ scope.row.msg_num }}/{{ scope.row.msg_count }}</label>
+                        <label>{{ scope.row.msg_num }}/{{ scope.row.msg_total }}</label>
                     </template>
                 </el-table-column>
                 <el-table-column label="管理數" align="center" width="auto" prop="manage_server_count"/>

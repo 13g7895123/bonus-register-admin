@@ -40,11 +40,13 @@ const apiParam = ref()
 const apiUrlPrefix = '/api/'
 const dialogRef = ref()
 
+// Api config
+const phpAction = 'system_user';
+
 const formData = ref({
-    name: '',
-    account: '',             // 聯絡人
-    password: '',            // 密碼
-    switch: '1',
+    msg_num: '',
+    msg_total: '',             
+    msg_last_num: '', 
 })
 
 onMounted(() => {
@@ -54,8 +56,8 @@ onMounted(() => {
 
 const getData = async() => {
     const ajaxFormData = ref({ id: id.value })
-    apiParam.value = '?action=get_player_user'
-    apiUrl.value = apiUrlPrefix + "player_user.php" + apiParam.value
+    apiParam.value = `?action=get_${phpAction}`
+    apiUrl.value = apiUrlPrefix + `${phpAction}.php` + apiParam.value
 
     const { data: { success, data } } = await axios.post(apiUrl.value, ajaxFormData.value)
 
