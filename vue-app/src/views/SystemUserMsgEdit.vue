@@ -69,16 +69,17 @@ const getData = async() => {
 
 const handleSubmit = (formEl) => {
     if (!formEl) return;
-    formEl.validate(async(valid) => {
-        console.log(formData.value);        
+    formEl.validate(async(valid) => {  
         if (valid){
             const ajax_data = formData.value
-            const { data: { success, msg } } = await axios.post(`/api/player_user.php?action=edit_player_user`, ajax_data)
+            apiParam.value = `?action=edit_msg`
+            apiUrl.value = apiUrlPrefix + `${phpAction}.php` + apiParam.value
+            const { data: { success, msg } } = await axios.post(apiUrl.value, ajax_data)
 
             if (success){
                 Swal.fire({
                     title: `系統資訊`,
-                    text: '修改資料成功',
+                    text: msg,
                     icon: 'success',
                     showConfirmButton: false,
                     showCancelButton: false,
