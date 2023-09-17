@@ -6,7 +6,7 @@
             </div>
         </template>
         <div class="flex justify-center items-center">
-            <div class="w-24 h-24 relative circle border border-slate-700 rounded-full">
+            <div class="w-96 h-96 relative circle border border-slate-700 rounded-full">
                 <label>20</label>   <!-- 目前剩餘次數 -->
                 <label class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" >/</label>
                 <label>100</label>  <!-- 累積儲值次數 -->
