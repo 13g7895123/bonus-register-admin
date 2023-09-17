@@ -7,7 +7,9 @@
         </template>
         <div class="flex justify-center items-center">
             <div class="w-24 h-24 circle border border-slate-700 rounded-full">
-
+                <label>20</label>   <!-- 目前剩餘次數 -->
+                <label>/</label>
+                <label>100</label>  <!-- 累積儲值次數 -->
             </div>
         </div>
     </el-card>
