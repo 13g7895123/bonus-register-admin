@@ -14,7 +14,7 @@
                 <el-form-item prop="name" label="目前數量">
                     <el-input v-model="formData.name" class="text-center"></el-input>
                 </el-form-item>
-                <el-form-item prop="account" label="累積數量">
+                <el-form-item prop="account" label="累積數量" disabled>
                     <el-input v-model="formData.account" class="text-center"></el-input>
                 </el-form-item>
                 <el-form-item prop="password" label="新增數量">
