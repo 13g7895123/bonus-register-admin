@@ -5,16 +5,26 @@
                 <span class="font-semibold text-left">簡訊儲值</span>
             </div>
         </template>
-        <div class="flex justify-center items-center">
-            <div class="w-64 h-64 relative circle border border-slate-700 rounded-full">
-                <div class="absolute top-5 left-3">
-                    <label style="font-size: 30px;">20</label>   <!-- 目前剩餘次數 -->
-                </div>
-                
-                <label class="text-lg absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" >/</label>
-                <label>100</label>  <!-- 累積儲值次數 -->
-            </div>
-        </div>
+        <el-form
+                :model="formData"
+                ref="dialogRef"
+                label-width="100px"
+                style="margin: 10px; width: auto;"
+                >
+                <el-form-item prop="name" label="目前數量">
+                    <el-input v-model="formData.name" class="text-center"></el-input>
+                </el-form-item>
+                <el-form-item prop="account" label="累積數量">
+                    <el-input v-model="formData.account" class="text-center"></el-input>
+                </el-form-item>
+                <el-form-item prop="password" label="新增數量">
+                    <el-input v-model="formData.password"></el-input>
+                </el-form-item>
+                <el-form-item class="flex justify-center">
+                    <el-button @click="handleCancel">取消</el-button>
+                    <el-button type="primary" @click="handleSubmit(dialogRef)">提交</el-button>
+                </el-form-item>
+            </el-form>
     </el-card>
 </template>
 <script setup>
