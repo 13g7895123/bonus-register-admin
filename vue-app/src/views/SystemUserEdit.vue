@@ -161,9 +161,9 @@ const handleCancel = () => {
 .date_column .el-form-item__content{
     width: 100%;
 }
-.el-card__body {
+/* .el-card__body {
     padding-bottom: 0;
-}
+} */
 .selServer .el-checkbox-group{
     display: flex;
     flex-wrap: wrap !important;
