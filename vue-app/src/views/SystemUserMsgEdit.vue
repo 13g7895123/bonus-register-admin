@@ -7,7 +7,7 @@
         </template>
         <div class="flex justify-center items-center">
             <div class="w-64 h-64 relative circle border border-slate-700 rounded-full">
-                <div class="absolute">
+                <div class="absolute top-5 left-3">
                     <label class='text-[30px]'>20</label>   <!-- 目前剩餘次數 -->
                 </div>
                 
