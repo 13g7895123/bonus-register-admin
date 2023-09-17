@@ -33,7 +33,13 @@
                 <el-table-column type="index" label="編號" align="center" width="70"/>
                 <el-table-column label="伺服器名稱" align="center" width="auto" prop="name">
                     <template #default="scope">
-                        <el-link :href="domain + 'phonevalidation/' + scope.row.code_name" target="_blank">{{ scope.row.name }}</el-link>
+                        <el-link 
+                        :href="domain + 'phonevalidation/' + scope.row.code_name" 
+                        target="_blank"
+                        type="primary"
+                        >
+                            {{ scope.row.name }}
+                        </el-link>
                     </template>
                 </el-table-column>
                 <el-table-column label="伺服器代號" align="center" width="auto" prop="code_name"/>
