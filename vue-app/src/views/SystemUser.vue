@@ -263,4 +263,7 @@ const handleCancelSort = () => {
 .el-form-item{
     margin-right: 5px !important;
 }
+.el-table__row .el-button{
+    margin-left: 5px;
+}
 </style>
