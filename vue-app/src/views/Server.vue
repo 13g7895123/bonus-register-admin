@@ -31,12 +31,15 @@
                 v-if="tableData.length > 0"
             >
                 <el-table-column type="index" label="編號" align="center" width="70"/>
-                <el-table-column label="伺服器名稱" align="center" width="auto" prop="name"/>
+                <el-table-column label="伺服器名稱" align="center" width="auto" prop="name">
+                    <template #default="scope">
+                        <el-link :href="domain + scope.row.bg_img_path"></el-link>
+                    </template>
+                </el-table-column>
                 <el-table-column label="伺服器代號" align="center" width="auto" prop="code_name"/>
                 <el-table-column label="背景圖片" align="center" width="auto" prop="">
                     <template #default="scope">
                         <el-image style="width: auto; height: 50px" :src="scope.row.bg_img_path" @error="errorImage"></el-image>
-                        <!-- <el-text v-else>未上傳圖片</el-text> -->
                     </template>
                     <!-- <el-image v-if="imgUrl != ''" style="max-width: 130px; height: auto" :src="imgUrl"/> -->
                 </el-table-column>
@@ -134,6 +137,7 @@ import axios from 'axios';
 import { EditPen, Delete, QuestionFilled, Picture } from "@element-plus/icons-vue";
 import Swal from 'sweetalert2'
 import { useRouter } from "vue-router";
+import { domain } from '../config/common.js'
 
 const tableData = ref([])
 const allTableData = ref([])
