@@ -20,7 +20,7 @@ export default defineConfig({
     port: 8000,
     proxy: {
       '/api': {
-        target: 'http://139.162.15.125/api/admin',
+        target: 'http://pokemon.mercylife.cc/api/admin',
         // target: 'http://170.187.229.132:9091/api/bonus-register/admin',
         // target: 'localhost/api/bonus-register/admin',
         changeOrigin: true,
