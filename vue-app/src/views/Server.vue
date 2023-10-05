@@ -34,7 +34,7 @@
                 <el-table-column label="伺服器名稱" align="center" width="auto" prop="name">
                     <template #default="scope">
                         <el-link 
-                        :href="domain + 'phonevalidation/' + scope.row.code_name" 
+                        :href="domain + '?page=phone&sn=' + scope.row.code_name" 
                         target="_blank"
                         type="primary"
                         >
