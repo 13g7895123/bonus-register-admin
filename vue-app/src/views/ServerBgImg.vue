@@ -43,7 +43,8 @@ onMounted(() => {
     
     // 這邊的檔案上傳不可用vite proxy，會失敗
     // imgUploadUrl.value = `http://missa.mercylife.cc/img_upload/upload.php?action=server&sid=${id.value}`
-    imgUploadUrl.value = `http://170.187.229.132:9091/api/bonus-register/admin/imgUpload.php?action=imgUpload&sid=${id.value}`
+    imgUploadUrl.value = `http://tools.mercylife.cc/bonus-register/imgUpload/imgUpload.php?action=imgUpload&sid=${id.value}`
+    // imgUploadUrl.value = `http:///api/bonus-register/admin/imgUpload.php?action=imgUpload&sid=${id.value}`
 })
 
 const getData = async() => {
