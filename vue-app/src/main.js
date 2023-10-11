@@ -5,6 +5,7 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
+import autoLogout from './stores/autoLogout'
 
 // router
 import route from "./router"
@@ -17,4 +18,5 @@ app.use(ElementPlus)
 app.use(route)
 app.use(createPinia())
 app.use(VueSweetalert2)
+app.use(autoLogout)
 app.mount('#app')
