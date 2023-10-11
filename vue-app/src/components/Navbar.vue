@@ -88,22 +88,44 @@ if (loginCheck.getIsLogin){
       loginCheck.setLastTime('lastTime', new Date().getTime())
     }
   };
+  setInterval(checkTimeout, 5000);
 }
 
 const checkTimeout = () => {
   const currentTime = new Date().getTime()
   const lastTime = loginCheck.getLastTime
 
-  console.log('checkTimeout');
-  console.log(currentTime, lastTime, timeOut);
-
   if ((currentTime - lastTime) > timeOut){
-    console.log(currentTime, lastTime, timeOut);
-    logout()
+
+    // 清空 local storage
+    localStorage.removeItem('userId')
+    localStorage.removeItem('userAccount')
+
+    // 變更 login auth 狀態
+    loginAuth.setAuth(false)
+    loginAuth.setUser('')
+    loginAuth.setUserName('')
+    loginAuth.setUserId('')
+    loginAuth.setIsAdmin('')
+
+    loginCheck.setIsLogin(false)
+    loginCheck.setLoginTime('')
+    loginCheck.setLastTime('')
+
+    Swal.fire({
+      title: '系統提示',
+      text: '基於安全考量，超過30分鐘無任何操作，自動登出!',
+      icon: 'warning',
+      showConfirmButton: false,
+      showCancelButton: false,
+      timer: 1000,
+    }).then(() => {
+        router.push('/login');
+    })
   }
 }
 
-setInterval(checkTimeout, 5000);
+
 
 </script>
   
