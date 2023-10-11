@@ -43,7 +43,9 @@ import { useRouter } from "vue-router";
 const loginAuth = useAuthStore()
 const loginCheck = useLoginCheckStore();
 const router = useRouter()
-const timeOut = 1 * 60 * 1000  //設定超時時間: 30分鐘
+const timeOutMinute = 10
+// const timeOut = 1 * 60 * 1000  //設定超時時間: 30分鐘
+const timeOut = timeOutMinute * 1000  //設定超時時間: 30分鐘
 
 const handleDropdown = (item) => {
   switch (item) {
@@ -95,6 +97,7 @@ const checkTimeout = () => {
   console.log('checkTimeout');
 
   if ((currentTime - lastTime) > timeOut){
+    console.log(currentTime, lastTime, timeOut);
     logout()
   }
 }
