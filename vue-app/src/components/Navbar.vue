@@ -91,7 +91,6 @@ if (loginCheck.getIsLogin){
       loginCheck.setLastTime('lastTime', new Date().getTime())
     }
   };
-  setInterval(checkTimeout, 5000);
 }
 
 const checkTimeout = () => {
@@ -133,6 +132,7 @@ const checkTimeout = () => {
       }
     })
   }
+  setInterval(checkTimeout, 5000);
 }
 
 
