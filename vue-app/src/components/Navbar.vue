@@ -37,9 +37,11 @@
 <script setup>
 import { ArrowDown, Setting } from "@element-plus/icons-vue";
 import { useAuthStore } from "../stores/loginAuth";
+import { useLoginCheckStore } from '../stores/loginCheck';
 import { useRouter } from "vue-router";
 
 const loginAuth = useAuthStore()
+const loginCheck = useLoginCheckStore();
 const router = useRouter()
 
 const handleDropdown = (item) => {
@@ -69,6 +71,10 @@ const logout = () => {
   loginAuth.setUserName('')
   loginAuth.setUserId('')
   loginAuth.setIsAdmin('')
+
+  loginCheck.setIsLogin(false)
+  loginCheck.setLoginTime('')
+  loginCheck.setLastTime('')
 
   // 跳轉頁面
   router.push('/login')

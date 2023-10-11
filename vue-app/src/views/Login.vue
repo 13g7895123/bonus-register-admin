@@ -38,6 +38,7 @@ import axios from 'axios'
 import { useRouter } from "vue-router";
 import Swal from 'sweetalert2'
 import { useAuthStore } from '../stores/loginAuth.js';
+import { useLoginCheckStore } from '../stores/loginCheck';
 
 const ruleFormRef = ref()
 const apiUrl = ref()
@@ -45,6 +46,7 @@ const apiParam = ref()
 const apiUrlPrefix = '/api/'
 const router = useRouter();
 const loginStore = useAuthStore();
+const loginCheck = useLoginCheckStore();
 
 const loginUser = ref({
     account: '',
@@ -81,6 +83,10 @@ const handleSubmit = (formEl) => {
                 loginStore.setUser(account)
                 loginStore.setUserName(name)
                 loginStore.setIsAdmin(is_admin)
+
+                loginCheck.setIsLogin(true)
+                loginCheck.setLoginTime(new Date().getTime())
+                loginCheck.setLastTime(new Date().getTime())
 
                 Swal.fire({
                     title: '登入成功',

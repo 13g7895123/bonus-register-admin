@@ -5,7 +5,7 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
-import autoLogout from './stores/autoLogout'
+import autoLogout from './utils/autoLogout'
 
 // router
 import route from "./router"
