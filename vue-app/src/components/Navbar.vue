@@ -43,6 +43,7 @@ import { useRouter } from "vue-router";
 const loginAuth = useAuthStore()
 const loginCheck = useLoginCheckStore();
 const router = useRouter()
+const timeOut = 1 * 60 * 1000  //設定超時時間: 30分鐘
 
 const handleDropdown = (item) => {
   switch (item) {
@@ -60,7 +61,6 @@ const showUserInfo = () => {
 }
 
 const logout = () => {
-
   // 清空 local storage
   localStorage.removeItem('userId')
   localStorage.removeItem('userAccount')
@@ -79,6 +79,28 @@ const logout = () => {
   // 跳轉頁面
   router.push('/login')
 }
+
+if (loginCheck.getIsLogin){
+  window.onload = function () {
+    window.document.onmousedown = function () {
+      loginCheck.setLastTime('lastTime', new Date().getTime())
+    }
+  };
+}
+
+const checkTimeout = () => {
+  const currentTime = new Date().getTime()
+  const lastTime = loginCheck.getLastTime()
+
+  console.log('checkTimeout');
+
+  if ((currentTime - lastTime) > timeOut){
+    logout()
+  }
+}
+
+setInterval(checkTimeout, 5000);
+
 </script>
   
   <style scoped>
