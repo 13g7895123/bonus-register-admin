@@ -83,6 +83,8 @@ const logout = () => {
   router.push('/login')
 }
 
+console.log(loginCheck.getIsLogin);
+
 if (loginCheck.getIsLogin){
   window.onload = function () {
     window.document.onmousedown = function () {
