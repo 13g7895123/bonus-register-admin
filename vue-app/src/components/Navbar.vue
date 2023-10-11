@@ -39,6 +39,7 @@ import { ArrowDown, Setting } from "@element-plus/icons-vue";
 import { useAuthStore } from "../stores/loginAuth";
 import { useLoginCheckStore } from '../stores/loginCheck';
 import { useRouter } from "vue-router";
+import Swal from 'sweetalert2'
 
 const loginAuth = useAuthStore()
 const loginCheck = useLoginCheckStore();
@@ -116,11 +117,15 @@ const checkTimeout = () => {
       title: '系統提示',
       text: '基於安全考量，超過30分鐘無任何操作，自動登出!',
       icon: 'warning',
-      showConfirmButton: false,
+      showConfirmButton: true,
       showCancelButton: false,
       timer: 1000,
-    }).then(() => {
+    }).then((isConfirm) => {
+      if (isConfirm) {
         router.push('/login');
+      } else {
+        router.push('/login');
+      }
     })
   }
 }
