@@ -90,7 +90,7 @@ if (loginCheck.getIsLogin){
 
 const checkTimeout = () => {
   const currentTime = new Date().getTime()
-  const lastTime = loginCheck.getLastTime()
+  const lastTime = loginCheck.getLastTime
 
   console.log('checkTimeout');
 
