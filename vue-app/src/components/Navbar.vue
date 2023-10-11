@@ -95,6 +95,7 @@ const checkTimeout = () => {
   const lastTime = loginCheck.getLastTime
 
   console.log('checkTimeout');
+  console.log(currentTime, lastTime, timeOut);
 
   if ((currentTime - lastTime) > timeOut){
     console.log(currentTime, lastTime, timeOut);
