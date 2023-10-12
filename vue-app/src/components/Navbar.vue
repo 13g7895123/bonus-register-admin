@@ -92,6 +92,18 @@ onMounted(() => {
     setInterval(checkTimeout, 5000);
     document.addEventListener('mousemove', myListener, false);
     console.log('onload');
+  }else{
+    console.log(router.currentRoute._value);
+    Swal.fire({
+      title: '驗證失敗',
+      text: '跳轉至登入畫面',
+      icon: 'error',
+      showConfirmButton: false,
+      showCancelButton: false,
+      timer: 2000,
+    }).then(() => {
+      router.push('/login')
+    })
   }
 })
 
