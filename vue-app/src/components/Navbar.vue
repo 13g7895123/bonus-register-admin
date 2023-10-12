@@ -40,6 +40,7 @@ import { useAuthStore } from "../stores/loginAuth";
 import { useLoginCheckStore } from '../stores/loginCheck';
 import { useRouter } from "vue-router";
 import Swal from 'sweetalert2'
+import { onMounted } from 'vue'
 
 const loginAuth = useAuthStore()
 const loginCheck = useLoginCheckStore();
@@ -83,13 +84,15 @@ const logout = () => {
   router.push('/login')
 }
 
-if (loginCheck.getIsLogin){
-  window.onload = function () {
-    window.document.onmousedown = function () {
-      loginCheck.setLastTime('lastTime', new Date().getTime())
-    }
-  };
-}
+onMounted(() => {
+  if (loginCheck.getIsLogin){
+    window.onload = function () {
+      window.document.onmousedown = function () {
+        loginCheck.setLastTime('lastTime', new Date().getTime())
+      }
+    };
+  }
+})
 
 const checkTimeout = () => {
   const currentTime = new Date().getTime()
