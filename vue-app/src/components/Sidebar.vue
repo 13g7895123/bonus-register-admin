@@ -21,13 +21,13 @@
                     <span>伺服器管理</span>
                 </el-menu-item>
             </router-link>
-            <router-link to="/systemUser">
+            <router-link to="/systemUser" v-if="isAdmin == true">
                 <el-menu-item index="/systemUser">
                     <el-icon><Avatar /></el-icon>
                     <span>系統使用者</span>
                 </el-menu-item>
             </router-link>
-            <router-link to="/systemAdmin" v-if="isLogin == true">
+            <router-link to="/systemAdmin" v-if="isAdmin == true">
                 <el-menu-item index="/systemAdmin">
                     <el-icon><Avatar /></el-icon>
                     <span>系統管理者</span>
@@ -44,10 +44,10 @@ import { useAuthStore } from '../stores/loginAuth.js';
 import { ref, onMounted } from 'vue'
 
 const loginStore = useAuthStore();
-const isLogin = ref(null)
+const isAdmin = ref(null)
 
 onMounted(() => {
-    isLogin.value = loginStore.getIsAdmin
+    isAdmin.value = loginStore.getIsAdmin
 })
 
 </script>
