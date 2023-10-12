@@ -89,7 +89,8 @@ onMounted(() => {
   if (loginCheck.getIsLogin){
     window.onload = function () {
       window.document.onmousedown = function () {
-        loginCheck.setLastTime('lastTime', new Date().getTime())
+        console.log('move: ' + loginCheck.getLastTime);
+        loginCheck.setLastTime(new Date().getTime())
       }
     };
   }
