@@ -46,8 +46,7 @@ const loginAuth = useAuthStore()
 const loginCheck = useLoginCheckStore();
 const router = useRouter()
 const timeOutMinute = 10
-// const timeOut = 1 * 60 * 1000  //設定超時時間: 30分鐘
-const timeOut = timeOutMinute * 1000  //設定超時時間: 30分鐘
+const timeOut = timeOutMinute * 60 * 1000  //設定超時時間: 10分鐘
 
 const handleDropdown = (item) => {
   switch (item) {
@@ -87,10 +86,11 @@ const logout = () => {
 onMounted(() => {
   console.log('onMounted: ' + loginCheck.getIsLogin);
   if (loginCheck.getIsLogin){
+    setInterval(checkTimeout, 5000);
     document.addEventListener('mousemove', myListener, false);
     console.log('onload');
   }
-  setInterval(checkTimeout, 5000);
+  
 })
 
 const myListener = () => {
