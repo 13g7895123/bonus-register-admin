@@ -94,12 +94,12 @@ onMounted(() => {
 })
 
 const myListener = () => {
-    document.removeEventListener('mousemove', myListener, false);
+    // document.removeEventListener('mousemove', myListener, false);
     // do stuff
     console.log('move: ' + loginCheck.getLastTime);
     loginCheck.setLastTime(new Date().getTime())
     console.log('move: ' + loginCheck.getLastTime);
-    document.addEventListener('mousemove', myListener, false);
+    // document.addEventListener('mousemove', myListener, false);
 };
 
 const checkTimeout = () => {
