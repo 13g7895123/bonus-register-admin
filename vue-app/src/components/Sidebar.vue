@@ -27,7 +27,7 @@
                     <span>系統使用者</span>
                 </el-menu-item>
             </router-link>
-            <router-link to="/systemAdmin">
+            <router-link to="/systemAdmin" v-if="isLogin == true">
                 <el-menu-item index="/systemAdmin">
                     <el-icon><Avatar /></el-icon>
                     <span>系統管理者</span>
@@ -40,6 +40,14 @@
 
 <script setup>
 import { Avatar, Refrigerator, User } from "@element-plus/icons-vue";
+import { useAuthStore } from '../stores/loginAuth.js';
+
+const loginStore = useAuthStore();
+const isLogin = ref(null)
+
+onMounted(() => {
+    isLogin.value = loginStore.getIsAdmin
+})
 
 </script>
 
