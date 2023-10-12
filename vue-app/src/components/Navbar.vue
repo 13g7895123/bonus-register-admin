@@ -87,15 +87,8 @@ const logout = () => {
 onMounted(() => {
   console.log('onMounted: ' + loginCheck.getIsLogin);
   if (loginCheck.getIsLogin){
-    window.onload = function () {
-      document.addEventListener('mousemove', myListener, false);
-      console.log('onload');
-      // window.document.onmousedown = function () {
-      //   console.log('move: ' + loginCheck.getLastTime);
-        
-      //   console.log('move: ' + loginCheck.getLastTime);
-      // }
-    };
+    document.addEventListener('mousemove', myListener, false);
+    console.log('onload');
   }
   setInterval(checkTimeout, 5000);
 })
