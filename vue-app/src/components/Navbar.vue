@@ -91,7 +91,6 @@ onMounted(() => {
     document.addEventListener('mousemove', myListener, false);
     console.log('onload');
   }
-  
 })
 
 const myListener = () => {

@@ -1,12 +1,14 @@
 <script setup>
 import { watchEffect } from 'vue';
 import { useAuthStore } from './stores/loginAuth.js';
+import { useLoginCheckStore } from './stores/loginCheck.js';
 import { useRouter } from 'vue-router';
 import Swal from 'sweetalert2'
 import { ElConfigProvider } from 'element-plus'
 import zhTw from 'element-plus/lib/locale/lang/zh-tw'
 
 const loginStore = useAuthStore()
+const loginCheck = useLoginCheckStore();
 const router = useRouter()
 
 watchEffect(() => {
@@ -15,16 +17,18 @@ watchEffect(() => {
     loginStore.setUser(localStorage.userAccount)
     loginStore.setUserName(localStorage.userName)
   }else{
-    Swal.fire({
-      title: '驗證失敗',
-      text: '跳轉至登入畫面',
-      icon: 'error',
-      showConfirmButton: false,
-      showCancelButton: false,
-      timer: 2000,
-    }).then(() => {
-      router.push('/login')
-    })
+    if (loginCheck.getIsLogin){
+      Swal.fire({
+        title: '驗證失敗',
+        text: '跳轉至登入畫面',
+        icon: 'error',
+        showConfirmButton: false,
+        showCancelButton: false,
+        timer: 2000,
+      }).then(() => {
+        router.push('/login')
+      })
+    }
   }
 })
 
