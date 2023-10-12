@@ -103,6 +103,7 @@ onMounted(() => {
       showCancelButton: false,
       timer: 2000,
     }).then(() => {
+      document.removeEventListener('mousemove', myListener, false);
       router.push('/login')
     })
   }
