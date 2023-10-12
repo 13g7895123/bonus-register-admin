@@ -123,7 +123,7 @@ const checkTimeout = () => {
       icon: 'warning',
       showConfirmButton: true,
       showCancelButton: false,
-      timer: 1000,
+      // timer: 1000,
     }).then((isConfirm) => {
       if (isConfirm) {
         router.push('/login');
