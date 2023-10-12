@@ -80,6 +80,8 @@ const logout = () => {
   loginCheck.setLoginTime('')
   loginCheck.setLastTime('')
 
+  document.removeEventListener('mousemove', myListener, false);
+
   // 跳轉頁面
   router.push('/login')
 }
