@@ -83,8 +83,6 @@ const logout = () => {
   router.push('/login')
 }
 
-console.log(loginCheck.getIsLogin);
-
 if (loginCheck.getIsLogin){
   window.onload = function () {
     window.document.onmousedown = function () {
@@ -134,7 +132,7 @@ const checkTimeout = () => {
 setInterval(checkTimeout, 5000);
 </script>
   
-  <style scoped>
+<style scoped>
   
   .logo-container {
     line-height: 60px;
@@ -195,4 +193,4 @@ setInterval(checkTimeout, 5000);
   .dropdown i {
     margin-top: 20px;
   }
-  </style>
+</style>
