@@ -92,6 +92,7 @@ onMounted(() => {
       }
     };
   }
+  setInterval(checkTimeout, 5000);
 })
 
 const checkTimeout = () => {
@@ -132,7 +133,7 @@ const checkTimeout = () => {
     })
   }
 }
-setInterval(checkTimeout, 5000);
+
 </script>
   
 <style scoped>
