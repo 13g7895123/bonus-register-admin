@@ -45,7 +45,7 @@ import { onMounted } from 'vue'
 const loginAuth = useAuthStore()
 const loginCheck = useLoginCheckStore();
 const router = useRouter()
-const timeOutMinute = 10
+const timeOutMinute = 30
 // const timeOut = 1 * 60 * 1000  //設定超時時間: 30分鐘
 const timeOut = timeOutMinute * 1000  //設定超時時間: 30分鐘
 
