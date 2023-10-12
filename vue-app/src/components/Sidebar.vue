@@ -41,7 +41,7 @@
 <script setup>
 import { Avatar, Refrigerator, User } from "@element-plus/icons-vue";
 import { useAuthStore } from '../stores/loginAuth.js';
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const loginStore = useAuthStore();
 const isLogin = ref(null)
