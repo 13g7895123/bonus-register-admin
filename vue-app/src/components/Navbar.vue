@@ -40,7 +40,7 @@ import { useAuthStore } from "../stores/loginAuth";
 import { useLoginCheckStore } from '../stores/loginCheck';
 import { useRouter } from "vue-router";
 import Swal from 'sweetalert2'
-import { onMounted } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
 
 const loginAuth = useAuthStore()
 const loginCheck = useLoginCheckStore();
@@ -48,6 +48,7 @@ const router = useRouter()
 const timeOutMinute = 10
 // const timeOut = timeOutMinute * 60 * 1000  //設定超時時間: 10分鐘
 const timeOut = 5 * 1000  // 測試用超時時間: 5秒
+const interval = ref(null)
 
 const handleDropdown = (item) => {
   switch (item) {
@@ -89,7 +90,7 @@ const logout = () => {
 onMounted(() => {
   console.log('onMounted: ' + loginCheck.getIsLogin);
   if (loginCheck.getIsLogin){
-    setInterval(checkTimeout, 5000);
+    interval.value = setInterval(checkTimeout, 5000);
     document.addEventListener('mousemove', myListener, false);
     console.log('onload');
   }else{
@@ -105,6 +106,10 @@ onMounted(() => {
       router.push('/login')
     })
   }
+})
+
+onUnmounted(() => {
+  clearInterval(interval.value)
 })
 
 const myListener = () => {
