@@ -11,7 +11,7 @@ export const useLoginCheckStore = defineStore('check', {
       },
       actions: {
         setIsLogin(isLogin){
-            this.isAuthenticated = isLogin;            
+            this.isLogin = isLogin;            
         },
         setLoginTime(loginTime){
             if(loginTime){
