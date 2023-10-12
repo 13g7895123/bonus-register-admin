@@ -127,8 +127,6 @@ const checkTimeout = () => {
     }).then((isConfirm) => {
       if (isConfirm) {
         router.push('/login');
-      } else {
-        router.push('/login');
       }
     })
   }
