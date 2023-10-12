@@ -132,11 +132,8 @@ const checkTimeout = () => {
       }
     })
   }
-  setInterval(checkTimeout, 5000);
 }
-
-
-
+setInterval(checkTimeout, 5000);
 </script>
   
   <style scoped>
