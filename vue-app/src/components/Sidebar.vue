@@ -27,7 +27,7 @@
                     <span>系統使用者</span>
                 </el-menu-item>
             </router-link>
-            <router-link to="/systemAdmin" v-if="isLogin.value == true">
+            <router-link to="/systemAdmin" v-if="isLogin == true">
                 <el-menu-item index="/systemAdmin">
                     <el-icon><Avatar /></el-icon>
                     <span>系統管理者</span>
