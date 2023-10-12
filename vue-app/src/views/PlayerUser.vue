@@ -206,7 +206,7 @@ const closeModel = () => {
 }
 
 // 篩選
-// const handleSort = () => {
+const handleSort = () => {
 //     if (filterEngName.value == ''){
 
 //         Swal.fire({
@@ -227,7 +227,7 @@ const closeModel = () => {
 //         return eng_name.includes(filterEngName.value.toUpperCase())
 //     })
 //     setPaginations();
-// }
+}
 
 </script>
 <style>

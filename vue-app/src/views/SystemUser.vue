@@ -232,30 +232,30 @@ const closeModel = () => {
 
 // 篩選
 const handleSort = () => {
-    if (filterEngName.value == ''){
+//     if (filterEngName.value == ''){
 
-        Swal.fire({
-            title: `請輸入藥品名`,
-            icon: 'error',
-            showConfirmButton: false,
-            showCancelButton: false,
-            timer: 2000,
-        }).then(() => {
-            getMedicine()
-            return
-        })
-    }
+//         Swal.fire({
+//             title: `請輸入藥品名`,
+//             icon: 'error',
+//             showConfirmButton: false,
+//             showCancelButton: false,
+//             timer: 2000,
+//         }).then(() => {
+//             getMedicine()
+//             return
+//         })
+//     }
 
-    allTableData.value = filterTableData.value.filter((item) => {
-        let eng_name = item.eng_name
-        eng_name = eng_name.toUpperCase()
-        return eng_name.includes(filterEngName.value.toUpperCase())
-    })
-    setPaginations();
-}
+//     allTableData.value = filterTableData.value.filter((item) => {
+//         let eng_name = item.eng_name
+//         eng_name = eng_name.toUpperCase()
+//         return eng_name.includes(filterEngName.value.toUpperCase())
+//     })
+//     setPaginations();
+// }
 
-const handleCancelSort = () => {
-    history.go(0)
+// const handleCancelSort = () => {
+//     history.go(0)
 }
 
 </script>
