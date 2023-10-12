@@ -89,6 +89,7 @@ onMounted(() => {
   if (loginCheck.getIsLogin){
     window.onload = function () {
       document.addEventListener('mousemove', myListener, false);
+      console.log('onload');
       // window.document.onmousedown = function () {
       //   console.log('move: ' + loginCheck.getLastTime);
         
