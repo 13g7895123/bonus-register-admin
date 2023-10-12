@@ -45,7 +45,7 @@ import { onMounted } from 'vue'
 const loginAuth = useAuthStore()
 const loginCheck = useLoginCheckStore();
 const router = useRouter()
-const timeOutMinute = 30
+const timeOutMinute = 10
 // const timeOut = 1 * 60 * 1000  //設定超時時間: 30分鐘
 const timeOut = timeOutMinute * 1000  //設定超時時間: 30分鐘
 
@@ -106,8 +106,7 @@ const checkTimeout = () => {
 
   if ((currentTime - lastTime) > timeOut){
 
-    console.log('觸發登出' + currentTime - lastTime, timeOut);
-    console.log(currentTime, lastTime, timeOut);
+    console.log('觸發登出:' + (currentTime - lastTime) + '/' + timeOut);
     // 清空 local storage
     localStorage.removeItem('userId')
     localStorage.removeItem('userAccount')
