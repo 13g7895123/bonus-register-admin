@@ -85,6 +85,7 @@ const logout = () => {
 }
 
 onMounted(() => {
+  console.log('onMounted: ' + loginCheck.getIsLogin);
   if (loginCheck.getIsLogin){
     window.onload = function () {
       window.document.onmousedown = function () {
@@ -99,10 +100,12 @@ const checkTimeout = () => {
   const currentTime = new Date().getTime()
   const lastTime = loginCheck.getLastTime
 
+  console.log('checkTimeout: ' + loginCheck.getIsLogin);
   console.log(currentTime, lastTime, timeOut);
 
   if ((currentTime - lastTime) > timeOut){
 
+    console.log('觸發登出' + currentTime - lastTime, timeOut);
     console.log(currentTime, lastTime, timeOut);
     // 清空 local storage
     localStorage.removeItem('userId')
