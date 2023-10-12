@@ -88,15 +88,24 @@ onMounted(() => {
   console.log('onMounted: ' + loginCheck.getIsLogin);
   if (loginCheck.getIsLogin){
     window.onload = function () {
-      window.document.onmousedown = function () {
-        console.log('move: ' + loginCheck.getLastTime);
-        loginCheck.setLastTime(new Date().getTime())
-        console.log('move: ' + loginCheck.getLastTime);
-      }
+      document.addEventListener('mousemove', myListener, false);
+      // window.document.onmousedown = function () {
+      //   console.log('move: ' + loginCheck.getLastTime);
+        
+      //   console.log('move: ' + loginCheck.getLastTime);
+      // }
     };
   }
   setInterval(checkTimeout, 5000);
 })
+
+const myListener = () => {
+    document.removeEventListener('mousemove', myListener, false);
+    // do stuff
+    console.log('move: ' + loginCheck.getLastTime);
+    loginCheck.setLastTime(new Date().getTime())
+    console.log('move: ' + loginCheck.getLastTime);
+};
 
 const checkTimeout = () => {
   const currentTime = new Date().getTime()
