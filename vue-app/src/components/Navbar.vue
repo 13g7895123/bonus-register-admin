@@ -40,7 +40,7 @@ import { useAuthStore } from "../stores/loginAuth";
 import { useLoginCheckStore } from '../stores/loginCheck';
 import { useRouter } from "vue-router";
 import Swal from 'sweetalert2'
-import { onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const loginAuth = useAuthStore()
 const loginCheck = useLoginCheckStore();
