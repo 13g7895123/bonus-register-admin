@@ -116,7 +116,6 @@ const router = useRouter()
 
 onMounted(() => {
     getPlayers()
-    // console.log(tableData.value);
 })
 
 const getPlayers = async() => {
