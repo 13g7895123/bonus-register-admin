@@ -92,9 +92,8 @@ onMounted(() => {
   if (loginCheck.getIsLogin){
     interval.value = setInterval(checkTimeout, 5000);
     document.addEventListener('mousemove', myListener, false);
-    console.log('onload');
   }else{
-    console.log(router.currentRoute._value);
+    // console.log(router.currentRoute._value);
     Swal.fire({
       title: '驗證失敗',
       text: '跳轉至登入畫面',
@@ -114,24 +113,19 @@ onUnmounted(() => {
 })
 
 const myListener = () => {
-    // document.removeEventListener('mousemove', myListener, false);
-    // do stuff
-    console.log('move: ' + loginCheck.getLastTime);
     loginCheck.setLastTime(new Date().getTime())
-    console.log('move: ' + loginCheck.getLastTime);
-    // document.addEventListener('mousemove', myListener, false);
 };
 
 const checkTimeout = () => {
   const currentTime = new Date().getTime()
   const lastTime = loginCheck.getLastTime
 
-  console.log('checkTimeout: ' + loginCheck.getIsLogin);
-  console.log(currentTime, lastTime, timeOut);
+  // console.log('checkTimeout: ' + loginCheck.getIsLogin);
+  // console.log(currentTime, lastTime, timeOut);
 
   if ((currentTime - lastTime) > timeOut){
 
-    console.log('觸發登出:' + (currentTime - lastTime) + '/' + timeOut);
+    // console.log('觸發登出:' + (currentTime - lastTime) + '/' + timeOut);
     // 清空 local storage
     localStorage.removeItem('userId')
     localStorage.removeItem('userAccount')
