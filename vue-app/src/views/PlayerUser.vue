@@ -95,6 +95,7 @@ import axios from 'axios';
 import { EditPen, Delete } from "@element-plus/icons-vue";
 import Swal from 'sweetalert2'
 import { useRouter } from "vue-router";
+import { useAuthStore } from "../stores/loginAuth";
 
 const tableData = ref([])
 const allTableData = ref([])
@@ -102,6 +103,7 @@ const filterTableData = ref([])
 const show = ref(false)
 const editData = ref()
 const operation = ref()   // 0為編輯，1為新增
+const loginAuth = useAuthStore()
 
 // 分頁
 const page_index = ref(1),
@@ -116,9 +118,16 @@ const router = useRouter()
 
 onMounted(() => {
     getPlayers()
+    console.log(loginAuth.getUser);
+    console.log(loginAuth.getUserName);
 })
 
 const getPlayers = async() => {
+
+    if (loginAuth.getIsAdmin == true){
+
+    }
+
     const { data: { success, data } } = await axios.post('/api/player_user.php?action=player_user')
 
     if (success){
