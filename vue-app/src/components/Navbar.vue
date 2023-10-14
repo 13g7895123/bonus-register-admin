@@ -46,8 +46,8 @@ const loginAuth = useAuthStore()
 const loginCheck = useLoginCheckStore();
 const router = useRouter()
 const timeOutMinute = 10
-// const timeOut = timeOutMinute * 60 * 1000  //設定超時時間: 10分鐘
-const timeOut = 5 * 1000  // 測試用超時時間: 5秒
+const timeOut = timeOutMinute * 60 * 1000  //設定超時時間: 10分鐘
+// const timeOut = 5 * 1000  // 測試用超時時間: 5秒
 const interval = ref(null)
 
 const handleDropdown = (item) => {
