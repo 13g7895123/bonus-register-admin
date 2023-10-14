@@ -88,28 +88,28 @@ const logout = () => {
 }
 
 onMounted(() => {
-  console.log('onMounted: ' + loginCheck.getIsLogin);
-  if (loginCheck.getIsLogin){
-    interval.value = setInterval(checkTimeout, 5000);
-    document.addEventListener('mousemove', myListener, false);
-  }else{
-    // console.log(router.currentRoute._value);
-    Swal.fire({
-      title: '驗證失敗',
-      text: '跳轉至登入畫面',
-      icon: 'error',
-      showConfirmButton: false,
-      showCancelButton: false,
-      timer: 2000,
-    }).then(() => {
-      document.removeEventListener('mousemove', myListener, false);
-      router.push('/login')
-    })
-  }
+  // console.log('onMounted: ' + loginCheck.getIsLogin);
+  // if (loginCheck.getIsLogin){
+  //   interval.value = setInterval(checkTimeout, 5000);
+  //   document.addEventListener('mousemove', myListener, false);
+  // }else{
+  //   // console.log(router.currentRoute._value);
+  //   Swal.fire({
+  //     title: '驗證失敗',
+  //     text: '跳轉至登入畫面',
+  //     icon: 'error',
+  //     showConfirmButton: false,
+  //     showCancelButton: false,
+  //     timer: 2000,
+  //   }).then(() => {
+  //     document.removeEventListener('mousemove', myListener, false);
+  //     router.push('/login')
+  //   })
+  // }
 })
 
 onUnmounted(() => {
-  clearInterval(interval.value)
+  // clearInterval(interval.value)
 })
 
 const myListener = () => {

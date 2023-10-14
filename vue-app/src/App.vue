@@ -12,23 +12,23 @@ const loginCheck = useLoginCheckStore();
 const router = useRouter()
 
 watchEffect(() => {
-  if(localStorage.userAccount){
+  if(loginCheck.getIsLogin){
     loginStore.setAuth(true)
     loginStore.setUser(localStorage.userAccount)
     loginStore.setUserName(localStorage.userName)
   }else{
-    // if (loginCheck.getIsLogin){
-    //   Swal.fire({
-    //     title: '驗證失敗',
-    //     text: '跳轉至登入畫面',
-    //     icon: 'error',
-    //     showConfirmButton: false,
-    //     showCancelButton: false,
-    //     timer: 2000,
-    //   }).then(() => {
-    //     router.push('/login')
-    //   })
-    // }
+    if (loginCheck.getIsLogin){
+      Swal.fire({
+        title: '驗證失敗',
+        text: '跳轉至登入畫面',
+        icon: 'error',
+        showConfirmButton: false,
+        showCancelButton: false,
+        timer: 2000,
+      }).then(() => {
+        router.push('/login')
+      })
+    }
   }
 })
 
