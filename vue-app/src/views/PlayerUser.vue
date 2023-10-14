@@ -118,17 +118,19 @@ const router = useRouter()
 
 onMounted(() => {
     getPlayers()
-    console.log(loginAuth.getUser);
-    console.log(loginAuth.getUserName);
 })
 
 const getPlayers = async() => {
 
-    if (loginAuth.getIsAdmin == true){
+    let axiosData;
 
+    if (loginAuth.getIsAdmin == true){
+        axiosData = loginAuth.getUser
+    }else{
+        axiosData = ''
     }
 
-    const { data: { success, data } } = await axios.post('/api/player_user.php?action=player_user')
+    const { data: { success, data } } = await axios.post('/api/player_user.php?action=player_user', axiosData)
 
     if (success){
         tableData.value = data
