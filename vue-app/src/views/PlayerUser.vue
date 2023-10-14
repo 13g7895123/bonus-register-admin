@@ -122,12 +122,12 @@ onMounted(() => {
 
 const getPlayers = async() => {
 
-    let axiosData;
-
-    if (loginAuth.getIsAdmin == true){
-        axiosData = loginAuth.getUser
+    let axiosData = {};
+    
+    if (loginAuth.getIsAdmin != true){
+        axiosData = { userAccount: loginAuth.getUser }
     }else{
-        axiosData = ''
+        axiosData = { userAccount: '' }
     }
 
     const { data: { success, data } } = await axios.post('/api/player_user.php?action=player_user', axiosData)
