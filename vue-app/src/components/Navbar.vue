@@ -10,7 +10,7 @@
           <img src="../assets/user.png" class="avatar" alt="" />
           <div class="welcome-content">
             <p class="content welcome">Welcome</p>
-            <p class="content username">{{ sessionStorage.getItem("userName") }}</p>
+            <p class="content username">{{ userName }}</p>
           </div>
           <span class="dropdown">
             <!-- <el-dropdown> -->
@@ -49,6 +49,7 @@ const timeOutMinute = 10
 const timeOut = timeOutMinute * 60 * 1000  //設定超時時間: 10分鐘
 // const timeOut = 5 * 1000  // 測試用超時時間: 5秒
 const interval = ref(null)
+const userName = ref()
 
 const handleDropdown = (item) => {
   switch (item) {
@@ -88,6 +89,7 @@ const logout = () => {
 }
 
 onMounted(() => {
+  userName.value = sessionStorage.getItem('userName')
   // console.log('onMounted: ' + loginCheck.getIsLogin);
   // if (loginCheck.getIsLogin){
   //   interval.value = setInterval(checkTimeout, 5000);
