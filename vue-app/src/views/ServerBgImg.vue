@@ -42,7 +42,7 @@ onMounted(() => {
     getData()
     
     // 這邊的檔案上傳不可用vite proxy，會失敗
-    imgUploadUrl.value = `http://tools.mercylife.cc/bonus-register/imgUpload/imgUpload.php?action=imgUpload&sid=${id.value}`
+    imgUploadUrl.value = `https://tools.mercylife.cc/bonus-register/imgUpload/imgUpload.php?action=imgUpload&sid=${id.value}`
 })
 
 const getData = async() => {
