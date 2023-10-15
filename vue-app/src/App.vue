@@ -13,10 +13,13 @@ const router = useRouter()
 
 onMounted(() => {
   console.log(sessionStorage.getItem('isLogin'));
+  // if(sessionStorage.getItem('isLogin') == null){
+
+  // }
 })
 
 watchEffect(() => {
-  if(sessionStorage.getItem('isLogin') == null){
+  if(sessionStorage.getItem('isLogin') != null){
     loginStore.setAuth(true)
     loginStore.setUser(localStorage.userAccount)
     loginStore.setUserName(localStorage.userName)
