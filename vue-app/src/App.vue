@@ -1,17 +1,14 @@
 <script setup>
 import { watchEffect, onMounted } from 'vue';
-import { useAuthStore } from './stores/loginAuth.js';
-import { useLoginCheckStore } from './stores/loginCheck.js';
 import { useRouter } from 'vue-router';
 import Swal from 'sweetalert2'
 import { ElConfigProvider } from 'element-plus'
 import zhTw from 'element-plus/lib/locale/lang/zh-tw'
 
-const loginStore = useAuthStore()
-const loginCheck = useLoginCheckStore();
 const router = useRouter()
 
 onMounted(() => {
+  console.log(router.currentRoute);
   if(sessionStorage.getItem('isLogin') == null){
     Swal.fire({
         title: '驗證失敗',
