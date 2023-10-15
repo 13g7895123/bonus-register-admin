@@ -82,7 +82,7 @@ onMounted(() => {
   }else{
     userName.value = sessionStorage.getItem('userName')
   }
-  
+  console.log('onMounted: ' + sessionStorage.getItem('isLogin'));
   
   // if (loginCheck.getIsLogin){
   //   interval.value = setInterval(checkTimeout, 5000);
