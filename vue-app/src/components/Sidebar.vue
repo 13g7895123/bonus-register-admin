@@ -47,7 +47,7 @@ const loginStore = useAuthStore();
 const isAdmin = ref(null)
 
 onMounted(() => {
-    isAdmin.value = loginStore.getIsAdmin
+    isAdmin.value = sessionStorage.getItem('isAdmin')
 })
 
 </script>
