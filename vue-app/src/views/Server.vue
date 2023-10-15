@@ -165,7 +165,8 @@ const page_index = ref(1),
 // const filterEngName = ref()
 
 const getServer = async() => {
-    const { data: { success, data } } = await axios.post('/api/server.php?action=server')
+    let axiosData = (loginAuth.getIsAdmin != true) ? { userAccount: loginAuth.getUser } : axiosData = { userAccount: '' }
+    const { data: { success, data } } = await axios.post('/api/server.php?action=server', axiosData)
 
     if (success){
         tableData.value = data
