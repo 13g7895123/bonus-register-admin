@@ -78,6 +78,7 @@ const logout = () => {
 onMounted(() => {
   console.log('onMounted: ' + sessionStorage.getItem('isLogin'));
   if (sessionStorage.getItem('isLogin') != true){
+    console.log('do this!');
     logout()
   }else{
     userName.value = sessionStorage.getItem('userName')
