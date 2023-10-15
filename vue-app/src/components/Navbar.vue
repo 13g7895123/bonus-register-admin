@@ -77,11 +77,12 @@ const logout = () => {
 
 onMounted(() => {
   console.log('onMounted: ' + sessionStorage.getItem('isLogin'));
-  if (sessionStorage.getItem('isLogin') !== true){
-    console.log('do this!');
-    logout()
-  }else{
+  if (sessionStorage.getItem('isLogin') == true){
     userName.value = sessionStorage.getItem('userName')
+    console.log('do this!');
+    
+  }else{
+    logout()
   }
   console.log('onMounted: ' + sessionStorage.getItem('isLogin'));
   
