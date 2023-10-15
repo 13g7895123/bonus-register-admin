@@ -13,9 +13,18 @@ const router = useRouter()
 
 onMounted(() => {
   console.log(sessionStorage.getItem('isLogin'));
-  // if(sessionStorage.getItem('isLogin') == null){
-
-  // }
+  if(sessionStorage.getItem('isLogin') == null){
+    Swal.fire({
+        title: '驗證失敗',
+        text: '跳轉至登入畫面',
+        icon: 'error',
+        showConfirmButton: false,
+        showCancelButton: false,
+        timer: 2000,
+      }).then(() => {
+        router.push('/login')
+      })
+  }
 })
 
 watchEffect(() => {
