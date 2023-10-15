@@ -16,7 +16,7 @@ onMounted(() => {
 })
 
 watchEffect(() => {
-  if(sessionStorage.getItem('isLogin')){
+  if(sessionStorage.getItem('isLogin') != true){
     loginStore.setAuth(true)
     loginStore.setUser(localStorage.userAccount)
     loginStore.setUserName(localStorage.userName)
