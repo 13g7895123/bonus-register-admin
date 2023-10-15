@@ -76,13 +76,14 @@ const logout = () => {
 }
 
 onMounted(() => {
+  console.log('onMounted: ' + sessionStorage.getItem('isLogin'));
   if (sessionStorage.getItem('isLogin') != true){
     logout()
   }else{
     userName.value = sessionStorage.getItem('userName')
   }
   
-  console.log('onMounted: ' + sessionStorage.getItem('isLogin'));
+  
   // if (loginCheck.getIsLogin){
   //   interval.value = setInterval(checkTimeout, 5000);
   //   document.addEventListener('mousemove', myListener, false);
