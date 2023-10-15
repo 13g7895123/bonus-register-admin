@@ -77,7 +77,7 @@ const logout = () => {
 
 onMounted(() => {
   console.log('onMounted: ' + sessionStorage.getItem('isLogin'));
-  if (sessionStorage.getItem('isLogin') != true){
+  if (sessionStorage.getItem('isLogin') != True){
     console.log('do this!');
     logout()
   }else{
