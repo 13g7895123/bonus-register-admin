@@ -76,16 +76,16 @@ const logout = () => {
 }
 
 onMounted(() => {
-  const isLogin = sessionStorage.getItem('isLogin')
-  console.log('onMounted: ' + isLogin);
-  if (isLogin == true){
-    userName.value = sessionStorage.getItem('userName')
-    console.log('do this!');
-  }else{
-    console.log('do logout!');
-    logout()
-  }
-  console.log('onMounted: ' + sessionStorage.getItem('isLogin'));
+  // const isLogin = sessionStorage.getItem('isLogin')
+  // console.log('onMounted: ' + isLogin);
+  // if (isLogin == true){
+  //   userName.value = sessionStorage.getItem('userName')
+  //   console.log('do this!');
+  // }else{
+  //   console.log('do logout!');
+  //   logout()
+  // }
+  // console.log('onMounted: ' + sessionStorage.getItem('isLogin'));
   
   // if (loginCheck.getIsLogin){
   //   interval.value = setInterval(checkTimeout, 5000);
