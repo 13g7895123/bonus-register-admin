@@ -67,20 +67,7 @@ const showUserInfo = () => {
 }
 
 const logout = () => {
-  // 清空 local storage
-  localStorage.removeItem('userId')
-  localStorage.removeItem('userAccount')
-
-  // 變更 login auth 狀態
-  loginAuth.setAuth(false)
-  loginAuth.setUser('')
-  loginAuth.setUserName('')
-  loginAuth.setUserId('')
-  loginAuth.setIsAdmin('')
-
-  loginCheck.setIsLogin(false)
-  loginCheck.setLoginTime('')
-  loginCheck.setLastTime('')
+  sessionStorage.clear()
 
   document.removeEventListener('mousemove', myListener, false);
 
@@ -90,7 +77,7 @@ const logout = () => {
 
 onMounted(() => {
   userName.value = sessionStorage.getItem('userName')
-  // console.log('onMounted: ' + loginCheck.getIsLogin);
+  console.log('onMounted: ' + sessionStorage.getItem('isLogin'));
   // if (loginCheck.getIsLogin){
   //   interval.value = setInterval(checkTimeout, 5000);
   //   document.addEventListener('mousemove', myListener, false);

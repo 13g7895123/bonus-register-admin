@@ -73,7 +73,7 @@ const handleSubmit = (formEl) => {
 
             if (success && user){
                 
-                const { id, account, name, is_admin } = user
+                const { id, name, is_admin } = user
 
                 sessionStorage.setItem('userId', id)
                 sessionStorage.setItem('userName', name)
@@ -82,19 +82,19 @@ const handleSubmit = (formEl) => {
                 sessionStorage.setItem('loginTime', new Date().getTime())
                 sessionStorage.setItem('lastTime', new Date().getTime())
 
-                localStorage.setItem('userId', id)
-                localStorage.setItem('userAccount', account)
-                localStorage.setItem('userName', name)
-                localStorage.setItem('isAdmin', is_admin)
+                // localStorage.setItem('userId', id)
+                // localStorage.setItem('userAccount', account)
+                // localStorage.setItem('userName', name)
+                // localStorage.setItem('isAdmin', is_admin)
 
-                loginStore.setAuth(true)
-                loginStore.setUser(account)
-                loginStore.setUserName(name)
-                loginStore.setIsAdmin(is_admin)
+                // loginStore.setAuth(true)
+                // loginStore.setUser(account)
+                // loginStore.setUserName(name)
+                // loginStore.setIsAdmin(is_admin)
 
-                loginCheck.setIsLogin(true)
-                loginCheck.setLoginTime(new Date().getTime())
-                loginCheck.setLastTime(new Date().getTime())
+                // loginCheck.setIsLogin(true)
+                // loginCheck.setLoginTime(new Date().getTime())
+                // loginCheck.setLastTime(new Date().getTime())
 
                 Swal.fire({
                     title: '登入成功',
