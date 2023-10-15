@@ -144,6 +144,7 @@ import { EditPen, Delete, QuestionFilled, Picture } from "@element-plus/icons-vu
 import Swal from 'sweetalert2'
 import { useRouter } from "vue-router";
 import { domain } from '../config/common.js'
+import { useAuthStore } from "../stores/loginAuth";
 
 const tableData = ref([])
 const allTableData = ref([])
@@ -151,6 +152,7 @@ const filterTableData = ref([])
 const show = ref(false)
 const editData = ref()
 const router = useRouter()
+const loginAuth = useAuthStore()
 
 // Api config
 const phpAction = 'server';
