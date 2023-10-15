@@ -1,5 +1,5 @@
 <script setup>
-import { watchEffect } from 'vue';
+import { watchEffect, onMounted } from 'vue';
 import { useAuthStore } from './stores/loginAuth.js';
 import { useLoginCheckStore } from './stores/loginCheck.js';
 import { useRouter } from 'vue-router';
@@ -10,6 +10,10 @@ import zhTw from 'element-plus/lib/locale/lang/zh-tw'
 const loginStore = useAuthStore()
 const loginCheck = useLoginCheckStore();
 const router = useRouter()
+
+onMounted(() => {
+  console.log(sessionStorage.getItem('isLogin'));
+})
 
 watchEffect(() => {
   if(sessionStorage.getItem('isLogin')){
