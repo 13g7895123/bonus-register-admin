@@ -78,9 +78,9 @@ const handleSubmit = (formEl) => {
                 sessionStorage.setItem('userId', id)
                 sessionStorage.setItem('userName', name)
                 sessionStorage.setItem('isAdmin', is_admin)
-                sessionStorage.setItem(true)
-                sessionStorage.setItem(new Date().getTime())
-                sessionStorage.setItem(new Date().getTime())
+                sessionStorage.setItem('isLogin', true)
+                sessionStorage.setItem('loginTime', new Date().getTime())
+                sessionStorage.setItem('lastTime', new Date().getTime())
 
                 localStorage.setItem('userId', id)
                 localStorage.setItem('userAccount', account)
