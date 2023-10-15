@@ -8,12 +8,12 @@
         <div class="h-full px-5 pt-3">
             <div class="w-full flex items-center justify-between">
                 <el-form :inline="true">
-                    <el-form-item prop="colName" label="">
+                    <!-- <el-form-item prop="colName" label="">
                         <el-input v-model="filterEngName"></el-input>
                     </el-form-item>
                     <el-form-item>
                         <el-button type="primary" size="small" @click="handleSort">篩選</el-button>
-                    </el-form-item>
+                    </el-form-item> -->
                 </el-form>
                 <el-form :inline="true">
                     <el-form-item class="float-right">
