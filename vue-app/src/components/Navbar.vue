@@ -82,6 +82,7 @@ onMounted(() => {
     console.log('do this!');
     
   }else{
+    console.log('do logout!');
     logout()
   }
   console.log('onMounted: ' + sessionStorage.getItem('isLogin'));
