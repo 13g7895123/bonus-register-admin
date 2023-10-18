@@ -1,16 +1,18 @@
 <script setup>
 import { watchEffect, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import Swal from 'sweetalert2'
 import { ElConfigProvider } from 'element-plus'
 import zhTw from 'element-plus/lib/locale/lang/zh-tw'
 
+const route = useRoute()
 const router = useRouter()
 
 onMounted(() => {
   // console.log(router.currentRoute);
   // console.log(router.currentRoute._value);
-  console.log(router.currentRoute._value.name);
+  const path = conpute(() => route.path)
+  console.log(path);
   if(sessionStorage.getItem('isLogin') == null){
     Swal.fire({
         title: '驗證失敗',
