@@ -1,5 +1,5 @@
 <script setup>
-import { watchEffect, onMounted } from 'vue';
+import { watchEffect, onMounted, computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import Swal from 'sweetalert2'
 import { ElConfigProvider } from 'element-plus'
@@ -11,7 +11,7 @@ const router = useRouter()
 onMounted(() => {
   // console.log(router.currentRoute);
   // console.log(router.currentRoute._value);
-  const path = conpute(() => route.path)
+  const path = computed(() => route.path)
   console.log(path);
   if(sessionStorage.getItem('isLogin') == null){
     Swal.fire({
