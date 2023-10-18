@@ -8,7 +8,7 @@ import zhTw from 'element-plus/lib/locale/lang/zh-tw'
 const router = useRouter()
 
 onMounted(() => {
-  console.log(router.currentRoute._value);
+  console.log(router.currentRoute._value.name);
   if(sessionStorage.getItem('isLogin') == null){
     Swal.fire({
         title: '驗證失敗',
