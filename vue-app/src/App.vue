@@ -8,10 +8,12 @@ import zhTw from 'element-plus/lib/locale/lang/zh-tw'
 const route = useRoute()
 const router = useRouter()
 
+const path = computed(() => route.path)
+
 onMounted(() => {
   // console.log(router.currentRoute);
   // console.log(router.currentRoute._value);
-  const path = computed(() => route.path)
+  
   console.log(path);
   if(sessionStorage.getItem('isLogin') == null){
     Swal.fire({
