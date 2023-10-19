@@ -8,11 +8,13 @@ import zhTw from 'element-plus/lib/locale/lang/zh-tw'
 const route = useRoute()
 const router = useRouter()
 
-const path = computed(() => route.path)
+// const path = computed(() => route.path)
 
-onMounted(() => {
+onMounted(async() => {
   // console.log(router.currentRoute);
   // console.log(router.currentRoute._value);
+  await route.isReady()
+  console.log(route.path);
   
   console.log(path);
   if(sessionStorage.getItem('isLogin') == null){
