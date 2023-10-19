@@ -21,7 +21,7 @@ export default defineConfig({
     proxy: {
       '/api': {
         // target: 'http://pokemon.mercylife.cc/api/admin',
-        target: 'http://api.mercylife.cc/api/bonus-register/admin',
+        target: 'http://apix.mercylife.cc/api/bonus-register/admin',
         // target: 'http://170.187.229.132:9091/api/bonus-register/admin',
         // target: 'localhost/api/bonus-register/admin',
         changeOrigin: true,
