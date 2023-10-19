@@ -8,18 +8,13 @@ import zhTw from 'element-plus/lib/locale/lang/zh-tw'
 const route = useRoute()
 const router = useRouter()
 
-// const path = computed(() => route.path)
 
 onMounted(async() => {
-  // console.log(router.currentRoute);
-  // console.log(router.currentRoute._value);
   await router.isReady()
-  console.log(route.path);
-  console.log(route.name);
-  console.log(route);
 
   if(sessionStorage.getItem('isLogin') == null){
-    Swal.fire({
+    if (route.name != 'Login'){
+      Swal.fire({
         title: '驗證失敗',
         text: '跳轉至登入畫面',
         icon: 'error',
@@ -29,6 +24,7 @@ onMounted(async() => {
       }).then(() => {
         router.push('/login')
       })
+    }
   }
 })
 
