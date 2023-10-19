@@ -13,7 +13,7 @@ const router = useRouter()
 onMounted(async() => {
   // console.log(router.currentRoute);
   // console.log(router.currentRoute._value);
-  await route.isReady()
+  await router.isReady()
   console.log(route.path);
   
   console.log(path);
