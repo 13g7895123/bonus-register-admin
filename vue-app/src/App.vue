@@ -12,8 +12,8 @@ const router = useRouter()
 onMounted(async() => {
   await router.isReady()
 
-  if(sessionStorage.getItem('isLogin') == null){
-    if (route.name != 'Login'){
+  if (route.name != 'Login'){
+    if(sessionStorage.getItem('isLogin') == null){
       Swal.fire({
         title: '驗證失敗',
         text: '跳轉至登入畫面',
