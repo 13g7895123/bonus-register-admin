@@ -15,7 +15,9 @@ onMounted(async() => {
   // console.log(router.currentRoute._value);
   await router.isReady()
   console.log(route.path);
-  
+  console.log(route.name);
+  console.log(route);
+
   if(sessionStorage.getItem('isLogin') == null){
     Swal.fire({
         title: '驗證失敗',
