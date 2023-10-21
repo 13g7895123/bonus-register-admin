@@ -132,7 +132,7 @@ const getPlayers = async() => {
         // console.log(tableData.value);
         setPaginations()
     }else{
-        history.go(0)
+        // history.go(0)
     }
 }
 
